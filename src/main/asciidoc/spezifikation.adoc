@@ -1,5 +1,5 @@
 = Softwareengineering 1 - ZPA Next Generation
-Autor1, Autor2, ...
+Melvin Lux, Linus Pummer, Jonas Huberts, Daniel Altmann
 
 include::{docdir}/locale/attributes-de.adoc[]
 :includedir: {docdir}/../puml/
