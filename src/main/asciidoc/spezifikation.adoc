@@ -34,9 +34,54 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 
 == Architektur Überblick
 
+== Stakeholder
+
+* Studenten
+* Professoren
+* ZPA-Admin
+* Fakultät
+* API-User
+
+=== Vorname Nachname von Stakeholder 1
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Welche Rolle bzw. Funktion hat der Stakeholder im Projekt. Nicht zu verwechseln mit der Rolle im zu erstellenden System.
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Von wann bis wann ist der Stakeholder für das Projekt verfügbar. Wichtiger Punkt, um Meetings, Workshops oder ähnliches zu planen.
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Welches Wissensgebiet bzw. welchen Wissensumfang hat der Stakeholder.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Welche Interessen und Ziele bezogen auf das Projekt hat der Stakeholder. Achtung: nicht jeder
+Stakeholder hat ein Interesse am Projekterfolg.
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Wie relevant ist der Stakeholder für das Projekt.
+|===
+
 == Rollen
 
 Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
+
+* Gast
+* Student
+* Lehrende
+** intern
+** extern
+* Sachbearbeiter
+** Sekretär
+** Fakultätsmitarbeiter
+** Facilitymanager
+** Securitymanager
+* ZPA-Admin
+** Developer
+** Daily Manager
 
 == Funktionale Anforderungen
 
