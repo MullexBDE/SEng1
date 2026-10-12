@@ -80,13 +80,11 @@ Stakeholder hat ein Interesse am Projekterfolg.
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
 |{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
 |{set:cellbgcolor:#e8e8e8} *Wissen*
-|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte
-Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
+|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
-|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling),
-intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
+|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
 |{set:cellbgcolor:#e8e8e8} *Relevanz*
-|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch. 
+|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
 |===
 
 == Rollen
