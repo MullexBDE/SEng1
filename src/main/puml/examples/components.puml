@@ -1,0 +1,41 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam ArrowColor black
+hide stereotype
+
+skinparam component {
+	BorderColor black
+
+    BackgroundColor<<AT>> #salmon
+    StereotypeFontColor<<AT>> #white
+    FontColor<<AT>> #white
+
+    BackgroundColor<<A>> #lightGreen
+    StereotypeFontColor<<A>> #black
+    FontColor<<A>> #black
+
+    BackgroundColor<<T>> #gold
+    StereotypeFontColor<<T>> #black
+    FontColor<<T>> #black
+
+    BackgroundColor<<0>> #deepskyblue
+    StereotypeFontColor<<0>> #white
+    FontColor<<0>> #white
+
+    BackgroundColor<<R>> #sienna
+    StereotypeFontColor<<R>> #white
+    FontColor<<R>> #white
+
+    FontName Arial Black
+    StereotypeFontName Arial Black
+}
+
+component [User Interface]<<AT>> #lightGreen
+component [Services]<<A>> #beige
+component [Persistence]<<T>> #lightBlue
+
+[User Interface] .> Services
+Services .> Persistence
+
+@enduml

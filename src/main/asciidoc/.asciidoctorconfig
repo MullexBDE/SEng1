@@ -1,0 +1,2 @@
+:localedir: {asciidoctorconfigdir}/locale
+:pumldir: {asciidoctorconfigdir}/../puml

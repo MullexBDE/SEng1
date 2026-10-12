@@ -1,0 +1,17 @@
+@startuml
+
+|Dozent|
+start
+:ZPA Webseite aufrufen;
+|ZPA|
+:Anmeldeoptionen anzeigen;
+|Dozent|
+:Shibboleth wählen;
+|ZPA|
+:Anmeldedialog zeigen;
+|Dozent|
+:Zugangsdaten setzen;
+|ZPA|
+:Startseite anzeigen;
+stop
+@enduml

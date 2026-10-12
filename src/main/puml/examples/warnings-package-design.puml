@@ -1,0 +1,59 @@
+@startuml
+
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+hide stereotype
+
+package Warnings {
+}
+package Steps {
+}
+package Model {
+}
+package Charts {
+}
+package Filter {
+}
+package Portlets {
+}
+package Columns {
+}
+package Tokens {
+}
+package Utilities {
+}
+package "REST API" {
+}
+
+Warnings ..> Utilities
+Warnings ..> Model
+
+Steps ..> Utilities
+Steps ..> Model
+Steps -..> Filter
+Steps -..> "REST API"
+
+Tokens ..> Model
+Tokens ..> Utilities
+
+Portlets ..> Model
+Portlets ..> Utilities
+Portlets ..> Charts
+
+Columns ..> Model
+Columns ..> Utilities
+
+Model ..> Utilities
+Model ..> Charts
+Model ..> "REST API"
+
+Charts ..> Utilities
+"REST API" ..> Utilities
+Filter ..> Utilities
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+hide footbox
+skinparam FontName Arial Black
+skinparam FontName Arial
+
+Consumer -> TemplateAlgorithm : runTemplateMethod
+activate TemplateAlgorithm
+
+TemplateAlgorithm -> TemplateAlgorithm : start
+TemplateAlgorithm -> Alternative1 : primitiveMethod1
+activate Alternative1
+Alternative1 --> TemplateAlgorithm
+deactivate Alternative1
+TemplateAlgorithm -> TemplateAlgorithm : work
+TemplateAlgorithm -> Alternative1 : primitiveMethod2
+activate Alternative1
+Alternative1 --> TemplateAlgorithm
+deactivate Alternative1
+TemplateAlgorithm -> TemplateAlgorithm : merge
+TemplateAlgorithm --> Consumer
+
+@enduml

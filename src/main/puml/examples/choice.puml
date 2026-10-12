@@ -1,0 +1,23 @@
+@startuml
+
+
+state Anmeldung
+state Logout <<end>>
+state LoginCheck <<choice>>
+
+[*] -> Kursliste
+Anmeldung --> LoginCheck : Anmelden / passwortPrüfen
+LoginCheck --> Anmeldung : [Login nicht erfolgreich]
+LoginCheck -right-> Kursliste : [Login erfolgreich]
+
+Kursliste -> Raumbuchung : Raumbuchung
+Raumbuchung -> Kursliste: Kursliste
+
+Kursliste --> Logout : Logout
+
+Raumbuchung --> Raumbuchung : Suchen / suchergebnisAnzeigen
+
+Raumbuchung --> Gebucht : Buchen
+Gebucht --> Logout : Logout
+
+@enduml

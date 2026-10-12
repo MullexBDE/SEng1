@@ -1,0 +1,66 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam defaultTextAlignment center
+
+skinparam ArrowColor black
+
+skinparam interface {
+    BorderColor black
+}
+
+skinparam component {
+	BorderColor black
+
+    BackgroundColor<<AT>> #salmon
+    StereotypeFontColor<<AT>> #white
+    FontColor<<AT>> #white
+
+    BackgroundColor<<A>> #lightGreen
+    StereotypeFontColor<<A>> #black
+    FontColor<<A>> #black
+
+    BackgroundColor<<T>> #gold
+    StereotypeFontColor<<T>> #black
+    FontColor<<T>> #black
+
+    BackgroundColor<<0>> #deepskyblue
+    StereotypeFontColor<<0>> #white
+    FontColor<<0>> #white
+
+    BackgroundColor<<R>> #sienna
+    StereotypeFontColor<<R>> #white
+    FontColor<<R>> #white
+
+    FontName Arial Black
+    StereotypeFontName Arial Black
+}
+
+component [Kursliste\nWebView] <<AT>> as View
+component [REST\nAPI] <<T>> as RESTAPI
+component [ZPA\nREST] <<AT>> as REST
+component [Kurs\nVerwaltung] <<A>> as ServiceLayer
+component [Kurse\nPersistence] <<AT>> as KursPersistence
+component [Persistence] <<T>>
+component [UI\nToolkit] <<T>> as UI
+component [JDK] <<0>>
+component [Commons] <<0>>
+component [JDBC] <<T>>
+
+View .> REST : \t
+REST .up.> RESTAPI
+REST .> ServiceLayer
+ServiceLayer .> KursPersistence
+KursPersistence .> [Persistence]
+
+UI <.. View
+JDK <.. ServiceLayer
+JDK <.. KursPersistence
+JDK <.. Persistence
+
+ServiceLayer ..> Commons
+KursPersistence ..> Commons
+Persistence ..> Commons
+Persistence ..> JDBC
+
+@enduml

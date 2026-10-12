@@ -1,0 +1,31 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 24
+skinparam defaultFontSize 20
+skinparam classFontName Arial
+skinparam classArrowColor Black
+skinparam componentStyle uml2
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+
+hide circle
+
+class View {
+}
+class Controller {
+}
+class Model {
+}
+
+View <.> Controller
+View ..> Model
+Controller ..> Model
+
+
+@enduml

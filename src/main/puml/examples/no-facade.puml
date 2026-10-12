@@ -1,0 +1,40 @@
+@startuml
+
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+hide stereotype
+
+package "Consumer" {
+    class O1
+    class O2
+    class O3
+}
+
+package "Dependency" {
+    class A
+    class B
+    class C
+    class D
+    class E
+
+}
+
+
+O3 ..> D
+O1 ..> A
+O2 ..> A
+O2 ..> E
+O3 ..> E
+
+A .> B
+A ..> C
+B .> D
+C .> E
+E .> D
+
+@enduml

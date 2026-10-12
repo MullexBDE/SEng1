@@ -1,0 +1,48 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+
+skinparam component {
+  BackgroundColor #FFFF00
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+skinparam artifact {
+  BackgroundColor #3E46D9
+  StereotypeFontColor #white
+  FontColor #white
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor #white
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+skinparam ArrowColor white
+component "BenutzerVerwaltung" <<component>>  {
+    artifact benutzer-verwaltung.war <<artifact>> as F {
+        artifact Benutzer.Verwaltung.jar <<artifact>> as V
+        artifact HTTP.client.jar <<artifact>> as H
+        artifact Hibernate.jar <<artifact>> as C
+        artifact spring.security.jar <<artifact>> as E
+    }
+}
+
+V ..> H
+V .> C
+V ..> E
+@enduml

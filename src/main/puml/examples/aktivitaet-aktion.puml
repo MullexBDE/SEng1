@@ -1,0 +1,20 @@
+@startuml
+
+skinparam activity {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+(*)  -> [\t] "Aktion"
+"Aktion" -> [\t\t] "Aktivität    "
+"Aktivität    " -> [\t] (*)
+
+@enduml

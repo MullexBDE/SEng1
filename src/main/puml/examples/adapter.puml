@@ -1,0 +1,50 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+interface ClientApi <<interface>> {
+    wanted(data)
+}
+
+hide ClientApi fields
+
+class Client as " Client " {
+\t
+}
+
+class Adapter #gold {
+    adaptee: Adaptee
+    Adapter(adaptee: Adaptee)
+    wanted(data)
+}
+
+note left: @Override\npublic void wanted(Data data) {\n    var specialData = convertData(data);\n    adaptee.available(specialData); \n}\n
+
+class Adaptee {
+    available(specialData)
+}
+
+Client .right..> ClientApi : "    "
+Adapter -up-|> ClientApi
+Adapter .right.> Adaptee : "  <<call>>"
+
+
+
+@enduml

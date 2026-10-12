@@ -1,0 +1,50 @@
+@startuml
+
+skinparam componentStyle uml2
+
+skinparam ArrowColor black
+
+skinparam interface {
+    BorderColor black
+}
+
+skinparam component {
+	BorderColor black
+
+    BackgroundColor<<AT>> #salmon
+    StereotypeFontColor<<AT>> #white
+    FontColor<<AT>> #white
+
+    BackgroundColor<<A>> #lightGreen
+    StereotypeFontColor<<A>> #black
+    FontColor<<A>> #black
+
+    BackgroundColor<<T>> #gold
+    StereotypeFontColor<<T>> #black
+    FontColor<<T>> #black
+
+    BackgroundColor<<0>> #deepskyblue
+    StereotypeFontColor<<0>> #white
+    FontColor<<0>> #white
+
+    BackgroundColor<<R>> #sienna
+    StereotypeFontColor<<R>> #white
+    FontColor<<R>> #white
+
+    FontName Arial Black
+    StereotypeFontName Arial Black
+}
+
+[Anwendung] <<A>> as I
+interface "IA" as S1 #lightgreen
+[Technik] <<T>> as E
+interface "IT" as S2 #gold
+
+[Adapter] <<R>>
+
+I .> S1:\n
+S1 - Adapter:\n
+Adapter .> S2:\n
+S2 - E :\n
+
+@enduml

@@ -1,0 +1,851 @@
+= Softwareengineering 1 - ZPA Next Generation
+Prof. Jan PHilipps <jan.philipps@hm.edu>
+
+include::{localedir}/attributes-de.adoc[]
+
+:!chapter-signifier:
+:xrefstyle: short
+:sectnums:
+:partnums:
+
+== Einleitung
+
+An der Fakultät für Informatik und Mathematik ist eine Neuentwicklung des bisherigen ZPA-Systems geplant.
+Ziel ist es eine einheitliche und benutzerfreundliche Plattform zu entwickeln, die allen Beteiligten eine Erleichterung bewirkt.
+Im bisherigen ZPA-System können sich Studierende für FWP-Fächer, praxisbegleitenden Unterricht, Praktikumsgruppen und Seminare eintragen.
+Lehrkräfte nutzen es, um die Einteilung der Praktikumsgruppen abzurufen oder den Stundenplan anzuzeigen.
+Das Dekanatsteam verschafft sich mithilfe des Systems einen Überblick über die Auslastung und Verteilung der Kursteilnehmer.
+Admins haben die Möglichkeit, Kurse und Räume zu verwalten.
+
+Da eine Anbindung weitere Systeme an das aktuelle System technisch nicht machbar erscheint, soll eine Neuentwicklung eine offenere Plattform für weitere Systeme schaffen.
+Folgende Systeme sollen u.a. integriert werden:
+
+* Primuss: hochschulweites System zur Verwaltung der Noten
+* Moodle: hochschulweite Lernplattform
+
+Zudem weist das aktuelle System zahlreiche Fehler auf und hält den Ansturm der Studierenden nicht immer statt.
+Das System soll auch benutzerfreundlicher werden und eine moderne Benutzeroberfläche bekommen, die auf verschiedensten Plattformen nutzbar ist.
+Zur Realisierung des Projekts steht ein Gesamtbudget von 250.000 € zur Verfügung.
+Der Betrieb der Anwendung soll auf den Systemen des LRZ erfolgen.
+Die Einführung des neuen ZPA Next Generation ist schrittweise in den nächsten 3 Jahren geplant.
+Zunächst soll die Fächerauswahl umgesetzt werden, danach in mehreren Iterationen die nächst wichtigen Features.
+Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orientiert, soll im Projekt das Vorgehen Scrum angewendet werden.
+
+== Architektur Überblick
+
+Das ZPA System ist als Client-Server Anwendung umgesetzt und hat eine Schnittstelle zu Shibboleth, dem zentralen Authentifizierungsdienst der Hochschule München.
+Die Schnittstelle ist in <<Schnittstellen>> genauer beschrieben.
+
+[plantuml]
+.Kontext Diagramm mit Datenfluss
+----
+include::{pumldir}/examples/kontext-datenfluss.puml[Kontext Diagramm mit Datenfluss]
+----
+
+== Stakeholder
+
+In diesem Abschnitt sind die Stakeholder des ZPA Systems tabellarisch aufgeführt.
+
+=== Prof. Jan Philipps
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Fachbereich (d.h., Lehrkraft) und Verantwortlicher für Architektur und Qualitätssicherung.
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R2.037
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} jan.philipps@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} (auf Anfrage)
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Funktionale Anforderungen aus Sicht der Lehrkräfte
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Verbesserung der Benutzerfreundlichkeit des ZPA, Sicherstellung der Qualität des Endprodukts.
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Informationslieferant
+
+|===
+
+== Rollen
+
+Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
+
+=== Lehrkraft
+
+Lehrkräfte interessieren sich für die Belegung Ihrer Kurse. Relevante Informationen sind die Auslastung der Praktikumsgruppen und die Daten der teilnehmenden Personen. Lehrkräfte haben weitreichende Administrationsrechte auf ihren Kursen und können Räume in der Hochschule buchen. Die Berechtigungen für Lehrkräfte werden für interne Fakultätsmitglieder und externe Personen (z.B. LBAs) unterschieden.
+
+== Funktionale Anforderungen
+
+In diesem Abschnitt sind die funktionalen Anforderungen aufgelistet.
+
+=== Kursliste anzeigen
+
+[#re-kursliste]
+
+[caption="RE {counter:requirements-number} - "]
+.Kursliste anzeigen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} Hoch
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!} Kursliste anzeigen
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!} Das ZPA muss Lehrkräften die Möglichkeit bieten, eine Liste mit allen eigenen Kursen anzuzeigen.
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!} Die Lehrkraft möchte die Auslastung der eigenen Praktika steuern.
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!} Öffnen der Kursansicht und Überprüfen, dass alle Kurse der Lehrkraft angezeigt werden.
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!} Ullrich Hafner
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!} Ullrich Hafner
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} 3
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} 5
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!} -
+
+|===
+
+== Nichtfunktionale Anforderungen
+
+In diesem Abschnitt sind die nichtfunktionalen Anforderungen aufgelistet.
+
+=== Nur autorisierte Personen
+
+[caption="RE {counter:requirements-number} - "]
+.Autorisierte Personen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Sicherheit
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} Normal
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!} alle
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!} Das System muss gewährleisten, dass nur autorisierte Personen Zugriff haben.
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!} Die Daten der Studierenden müssen geschützt sein.
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!} Eine nicht autorisierte Person darf keinen der Anwendungsfälle ausführen können.
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!} Datenschutzbeauftragte
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!} Jan Philipps
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} 1
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} 5
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!} Verordnung (EU) 2016/679 (Datenschutz-Grundverordnung)
+
+|===
+
+=== Modeless Feedback
+
+[caption="RE {counter:requirements-number} - "]
+.Modeless Feedback
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Ergonomie
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} Niedrig
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!} alle
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!} Das System muss alle Rückmeldungen zu Dialogeingaben (Fehler oder automatische Ersetzungen) modeless darstellen, d.h. ohne Verwendung eines Dialogfensters.
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!} Der Arbeitsfluss eines Akteurs wird durch modale Dialoge gestört.
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!} Nach Eingabe eines fehlerhaften Werts in einem Datumsfeld darf kein Dialogfenster erscheinen, die Oberfläche muss an geeigneter Stelle die fehlerhafte Eingabe markieren.
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!} Usability Test
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!} Ullrich Hafner
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} 3
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} 1
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!} Siehe auch Alan Cooper, About Face 4.0.
+
+|===
+
+== Anwendungsfälle
+
+In diesem Abschnitt sind alle Anwendungsfälle des Systems aufgeführt.
+
+[plantuml]
+.Anwendungsfälle im ZPA
+----
+include::{pumldir}/examples/usecase-groups.puml[Anwendungsfälle im ZPA]
+----
+
+[#zpa-anmeldung]
+
+=== Im ZPA anmelden
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!} Akteur meldet sich im ZPA System an.
+|{set:cellbgcolor:#e8e8e8} *Akteure*
+|{set:cellbgcolor:!} Studierende, Lehrkräfte
+|{set:cellbgcolor:#e8e8e8} *Motivation*
+|{set:cellbgcolor:!} Akteur möchte ZPA benutzen.
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} Akteur hat ein Hochschulkonto.
+|{set:cellbgcolor:#e8e8e8} *Eingehende Daten*
+|{set:cellbgcolor:!} Zugangsdaten (Benutzername, Passwort)
+|{set:cellbgcolor:#e8e8e8} *Ergebnisse*
+|{set:cellbgcolor:!} Startseite des ZPA
+|{set:cellbgcolor:#e8e8e8} *Nachbedingungen*
+|{set:cellbgcolor:!} Sitzung wurde angelegt.
+|{set:cellbgcolor:#e8e8e8} *Anforderungen*
+|{set:cellbgcolor:!} RE 13 Nur autorisierte Personen
+|{set:cellbgcolor:#e8e8e8} *Ansprechpartner*
+|{set:cellbgcolor:!} Prof. Jan Philipps
+
+|===
+
+==== Standardablauf
+
+1.	Akteur ruft ZPA Webseite auf.
+2.	System zeigt Anmeldedialog an.
+3.	Akteur gibt Zugangsdaten ein und sendet das Formular ab.
+4.	System prüft die Zugangsdaten.
+5.	System erzeugt eine Sitzung für den Akteur.
+6.	System zeigt Startseite des ZPA Systems an.
+
+==== Fehler - Zugangsdaten falsch
+
+Statt 5-6:
+[start=5]
+1.	System gibt eine Fehlermeldung aus
+2.	Zurück zu Schritt 2
+
+==== Übersicht der Abläufe
+
+[plantuml]
+.Anwendungsfälle im ZPA
+----
+include::{pumldir}/examples/aktivitaet-einloggen.puml[Anwendungsfälle im ZPA]
+----
+
+==== Zustandsdiagramm Sitzung
+
+[plantuml]
+.Anwendungsfälle im ZPA
+----
+include::{pumldir}/examples/zustand-session.puml[Anwendungsfälle im ZPA]
+----
+
+=== Kursliste anzeigen
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!} Lehrkraft lässt sich Liste der eigenen Kurse anzeigen.
+|{set:cellbgcolor:#e8e8e8} *Akteure*
+|{set:cellbgcolor:!} Lehrkräfte
+|{set:cellbgcolor:#e8e8e8} *Motivation*
+|{set:cellbgcolor:!} Lehrkraft möchte die eigenen aktuellen Kurse sehen.
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} Sitzung der Lehrkraft ist aktiv.
+|{set:cellbgcolor:#e8e8e8} *Eingehende Daten*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Ergebnisse*
+|{set:cellbgcolor:!} Kursliste
+|{set:cellbgcolor:#e8e8e8} *Nachbedingungen*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Anforderungen*
+|{set:cellbgcolor:!} RE1 - Kursliste anzeigen
+|{set:cellbgcolor:#e8e8e8} *Ansprechpartner*
+|{set:cellbgcolor:!} Prof. Jan Philipps
+|===
+
+==== Standardablauf
+
+1.	Lehrkraft wählt die Kursliste aus.
+2.	System zeigt die Kursliste der Lehrkraft an.
+
+=== Kursteilnehmer anzeigen
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!} Akteur lässt sich Liste der Teilnehmer eines Kurses anzeigen.
+|{set:cellbgcolor:#e8e8e8} *Akteure*
+|{set:cellbgcolor:!} Lehrkraft
+|{set:cellbgcolor:#e8e8e8} *Motivation*
+|{set:cellbgcolor:!} Lehrkraft möchte Auslastung eines Kurses sehen.
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} Kurs ist im ZPA angelegt,
+Kursliste ist ausgewählt, Sitzung der Lehrkraft ist aktiv.
+|{set:cellbgcolor:#e8e8e8} *Eingehende Daten*
+|{set:cellbgcolor:!} Kursname
+|{set:cellbgcolor:#e8e8e8} *Ergebnisse*
+|{set:cellbgcolor:!} Teilnehmerliste des Kurses
+|{set:cellbgcolor:#e8e8e8} *Nachbedingungen*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Anforderungen*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Ansprechpartner*
+|{set:cellbgcolor:!} Prof. Jan Philipps
+|===
+
+==== Standardablauf
+
+1.	Lehrkraft wählt gewünschten Kurs aus und schickt die Anfrage ab.
+2.	System zeigt die Teilnehmer des ausgewählten Kurses an
+
+==== Übersicht der Abläufe
+
+[plantuml]
+.Anwendungsfälle im ZPA
+----
+include::{pumldir}/examples/kursliste-anzeigen.puml[Anwendungsfälle im ZPA]
+----
+
+[#raum-buchen]
+
+=== Raum buchen
+
+[cols="3,15"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!} Eine angemeldete Person bucht einen verfügbaren Raum zu einem festen Zeitpunkt.
+|{set:cellbgcolor:#e8e8e8} *Akteure*
+|{set:cellbgcolor:!} angemeldete Person
+|{set:cellbgcolor:#e8e8e8} *Motivation*
+|{set:cellbgcolor:!} Angemeldete Person (z.B. Studierende) möchte Platz für Lerngruppe finden. Lehrkraft möchte zusätzlichen Raum für Tutorium buchen.
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} ZPA Anmeldung war erfolgreich
+|{set:cellbgcolor:#e8e8e8} *Eingehende Daten*
+|{set:cellbgcolor:!} Zeitraum (`Raumbuchung.zeitRaum`)
+
+Raumparameter (`Raum.sitzplätze`, `Raum.anzahlTafeln`, `Raum.anzahlBeamer`, `Raum.anzahlRechner`)
+|{set:cellbgcolor:#e8e8e8} *Ergebnisse*
+|{set:cellbgcolor:!} Bestätigung für erfolgreiche Buchung
+|{set:cellbgcolor:#e8e8e8} *Nachbedingungen*
+|{set:cellbgcolor:!} Raum ist für ausgewählten Zeitraum für die angemeldete Person gebucht
+
+(Neue Instanz `Raumbuchung` angelegt und mit `Person` und `Raum` verknüpft)
+|{set:cellbgcolor:#e8e8e8} *Anforderungen*
+|{set:cellbgcolor:!} RE 27, RE 28
+|{set:cellbgcolor:#e8e8e8} *Ansprechpartner*
+|{set:cellbgcolor:!} Prof. Jan Philipps
+
+|===
+
+==== Standardablauf
+
+1. Der Akteur öffnet die Raumbuchung.
+2. Das System zeigt den Raumbuchungsdialog an.
+3. Der Akteur wählt den gewünschten Zeitraum aus.
+4. Das System zeigt alle am gewünschten Zeitraum verfügbaren Räume an, die zu den gewählten Raumparametern passen.
+5. Der Akteur wählt den passenden Raum aus.
+6. Das System erstellt eine neue Buchung, die den Raum für den Akteur reserviert.
+7. Das System zeigt eine Bestätigungsseite mit den Buchungsdaten an.
+Parallel dazu verschickt das System eine E-Mail mit den Buchungsdaten an den Akteur.
+
+==== Alternative - Raum filtern
+
+Statt 5-7:
+[start=5]
+1. Der Akteur konfiguriert die Raumparameter.
+2. Weiter mit Schritt 4. im Standardablauf.
+
+==== Alternative - Kein Raum gefunden
+
+Statt 4-7:
+[start=4]
+1. Das System zeigt eine Meldung an, dass kein Raum verfügbar ist.
+2. Weiter mit Schritt 3. im Standardablauf
+
+==== Fehler – Raum inzwischen belegt
+
+Statt 6-7:
+[start=6]
+1. Das System zeigt eine Meldung an, dass der Raum inzwischen vergeben ist.
+2. Weiter mit Schritt 3. im Standardablauf
+
+[#team-partner-waehlen]
+
+=== Teampartner wählen
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!} Ein Kursteilnehmer wählt einen Teampartner für die Gruppenarbeit aus.
+|{set:cellbgcolor:#e8e8e8} *Akteure*
+|{set:cellbgcolor:!} Studierende
+|{set:cellbgcolor:#e8e8e8} *Motivation*
+|{set:cellbgcolor:!} Abgaben sollen im Team bearbeitet werden: wenn Teammitglieder selbst ausgewählt werden, ist die Qualität der Ergebnisse höher.
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} Person ist am ZPA angemeldet
+|{set:cellbgcolor:#e8e8e8} *Eingehende Daten*
+|{set:cellbgcolor:!} Kurs, Teampartner
+|{set:cellbgcolor:#e8e8e8} *Ergebnisse*
+|{set:cellbgcolor:!} Bestätigung für Teamzuteilung
+|{set:cellbgcolor:#e8e8e8} *Nachbedingungen*
+|{set:cellbgcolor:!} Teamzuordnung erstellt bzw. aktualisiert
+|{set:cellbgcolor:#e8e8e8} *Anforderungen*
+|{set:cellbgcolor:!} RE 35
+|{set:cellbgcolor:#e8e8e8} *Ansprechpartner*
+|{set:cellbgcolor:!} Prof. Jan Philipps
+
+|===
+
+==== Standardablauf
+
+1. Der Akteur öffnet die Ansicht "Meine Kurse".
+2. Das System zeigt die Kurse des Akteurs an.
+3. Der Akteur wählt den gewünschten Kurs aus.
+4. Das System zeigt den Kurs an.
+5. Das System zeigt die Teams an, die noch nicht voll belegt sind.
+6. Der Akteur wählt ein gewünschtes Team aus.
+7. Das System aktualisiert die Teamzuordnung.
+8. Das System zeigt eine Bestätigungsseite mit den Teammitgliedern an. Parallel dazu verschickt das System eine E-Mail mit den Teamdetails an die beteiligten Studenten.
+
+==== Alternative - Neues Team bilden
+
+Statt 6-8:
+[start=6]
+1. Der Akteur wählt neues Team erstellen aus.
+2. Das System erstellt ein neues Team.
+3. Weiter mit Schritt 7. im Standardablauf.
+
+==== Alternative - Kein freies Team mehr
+
+Statt 5-8:
+[start=5]
+1. Das System zeigt eine Meldung an, dass kein Team mehr freie Plätze hat.
+2. Weiter mit Schritt 6. in der Alternative - Neues Team bilden.
+
+==== Fehler - Team inzwischen belegt
+
+Statt 7-8:
+[start=7]
+1. Das System zeigt eine Meldung an, dass das Team inzwischen voll ist.
+2. Weiter mit Schritt 5. im Standardablauf
+
+== Datenmodell
+
+Für das ZPA System sind die in <<Datenmodell-ZPA>> genannten Entitäten relevant.
+
+[plantuml]
+.Datenmodell des ZPA
+[#Datenmodell-ZPA]
+----
+include::{pumldir}/examples/sitzung.puml[Datenmodell des ZPA]
+----
+
+=== Entitäten
+
+Dieser Abschnitte beschreibt alle Entitäten des ZPA im Detail.
+
+==== Sitzung
+
+[caption="EN {counter:entity-number} - "]
+.Sitzung
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Aktuelle Sitzung einer Person.
+|{set:cellbgcolor:#e8e8e8} *Mengengerüst*
+5+|{set:cellbgcolor:!}1000 pro Tag.
+|{set:cellbgcolor:#e8e8e8} *Schlüssel*
+5+|{set:cellbgcolor:!}Schlüssel der Person.
+
+|===
+
+===== Start
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Zeitpunkt, an dem sich eine Person angemeldet hat.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!}Date
+|{set:cellbgcolor:#e8e8e8} *Initialwert*
+5+|{set:cellbgcolor:!}Erzeugungszeitpunkt
+|===
+
+===== Letzte Aktivität
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Zeitpunkt, an dem der Benutzer das letzte Mal im System aktiv war.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!}Date
+|{set:cellbgcolor:#e8e8e8} *Initialwert*
+5+|{set:cellbgcolor:!}Erzeugungszeitpunkt
+|===
+
+===== Status
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}
+Aktueller Status der Sitzung.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!}SitzungsStatus
+|{set:cellbgcolor:#e8e8e8} *Initialwert*
+5+|{set:cellbgcolor:!}AKTIV
+|===
+
+===== Benutzer
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Besitzer dieser Sitzung.
+|{set:cellbgcolor:#e8e8e8} *Ziel*
+5+|{set:cellbgcolor:!}Benutzer
+|{set:cellbgcolor:#e8e8e8} *Kardinalität*
+5+|{set:cellbgcolor:!}1
+|===
+
+==== Benutzer
+
+[caption="EN {counter:entity-number} - "]
+.Benutzer
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Ein aktiver Benutzers des Systems.
+|{set:cellbgcolor:#e8e8e8} *Mengengerüst*
+5+|{set:cellbgcolor:!}10000
+|{set:cellbgcolor:#e8e8e8} *Schlüssel*
+5+|{set:cellbgcolor:!}Email
+
+|===
+
+=== Fachliche Datentypen
+
+Dieser Abschnitte beschreibt alle fachlichen Datentypen des ZPA im Detail.
+
+==== Sitzungsstatus
+
+[cols="1,2,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Mögliche Status einer Sitzung.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!} «enumeration»
+.3+|{set:cellbgcolor:#e8e8e8} *Elemente*
+1+|{set:cellbgcolor:!}AKTIV
+4+|Sitzung ist aktiv: geplant ist eine Aktivitätszeit von 60 Minuten.
+
+1+|{set:cellbgcolor:!}ABGELAUFEN
+4+|{set:cellbgcolor:!}Sitzung ist abgelaufen und Benutzer muss sich neu anmelden.
+
+|===
+
+==== Hochschule Email Adresse
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Eine Emailadresse der Hochschule München.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!} «primitive»
+|{set:cellbgcolor:#e8e8e8} *Basistyp*
+5+|{set:cellbgcolor:!}String
+|{set:cellbgcolor:#e8e8e8} *Einschränkung*
+5+|{set:cellbgcolor:!}Die Emailadresse muss dem regulären Ausdruck `[a-z.]+@hm\.edu` entsprechen.
+|===
+
+== Dialoge
+
+Im ZPA System sind die in den folgenden Abschnitten beschriebenen Masken relevant.
+Der Dialogablauf zwischen diesen Masken ist in <<Dialogablauf-ZPA>> markiert.
+
+[plantuml]
+.Dialogablauf des ZPA
+[#Dialogablauf-ZPA]
+----
+include::{pumldir}/examples/zustand-ui-dialog-ablauf.puml[Datenmodell des ZPA]
+----
+
+Das ZPA wird grundsätzlich über die Anmeldungsseite betreten.
+Nach erfolgreichem Login leitet das System automatisch auf die Kursliste weiter: hier sind alle aktiven Kurse der angemeldeten Lehrkraft aufgelistet.
+Von dort lässt sich die Detailansicht eines Kurses anwählen.
+Über diese Seite kommt man auch wieder zurück zur Kursliste.
+
+=== Anmeldung
+
+Die Anmeldungsseite bietet die Möglichkeit, sich am ZPA System mittels Benutzername und Passwort anzumelden.
+
+==== Umgesetzte Anwendungsfälle
+
+* <<zpa-anmeldung, Im ZPA Anmelden>>
+
+==== Layout
+
+image::login.png[This is wrong]
+
+==== Felder
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!} Benutzername
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} String (`Person.hochschulKennung`)
+|{set:cellbgcolor:#e8e8e8} *Vorbelegung*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} Hochschulkennung inklusive "hm-" Präfix
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+|===
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!} Passwort
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} String
+|{set:cellbgcolor:#e8e8e8} *Vorbelegung*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} Hochschulpasswort
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!} Die Eingabe darf nicht im Klartext erscheinen, ebenso darf der Wert nicht unverschlüsselt an den Server übertragen werden.
+|===
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!} Status
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Anzeige
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} String
+|{set:cellbgcolor:#e8e8e8} *Vorbelegung*
+|{set:cellbgcolor:!} Bitte mit der Hochschulkennung anmelden
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+|===
+
+==== Aktionen
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!} Anmelden
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+|{set:cellbgcolor:!} Meldet den Akteur am System an.
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Icon*
+|{set:cellbgcolor:!} -
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} Benutzername und Passwort sind gefüllt.
+|{set:cellbgcolor:#e8e8e8} *Auslöser*
+|{set:cellbgcolor:!}
+a) Klicken der Schaltfläche Anmelden.
+
+b) Drücken der Eingabetaste im Feld Benutzername oder Passwort.
+|{set:cellbgcolor:#e8e8e8} *Ablauf*
+|{set:cellbgcolor:!}
+1. Ruft die Anmeldung mit den Werten der Felder Benutzername und Passwort auf, siehe Anwendungsfall <<zpa-anmeldung, Im ZPA Anmelden>>.
+
+2. Gibt im Fehlerfall die Fehlermeldung "Passwort oder Benutzername falsch" im Status Feld aus.
+
+3. Leitet im Erfolgsfall zum Dialog Kursliste über (mit der erzeugten Session ID).
+
+|===
+
+== Schnittstellen und Nachbarsysteme
+
+Das ZPA System hat Schnittstellen zu den in den folgenden Abschnitten aufgeführten Nachbarsystemen.
+
+=== Nachbarsysteme
+
+Das ZPA ist mit den folgenden Nachbarsystemen über eine Schnittstelle verbunden.
+
+==== Shibboleth Server des LRZ
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!} Shibboleth stellt Anwendungen eine zentrale Identitätskontrolle zur Verfügung (Identity-Provider)
+|{set:cellbgcolor:#e8e8e8} *Status*
+|{set:cellbgcolor:!} In Betrieb
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Standardsoftware (Apache Modul)
+|{set:cellbgcolor:#e8e8e8} *Systemplattform*
+|{set:cellbgcolor:!} Redhat Docker Image (redhat/ubi8)
+|{set:cellbgcolor:#e8e8e8} *Betrieb*
+|{set:cellbgcolor:!} LRZ, siehe auch https://www.lrz.de/services
+|{set:cellbgcolor:#e8e8e8} *Entwicklung*
+|{set:cellbgcolor:!} -
+|===
+
+=== Schnittstellen
+
+Das ZPA benutzt die in den folgenden Abschnitten aufgeführten Schnittstellen.
+
+==== Benutzerauthentifizierung über Shibboleth
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Richtung*
+|{set:cellbgcolor:!} Import
+|{set:cellbgcolor:#e8e8e8} *Granularität*
+|{set:cellbgcolor:!} Einzelabfrage
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Online
+|{set:cellbgcolor:#e8e8e8} *Antwortzeiten*
+|{set:cellbgcolor:!} < 100msec
+|{set:cellbgcolor:#e8e8e8} *Nutzungszeitraum*
+|{set:cellbgcolor:!} 7 Tage die Woche, 24h am Tag
+|{set:cellbgcolor:#e8e8e8} *Anzahl Nutzungen*
+|{set:cellbgcolor:!} 1000 pro Tag
+|{set:cellbgcolor:#e8e8e8} *Gleichzeitige Nutzungen*
+|{set:cellbgcolor:!}Durchschnitt: 10
+
+Maximal: 500 (während der Prioritätenvergabe)
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} 99,99%
+|===
+
+===== Aufbau
+
+Siehe Dokumentation unter https://www.shibboleth.net/.
+
+==== Teilnehmerliste
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Richtung*
+|{set:cellbgcolor:!} Export
+|{set:cellbgcolor:#e8e8e8} *Granularität*
+|{set:cellbgcolor:!} Einzelabfrage
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Offline
+|{set:cellbgcolor:#e8e8e8} *Antwortzeiten*
+|{set:cellbgcolor:!} < 1sec
+|{set:cellbgcolor:#e8e8e8} *Nutzungszeitraum*
+|{set:cellbgcolor:!} 5 Tage die Woche, zwischen 8 und 17 Uhr
+|{set:cellbgcolor:#e8e8e8} *Anzahl Nutzungen*
+|{set:cellbgcolor:!} 1 pro Kurs und Semester
+|{set:cellbgcolor:#e8e8e8} *Gleichzeitige Nutzungen*
+|{set:cellbgcolor:!}0
+|{set:cellbgcolor:#e8e8e8}
+*Verfügbarkeit*
+|{set:cellbgcolor:!} 99%
+|===
+
+===== Aufbau
+
+CSV Datei im Unix Format mit folgenden Feldern:
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Attributname*
+|{set:cellbgcolor:!} Vorname
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} String (`Person.vorname`)
+|{set:cellbgcolor:#e8e8e8} *Wertebereich*
+|{set:cellbgcolor:!} String
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+|===
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Attributname*
+|{set:cellbgcolor:!} Nachname
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} String (`Person.nachname`)
+|{set:cellbgcolor:#e8e8e8} *Wertebereich*
+|{set:cellbgcolor:!} String
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+|===
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Attributname*
+|{set:cellbgcolor:!} Email
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} String (`Person.email`)
+|{set:cellbgcolor:#e8e8e8} *Wertebereich*
+|{set:cellbgcolor:!} String
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+|===
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Attributname*
+|{set:cellbgcolor:!} Praktikum-ID
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} Noch offen
+|{set:cellbgcolor:#e8e8e8} *Wertebereich*
+|{set:cellbgcolor:!} String
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+Definiert das Praktikum, für das die Person angemeldet ist. Zu einer Vorlesung kann es mehrere Praktika geben.
+
+|===
+
+== Migration
+
+Historische Informationen aus dem bestehenden System sind nicht relevant und müssen daher nicht in das neue System migriert werden.
+
+== Glossar
+
+[cols="1,3,8"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Abkürzung*
+|{set:cellbgcolor:#e8e8e8} *Begriff*
+|{set:cellbgcolor:#e8e8e8} *Definition*
+
+|{set:cellbgcolor:!} ZPA
+|Zentrale Praktika Anmeldung
+|Das ZPA System ist eine Webanwendung, die zur Anmeldung und Gruppierung von Studierenden in die Lehrveranstaltungen,
+Praktika, Übungen und sonstigen Veranstaltungen, die an der FK07 stattfinden, dient.
+
+|===

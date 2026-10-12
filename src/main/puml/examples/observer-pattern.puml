@@ -1,0 +1,57 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam note {
+  ArrowColor black
+  BackgroundColor #ffff00
+  BorderColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+class Subject {
+    +registerObserver(o: Observer)
+    +unregisterObserver(o: Observer)
+    #notifyObservers()
+}
+
+class ConcreteSubject {
+    -state: State
+    +getState(): State
+    +setState(s: State)
+}
+
+Subject <|-- ConcreteSubject
+
+interface Observer <<interface>>  {
+    +update() {abstract}
+}
+
+hide Observer fields
+
+class ConcreteObserver as " ConcreteObserver " {
+    +update()
+}
+
+Subject o- Observer : \t\t
+
+Observer <|.. ConcreteObserver
+ConcreteSubject <- ConcreteObserver : \t\t\t
+
+@enduml

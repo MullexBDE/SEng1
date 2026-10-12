@@ -1,0 +1,72 @@
+@startuml
+
+skin rose
+
+skinparam sequence {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+
+  LifeLineBorderColor black
+  LifeLineBackgroundColor AE396
+
+  ParticipantBackgroundColor 4AD386
+  ParticipantBorderColor black
+}
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+
+  LifeLineBorderColor black
+  LifeLineBackgroundColor AE396
+
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 1
+
+hide circle
+hide footbox
+
+actor Client
+participant "builder:Builder" as builder
+participant "product:Product" as product
+
+activate Client
+create builder
+Client -->> builder : new
+activate builder
+
+Client -> builder: buildPartA(param: ParameterA)
+deactivate builder
+Client -> builder: buildPartB(param: ParameterB)
+activate builder
+create product
+builder -->> product : new
+deactivate builder
+Client -> builder: buildPartC(param: ParameterC)
+activate builder
+builder -> product: setPartA(partA: PartA)
+activate product
+deactivate product
+deactivate builder
+Client -> builder: build()
+activate builder
+builder -->> Client : product
+deactivate builder
+
+@enduml

@@ -1,0 +1,58 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+
+skinparam component {
+  BackgroundColor #f8f8f8
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+}
+
+skinparam node {
+  BackgroundColor #e6e6e6
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+}
+
+skinparam artifact {
+  BackgroundColor #3E46D9
+  StereotypeFontColor #white
+  FontColor #white
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor #white
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+
+node ":Server" <<device>> {
+    node ":Ubuntu 26.04" <<execution environment>> {
+        node ":Java LTS 25.0.3" <<execution environment>> {
+            node ":Jetty" <<execution environment>>  {
+                artifact jenkins.war {
+                    artifact Warnings <<artifact>> as W
+                    artifact Jenkins.Core <<artifact>> as C
+                    artifact Echarts.API <<artifact>> as E
+                    artifact DataTables.API <<artifact>> as D
+                }
+            }
+        }
+    }
+}
+
+W ..> E
+W ..> C
+W .right.> D
+@enduml

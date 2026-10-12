@@ -1,0 +1,57 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #FECCBB
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+class Rectangle {
+    -width: Integer
+    -height: Integer
+    Rectangle(width: Integer, height: Integer)
+    getArea(): Integer
+    stretchWidth(amount: Integer)
+    stretchHeight(amount: Integer)
+}
+
+class Square {
+    Square(size: Integer)
+    stretchWidth(amount: Integer)
+    stretchHeight(amount: Integer)
+}
+
+note right of Square::"Square" {
+<code>
+super(size, size);
+</code>
+}
+
+note right of Square::"stretchWidth" {
+<code>
+super.stretchWidth(amount);
+super.stretchHeight(amount);
+</code>
+}
+
+note right of Square::"stretchHeight" {
+<code>
+super.stretchWidth(amount);
+super.stretchHeight(amount);
+</code>
+}
+
+Rectangle <|-- Square
+@enduml

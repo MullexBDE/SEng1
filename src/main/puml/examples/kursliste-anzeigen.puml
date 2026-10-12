@@ -1,0 +1,28 @@
+@startuml
+
+skinparam activity {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam activityDiamondBackgroundColor #4AD386
+skinparam activityDiamondBorderColor black
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+|Dozent|
+start
+:Webseite aufrufen;
+|ZPA|
+:Kursliste anzeigen;
+|Dozent|
+:Kurs auswählen;
+|ZPA|
+:Teilnehmer anzeigen;
+stop
+@enduml

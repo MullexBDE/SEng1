@@ -1,0 +1,92 @@
+@startuml
+
+skin rose
+
+skinparam sequence {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+
+  LifeLineBorderColor black
+  LifeLineBackgroundColor AE396
+
+  ParticipantBackgroundColor 4AD386
+  ParticipantBorderColor black
+}
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+
+  LifeLineBorderColor black
+  LifeLineBackgroundColor AE396
+
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 1
+
+hide circle
+hide footbox
+
+actor Akteur
+participant ":Main" as main
+participant "text:HtmlText" as text
+participant "bold:BoldText" as bold
+participant "italic:ItalicText" as italic
+participant ":Printer" as printer
+
+activate Akteur
+activate main
+Akteur -> main: main()
+create text
+main -->> text : new("Hello")
+activate text
+text -->> main
+deactivate text
+
+create bold
+main -->> bold : new(text)
+activate bold
+bold -->> main
+deactivate bold
+
+create italic
+main -->> italic : new(bold)
+activate italic
+italic -->> main
+deactivate italic
+
+activate printer
+main -> printer: print(italic)
+
+printer -> italic: render()
+activate italic
+
+italic -> bold: render()
+activate bold
+
+bold -> text: render()
+activate text
+
+text -->> bold : "Hello"
+deactivate text
+bold -->> italic : "~<b>Hello</b>"
+deactivate bold
+italic -->> printer : "~<i>~<b>Hello</b></i>"
+deactivate italic
+
+@enduml

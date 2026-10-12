@@ -1,0 +1,46 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam FontName Arial Unicode MS
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+
+skinparam component {
+  BackgroundColor #f8f8f8
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+}
+
+node ":Benutzer Laptop" <<device>> {
+    node ":Browser" {
+    }
+}
+
+node ":Webserver" <<device>> {
+    node ":Apache" {
+
+    }
+}
+
+node ":Applikationsserver" <<device>> {
+    node ":Tomcat"  {
+
+    }
+}
+
+node ":Datenbankserver" <<device>> {
+    node ":MySQL"   {
+
+    }
+}
+
+":Browser" -> ":Apache"
+":Apache" -> ":Tomcat"
+":Tomcat" -> ":MySQL"
+
+@enduml

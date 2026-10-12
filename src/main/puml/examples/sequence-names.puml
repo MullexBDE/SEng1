@@ -1,0 +1,13 @@
+
+@startuml
+
+hide footbox
+actor Akteur
+activate Klasse
+Akteur -> Klasse: start()
+activate "Objekt:Klasse"
+Klasse -> "Objekt:Klasse": call()
+activate ":Klasse"
+"Objekt:Klasse" -> ":Klasse": anotherCall()
+
+@enduml

@@ -1,0 +1,17 @@
+node
+node_modules
+target
+*.iml
+*.bak
+.classpath
+.project
+.settings
+.idea/
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+release.properties
+metrics.env
+maven.log
+.DS_Store
+src/main/asciidoc/.asciidoctor
+/package-lock.json

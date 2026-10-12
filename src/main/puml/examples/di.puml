@@ -1,0 +1,71 @@
+@startuml
+
+skinparam component {
+  BackgroundColor #FFFF00
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+skinparam interface {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+skinparam componentStyle uml2
+
+component "Komponente X" as X <<component>> {
+    class XC {}
+}
+
+circle "S" {}
+circle "R" {}
+
+component "Komponente Y" as Y {
+    class YC {}
+}
+
+component "Komponente Z" as Z {
+    class ZC {}
+}
+
+circle "V"
+circle "T"
+
+circle "U"
+
+S - X
+X - R
+
+U -up- Y
+
+T - Z
+V - Z
+
+X .> U
+X .> T
+
+Y .> V
+
+Y -[hidden]--> X
+X -[hidden]--> Z
+
+@enduml

@@ -1,0 +1,551 @@
+= Softwareengineering 1 - Spezifikationsvorlage
+Prof. Jan Philipps <jan.philipps@hm.edu>
+
+include::{localedir}/attributes-de.adoc[]
+
+:!chapter-signifier:
+:xrefstyle: short
+:sectnums:
+:partnums:
+
+== Einleitung
+
+[TIP]
+====
+Die Einleitung enthält die Systemidee und umfasst maximal eine Seite Text. Sie entspricht dem Produktkarton des Softwaresystems und enthält eine einheitliche Sicht von Auftraggeber, Fachbereich und Entwicklungsteam.
+====
+
+== Architektur Überblick
+
+[TIP]
+====
+Beschreibt die Einordnung des zu spezifizierenden Systems in die Anwendungslandschaft des Auftraggebers. Die Nachbarsysteme werden identifiziert, die Datenquellen und die Datensenken werden dargestellt. Das zu spezifizierende System wird grob in Teilsysteme gegliedert, wobei sich diese Gliederung i.d.R. an der Fachlichkeit orientiert. Die systemeigene Datenhaltung wird skizziert. Weiter werden gesetzte technische Randbedingungen an das System (Host, Web-Client, vorhandene Middleware, Datenbanksysteme, Programmiersprachen) erhoben und dokumentiert. Aus dieser ersten Architektursicht wird in der Phase der Konstruktion die technische Systemarchitektur entwickelt. Da das Vorgehen zur Dokumentation der Architektur größtenteils erst in der Vorlesung Softwarearchitektur besprochen wird, enthält dieser Abschnitt zunächst nur das Systemkontextdiagramm.
+====
+
+== Stakeholder
+
+[TIP]
+====
+Ein Stakeholder (Interessenvertretung) ist eine Person, die von der Durchführung oder Einführung eines Projekts betroffen ist. Stakeholder sind die zentrale Quelle für Anforderungen an das System. In diesem Abschnitt werden die Stakeholder tabellarisch mit ihrem Namen aufgeführt.
+====
+
+=== Vorname Nachname von Stakeholder 1
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Welche Rolle bzw. Funktion hat der Stakeholder im Projekt. Nicht zu verwechseln mit der Rolle im zu erstellenden System.
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Von wann bis wann ist der Stakeholder für das Projekt verfügbar. Wichtiger Punkt, um Meetings, Workshops oder ähnliches zu planen.
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Welches Wissensgebiet bzw. welchen Wissensumfang hat der Stakeholder.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Welche Interessen und Ziele bezogen auf das Projekt hat der Stakeholder. Achtung: nicht jeder
+Stakeholder hat ein Interesse am Projekterfolg.
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Wie relevant ist der Stakeholder für das Projekt.
+|===
+
+== Rollen
+
+[TIP]
+====
+Der nutzende Personenkreis eines Softwaresystems ist vielfältig, d.h. den einen Benutzertyp gibt es nicht. Folgende Merkmale sollten untersucht werden, um Rollen zu finden:
+
+- Rechte pro Benutzergruppe
+- Verschiedene Perspektiven auf das Softwaresystem
+- Häufigkeit, mit der das Produkt benutzt wird
+- Vertrautheit mit dem fachlichen Gebiet (Neuling, Profi)
+- Generelles Verständnis von Computern und Programmen (Neuling, Profi)
+- Verständnis von dem eigentlichen Produkt
+- Motivation für die Produktnutzung
+====
+
+=== Name Rolle 1
+
+[TIP]
+====
+Kurze Erklärung, was die Rolle ausmacht und wo sie sich von anderen Rollen unterscheidet.
+====
+
+== Funktionale Anforderungen
+
+[TIP]
+====
+In diesem Abschnitt werden alle funktionalen Anforderungen aufgelistet. Pro Anforderung wird eine Tabelle komplett ausgefüllt. Zum Referenzieren von Anforderungen und Anwendungsfällen möglichst Referenzen verwenden.
+====
+
+[caption="RE {counter:requirements-number} - "]
+.Name der funktionalen Anforderung
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} Welchen Wert hat die Anforderung aus Sicht des Fachbereichs (Hoch, Normal, Niedrig).
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!} Referenziert die Anwendungsfälle, die diese Anforderung umsetzen bzw. benötigen. Dieser Abschnitt wird erst in der Analyse gefüllt, nachdem auch die Anwendungsfälle beschrieben wurden.
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!} Eine knappe Beschreibung der Anforderung gemäß der
+link:https://www.sophist.de/fileadmin/user_upload/Bilder_zu_Seiten/Publikationen/RE6/Requirements-Engineering_und_-Management_6-Auflage_-_Kapitel_10_-Leseprobe.pdf[Satzschablone von Rupp]: prägnant und kurz, aber dennoch ausführlich und konkret.
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!} Warum soll die Anforderung überhaupt umgesetzt werden? Hilft, unnötige Anforderungen auszusortieren.
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!} Beschreibt kurz, wie die Umsetzung der Anforderung im System überprüft werden kann. Fällt das schwer, ist die Anforderung meist zu groß!
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!} Wer hat die Anforderung gestellt?
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!} Wer hat die Anforderung verfasst (häufig implizit über Dokumenthistorie klar)?
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} Wie zufrieden ist der Stakeholder, wenn die Anforderung umgesetzt wird (1 = uninteressiert, 5 = extrem zufrieden).
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} Wie unzufrieden ist der Stakeholder, wenn die Anforderung nicht umgesetzt wird (1 = hat keinen Einfluss, 5 = extrem unzufrieden).
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!} Welche andere Anforderung hängt damit zusammen.
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!} Welche andere Anforderung kann nicht erfüllt werden, wenn diese erfüllt wird.
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!} Verweis auf erklärende Dokumente, etc.
+|===
+
+== Nichtfunktionale Anforderungen
+
+[TIP]
+====
+In diesem Abschnitt werden alle nichtfunktionalen Anforderungen aufgelistet. Pro Anforderung wird eine Tabelle wie in <<Funktionale Anforderungen>> komplett ausgefüllt. Zum Referenzieren von Anforderungen und Anwendungsfällen möglichst Referenzen verwenden.
+====
+
+== Anwendungsfälle
+
+[TIP]
+====
+Ein Anwendungsfall ist die Beschreibung einer Abfolge von zielgerichteten Interaktionen zwischen Akteuren und einem System. Anwendungsfälle beschreiben das extern sichtbare Systemverhalten in der Sprache und aus der Sicht der Personen, die das System nutzen. D.h. für diese Personen wird durch einen Anwendungsfall beschrieben, wie durch das System ein  sinnvoller Dienst erbracht oder ein benutzbares Ergebnis erreicht werden kann.
+
+Ein Anwendungsfall besteht aus einer oder mehreren systemunterstützten Aktivitäten. Ein Akteur ist eine außerhalb des Systems agierende beteiligte Person, die an der in einem Anwendungsfall beschriebenen Aktivität beteiligt ist. Akteure nehmen in der Interaktion gewöhnlich eine definierte Rolle ein: Es sind diejenigen Personen, die das System oder andere Systeme benutzen. Die Anwendungsfälle werden jeweils in einem eigenen Abschnitt beschrieben. Zur Verbesserung der Übersicht werden alle Anwendungsfälle in einem Anwendungsfalldiagramm dargestellt. Wenn möglich, werden die Anwendungsfälle dabei fachlich gruppiert.
+
+====
+
+=== Name Anwendungsfall 1
+
+[TIP]
+====
+Der Name ist eine eindeutige Bezeichnung und besteht aus zwei bis drei Worten, meist einem Substantiv und einem Verb.
+====
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Kurzbeschreibung*
+|{set:cellbgcolor:!}Erfolgt aus Sicht des Systems (was tut der Anwender mit dem System) und sollte prägnant und kurz
+(ein Satz), aber dennoch ausführlich und konkret sein.
+|{set:cellbgcolor:#e8e8e8} *Akteure*
+|{set:cellbgcolor:!}Rollen von Personen oder andere Systeme, die den Anwendungsfall auslösen oder daran beteiligt sind.
+Oft wird auch nur der primäre Akteur benannt.
+|{set:cellbgcolor:#e8e8e8} *Motivation*
+|{set:cellbgcolor:!}Der Akteur nutzt den Anwendungsfall aus einer bestimmten Motivation heraus.
+Stattdessen kann auch das Ziel oder ein Auslöser dokumentiert werden.
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!}Erwarteter (innerer) Zustand des Systems, bevor der Anwendungsfall beginnt.
+|{set:cellbgcolor:#e8e8e8} *Eingehende Daten*
+|{set:cellbgcolor:!}Welche Daten bzw. Informationen werden während der Ausführung des Anwendungsfalls vom System
+entgegengenommen (informell oder – wenn bekannt – ein Entitätstyp, eine Schnittstelle o.ä. aus dem Datenmodell).
+|{set:cellbgcolor:#e8e8e8} *Ergebnisse*
+|{set:cellbgcolor:!}Erwartetes sichtbares Resultat nach Ende der Ausführung eines Anwendungsfalls.
+|{set:cellbgcolor:#e8e8e8} *Nachbedingungen*
+|{set:cellbgcolor:!}Erwarteter (innerer) Zustand des Systems nach erfolgreicher Ausführung des Anwendungsfalls.
+|{set:cellbgcolor:#e8e8e8} *Anforderungen*
+|{set:cellbgcolor:!}Liste aller Anforderungen, die mit diesem Anwendungsfall umgesetzt bzw. hier benötigt werden.
+|{set:cellbgcolor:#e8e8e8} *Ansprechpartner*
+|{set:cellbgcolor:!}Wer von der Fachabteilung kann bei Unklarheiten Auskunft geben?
+|===
+
+==== Standardablauf
+
+[TIP]
+====
+Ein Ablauf zeigt das Zusammenspiel zwischen Akteur und System. Typischerweise wechselt sich der Akteur immer mit dem System ab. Erst führt der Akteur eine Aktion aus, dann reagiert das System darauf, usw. Ein Ablauf hat keine Verzweigungen. Sind diese erforderlich, so werden diese über alternative Abläufe oder Fehlerfälle abgebildet.
+
+====
+
+. Der Akteur macht etwas.
+. Das System reagiert auf den Akteur.
+
+[TIP]
+====
+Zur Verdeutlichung eines Ablaufs kann ein UML Aktivitätsdiagramm verwendet werden.
+====
+
+==== Name alternativer Ablauf 1
+
+[TIP]
+====
+Eine Alternative zum Standardablauf: dabei werden einzelne Schritte ersetzt (oder nicht durchgeführt).
+
+====
+
+. Der Akteur macht etwas anderes.
+. Das System reagiert wieder auf den Akteur.
+
+==== Name Ablauf Fehlerfall 1
+
+[TIP]
+====
+Eine Fehlersituation im Standardablauf: dabei werden einzelne Schritte ersetzt (oder nicht durchgeführt).
+====
+
+. Der Akteur macht etwas, das einen Fehler hervorruft.
+. Das System zeigt eine Fehlermeldung an oder gibt einen Verbesserungsvorschlag.
+
+[TIP]
+====
+Statt viele Fehlerabläufe zu spezifizieren, sollten Anwendungsfälle so gestaltet sein, dass Fehler gar nicht erst auftreten können.
+====
+
+==== Übersicht der Abläufe
+
+[TIP]
+====
+Um Abläufe zu visualisieren, bzw. mehrere Abläufe gemeinsam darzustellen, können diese mit einem UML Aktivitätsdiagramm
+dargestellt werden. Nur bei komplexeren Abläufen liefert so ein Diagramm einen Mehrwert.
+====
+
+== Datenmodell
+
+[TIP]
+====
+Beschreibt eine fachliche Sicht auf die Daten des Systems. Es werden Entitätstypen und deren Beziehungen untereinander beschrieben. Zu jedem Entitätstyp werden Attribute und deren Datentypen benannt und beschrieben. In einem oder mehreren Übersichtsdiagrammen werden zunächst die Kernentitäten des Systems in einem UML Klassendiagramm dargestellt. Fachliche Datentypen werden im Anschluss in einem weiteren Abschnitt beschrieben.
+====
+
+=== Entitäten
+
+==== Name Entität 1
+
+[caption="EN {counter:entity-number} - "]
+.Name der Entität
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung der Entität. Welche Verwendung, welche Verantwortlichkeiten hat die Entität. Ähnelt dem JavaDoc einer Klasse.
+|{set:cellbgcolor:#e8e8e8} *Mengengerüst*
+5+|{set:cellbgcolor:!}Wie viele Instanzen werden im System entstehen? Oft mit Zeitangaben, z.B. 100 pro Tag, etc. Diese Angabe ist später für die Systemarchitektur wichtig, um Datenbanken, Übertragunsprotokolle, etc. zu spezifizieren.
+|{set:cellbgcolor:#e8e8e8} *Schlüssel*
+5+|{set:cellbgcolor:!}Attribute oder Beziehungen, die einen fachlichen Schlüssel definieren. Technische (künstliche) Schlüssel sind hier nicht relevant. Schlüssel können zusammengesetzt sein, um eine eindeutige Zuordnung zu erzielen.
+|===
+
+===== Attribut 1 der Entität
+
+[TIP]
+====
+Ähnlich zum JavaDoc von Attributen in Klassen, werden hier die einzelnen Eigenschaften beschrieben. Dies wird i.A. nur für solche Attribute gemacht, die nicht selbsterklärend sind. Z.B. für Vorname und Nachname einer Person benötigt es keine Beschreibung, für ein Kürzel hingegen schon (Format, Begründung, etc.).
+====
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung des Attributs.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!}Typ des Attributs. Entweder ein atomarer Datentyp oder ein fachlicher Datentyp.
+|{set:cellbgcolor:#e8e8e8} *Initialwert*
+5+|{set:cellbgcolor:!}Initialer Wert des Attributs.
+|===
+
+===== Beziehung 1 der Entität
+
+[TIP]
+====
+Ähnlich zum JavaDoc von Attributen in Klassen, s.o.
+====
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung der Beziehung.
+|{set:cellbgcolor:#e8e8e8} *Ziel*
+5+|{set:cellbgcolor:!}Name der Zielentität. Möglichst Referenzen verwenden.
+|{set:cellbgcolor:#e8e8e8} *Kardinalität*
+5+|{set:cellbgcolor:!}Welche Kardinalität hat die Beziehung in Richtung der Zielentität.
+|===
+
+===== Zustandsmodell zur Entität 1
+
+[TIP]
+====
+Hat die Entität verschiedene Zustände, werden diese in einem UML Zustandsdiagramm dargestellt.
+====
+
+=== Fachliche Datentypen
+
+[TIP]
+====
+
+Jeder fachliche Datentyp wird in einem eigenen Abschnitt erläutert. Für die drei verschiedenen Varianten «type» (zusammengesetzter Datentyp), «enumeration» (für Aufzählungen) und «primitive» (für Einschränkungen bestehender Typen) wird eine unterschiedliche Vorlage verwendet.
+====
+
+==== Aufzählung 1 Name
+
+[cols="1,2,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung der Aufzählung.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!} «enumeration»
+.3+|{set:cellbgcolor:#e8e8e8} *Elemente*
+1+|{set:cellbgcolor:!}AUSPRÄGUNG_1
+4+|Erklärung für die Ausprägung 1
+
+1+|{set:cellbgcolor:!}AUSPRÄGUNG_2
+4+|{set:cellbgcolor:!}Erklärung für die Ausprägung 2
+
+1+|{set:cellbgcolor:!}AUSPRÄGUNG_3
+4+|{set:cellbgcolor:!}Erklärung für die Ausprägung 3
+
+|===
+
+==== Primitiver Typ 1 Name
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung des Datentyps.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!} «primitive»
+|{set:cellbgcolor:#e8e8e8} *Basistyp*
+5+|{set:cellbgcolor:!}Bestehender primitiver Typ, auf dem dieser neue Datentyp basiert.
+|{set:cellbgcolor:#e8e8e8} *Einschränkung*
+5+|{set:cellbgcolor:!}Wie wird der Typ eingeschränkt? Wertebereich und Darstellungsform in der Oberfläche.
+|===
+
+==== Zusammengesetzter Typ 1 Name
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung des Datentyps.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!} «type»
+|===
+
+===== Attribut 1 des Typs
+
+[cols="1,1,1,1,1,1"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+5+|{set:cellbgcolor:!}Kurze Beschreibung des Attributs.
+|{set:cellbgcolor:#e8e8e8} *Typ*
+5+|{set:cellbgcolor:!}Typ des Attributs. Entweder ein atomarer Datentyp oder ein fachlicher Datentyp.
+|{set:cellbgcolor:#e8e8e8} *Initialwert*
+5+|{set:cellbgcolor:!}Initialer Wert des Attributs.
+|===
+
+== Dialoge
+
+[TIP]
+====
+Beschreibt das statische Aussehen (Layout) und das dynamische Verhalten der Benutzerschnittstelle des Systems. Das statische Aussehen wird durch Mockups und Angaben zum angezeigten Entitätstyp bzw. zu Attributen beschrieben. Das dynamische Verhalten wird durch textuelle Beschreibungen und ggf. durch Interaktionsdiagramme (UML Zustandsdiagramme) beschrieben. Damit werden auch die Transaktionsgrenzen verdeutlicht, d.h. es wird klargemacht, wann die Eingaben des Benutzers persistent sind. Durch die Angabe der angezeigten Entitätstypen und ggf. angezeigten Attribute wird in der Spezifikation eine Verbindung zwischen Benutzerschnittstelle und Datenmodell hergestellt. Durch eine Benennung der Anwendungsfälle, die durch diese Benutzerschnittstelle unterstützt werden, wird die Verbindung zur funktionalen Spezifikation mittels Anwendungsfällen hergestellt.
+====
+
+=== Name Dialog 1
+
+[TIP]
+====
+Kurze Beschreibung des Dialogs:
+
+* Was ist das Ziel des Dialogs?
+* Welche Daten werden eingeben?
+====
+
+==== Umgesetzte Anwendungsfälle
+
+[TIP]
+====
+Auflistung aller Anwendungsfälle als Aufzählung. Möglichst mit Referenzen arbeiten.
+====
+
+==== Layout
+
+[TIP]
+====
+Aussehen des Dialogs als Mockup. Die Darstellung kann als Visio Skizze, https://www.drawio.com/[draw.io] oder https://balsamiq.com/[Balsamiq] Wireframes, Papierzeichnung, etc. erfolgen.
+====
+
+==== Titelleiste
+
+[TIP]
+====
+Die Titelleiste wird nur beschrieben, wenn sie dynamische Anteile enthält. Anderenfalls ist die Titelleiste im Layout ersichtlich.
+====
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Text*
+|{set:cellbgcolor:!}Text mit Platzhaltern, z.B. "Benutzer ${NAME}"
+|{set:cellbgcolor:#e8e8e8} *Platzhalter Name 1*
+|{set:cellbgcolor:!}Verweis auf das Datenmodell, oder mögliche Werte, z.B. `Person.name`
+|===
+
+==== Parameter
+
+[TIP]
+====
+Benötigt der Dialog Parameter zur Darstellung (z.B. aus dem vorhergehenden Dialog), so werden diese hier kurz aufgeführt. Andernfalls entfällt der Abschnitt.
+====
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!}Name des Parameters
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!}Verweis auf das Datenmodell. Woher kommt der Parameter?
+
+Wenn kein Verweis auf das Datenmodell möglich ist: Welchen Datentyp hat der Parameter?
+|===
+
+==== Felder
+
+[TIP]
+====
+Tabellarische Beschreibung aller relevanten Felder des Dialogs.
+====
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!} Name des Feldes, meist das Label vor dem Feld.
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss, Kann, Anzeige
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} Wo werden die Daten abgelegt? Woher werden sie gelesen?
+
+Wenn kein Verweis auf das Datenmodell möglich ist: Welchen Datentyp hat das Feld?
+|{set:cellbgcolor:#e8e8e8} *Vorbelegung*
+|{set:cellbgcolor:!} Mit welchem Wert ist das Feld vorbelegt? Ein leeres Feld wird durch ein "–" gekennzeichnet.
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} Optional: Kurze Beschreibung. Wird kein Tooltip benötigt, so wird dies durch ein – gekennzeichnet.
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+Optionale Bemerkungen.
+
+|===
+
+==== Tabellen
+
+[TIP]
+====
+Pro Tabellenspalte wird die folgende Tabelle ausgefüllt. Bei mehreren Tabellen werden einzelnen Unterabschnitte gebildet.
+====
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Spaltename*
+|{set:cellbgcolor:!} Name der Spalte, er wird in der Kopfzeile angezeigt.
+|{set:cellbgcolor:#e8e8e8} *Art*
+|{set:cellbgcolor:!} Muss, Kann, Anzeige (Achtung: nicht alle Tabellen bieten einen Editiermodus!)
+|{set:cellbgcolor:#e8e8e8} *Datenmodell*
+|{set:cellbgcolor:!} Wo werden die Daten abgelegt? Woher werden sie gelesen?
+
+Wenn kein Verweis auf das Datenmodell möglich ist: Welchen Datentyp hat die Spalte?
+|{set:cellbgcolor:#e8e8e8} *Vorbelegung*
+|{set:cellbgcolor:!} Mit welchem Wert ist die Spalte vorbelegt? Eine leere Zelle wird durch ein "–" gekennzeichnet.
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} Optional: Kurze Beschreibung. Wird kein Tooltip benötigt, so wird dies durch ein – gekennzeichnet.
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+|{set:cellbgcolor:!}
+Optionale Bemerkungen.
+|===
+
+Sortierung:
+
+* [Name der 1. Spalte], [Aufsteigend, Absteigend]
+* [Name der 2. Spalte], [Aufsteigend, Absteigend]
+
+Selektion
+
+* [Einfach, Mehrfach]
+* [Zeile, Zelle]
+
+Bemerkungen:
+
+* [z.B. Die Kopfzeile wird nicht angezeigt.]
+
+==== Aktionen
+
+[TIP]
+====
+Pro Aktion wird die folgenden Tabellen ausgefüllt.
+====
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Name*
+|{set:cellbgcolor:!} Name der Aktion, typischerweise als Text für Schaltfläche oder Menü genutzt.
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+|{set:cellbgcolor:!} Beschreibung der zugrundeliegenden Aktion.
+|{set:cellbgcolor:#e8e8e8} *Tooltip*
+|{set:cellbgcolor:!} Optional: Kurze Beschreibung. Wird kein Tooltip benötigt, so wird dies durch ein – gekennzeichnet.
+|{set:cellbgcolor:#e8e8e8} *Icon*
+|{set:cellbgcolor:!} Optional: Icon, das in der Schaltfläche oder im Menü angezeigt wird
+|{set:cellbgcolor:#e8e8e8} *Vorbedingung*
+|{set:cellbgcolor:!} Welche Vorbedingungen müssen erfüllt sein, damit die Aktion ausgelöst werden kann. Aktionen sind i.A. nicht auswählbar, wenn die Vorbedingungen nicht erfüllt sind.
+|{set:cellbgcolor:#e8e8e8} *Auslöser*
+|{set:cellbgcolor:!}
+Wie wird die Aktion ausgelöst? Beispielsweise Schaltfläche, Menü, etc.
+|{set:cellbgcolor:#e8e8e8}
+*Ablauf*
+|{set:cellbgcolor:!}
+Einzelne Schritte der Aktion. Hier kann auch auf den Usecase verwiesen werden.
+
+|===
+
+== Schnittstellen
+
+[TIP]
+====
+Beschreibt die Verbindung zwischen dem spezifizierten System und den externen Nachbarsystemen, mit denen dieses System kommuniziert. Die externen Systeme werden benannt. Es wird spezifiziert, welche Daten ausgetauscht werden oder welche externen Dienste benutzt werden. Es werden die Anwendungsfälle aufgeführt, bei denen externe Systeme benutzt werden.
+
+Aus Sicht des eigenen Systems kann es abstrakte Schnittstellen geben, über die mehr als ein externes System angebunden werden kann. In diesem Fall zerfällt die Spezifikation der Nachbarsystem-Schnittstelle in zwei Teile:
+
+- Definition der Anforderungen des eigenen Systems an die Schnittstelle: Welche Daten werden erwartet bzw. bereitgestellt?
+Welche Dienste werden benutzt bzw. geboten?
+- Beschreibung der konkreten Anbindung des Nachbarsystems: Wie passen die oben spezifizierten Anforderungen mit dem konkreten Nachbarsystem zusammen? Wie werden die Datenstrukturen aufeinander abgebildet? Welche konkreten Dienste des Nachbarsystems werden genutzt?
+
+Beispiel: Abstrakte Schnittstelle zu einem Nachbarsystem "Abrechnungssystem"; konkrete Schnittstelle zu einem Nachbarsystem "XYZ".
+
+Bei der Beschreibung der Schnittstellen können wir zwischen verschiedenen Arten von Schnittstellen unterscheiden:
+
+- offline-Schnittstelle mit Datenaustausch über Dateiablage oder ähnliche Verfahren
+- online-Schnittstelle mit direktem Zugriff auf die Datenbank des Nachbarsystems (oder umgekehrt: Nachbarsystem greift auf die Datenbank des eigenen Systems zu)
+- online-Schnittstelle mit direktem Aufruf von Diensten des Nachbarsystems
+
+====
+
+== Migration
+
+[TIP]
+====
+Beschreibt in detaillierter Form, wie bei Ablösung eines Altsystems die Daten aus dem Altsystem in das neue System überführt werden. Es handelt sich dabei um eine Datenmigration, die i.a. einmalig bzw. stufenweise stattfindet. Werden Teile eines Altsystems (zeitweise) zu einem Nachbarsystem und müssen Schnittstellen zu diesem System bereitgestellt werden, so werden diese Schnittstellen im Baustein Nachbarsystem-Schnittstellen beschrieben.
+====
+
+== Glossar
+
+[TIP]
+====
+Ein Glossar enthält Definitionen wichtiger Begriffe des Projekts. Dies umfasst fachliche, a ber auch technische Begriffe.
+Eine solche zusammenfassende Übersicht ist fachlich oder alphabetisch geordnet. Damit wird eine begriffliche Grundlage geschaffen, die sicherstellt, dass alle dasselbe meinen, wenn sie dieselben Begriffe verwenden. Ein solches Glossar ist insbesondere dann wichtig, wenn schon die Kundenvertreter untereinander keine klare und einheitliche Begriffswelt haben.
+====
+
+[cols="1,3,8"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Abkürzung*
+|{set:cellbgcolor:#e8e8e8} *Begriff*
+|{set:cellbgcolor:#e8e8e8} *Definition*
+
+|{set:cellbgcolor:!} optional, falls vorhanden
+| Name des Begriffs
+| Beschreibung des Begriffs. Gegebenenfalls weiterführende Links.
+
+|===

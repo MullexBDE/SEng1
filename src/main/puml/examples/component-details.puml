@@ -1,0 +1,73 @@
+@startuml
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+
+skinparam component {
+  BackgroundColor #FFFF00
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+skinparam interface {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+hide circle
+skinparam componentStyle uml2
+
+component BenutzerVerwaltung <<component>> {
+
+class Benutzer {
+    -vorname: String
+    -nachname: String
+    -email<<pk>>: String
+}
+
+class Student {
+    -matrikelNummer: String
+}
+
+class Dozent {
+    -telefon: TelefonNummer
+}
+
+Benutzer <|-- Student
+Benutzer <|-- Dozent
+
+}
+
+circle "BenutzerRepository" as BenutzerRepository
+
+circle "ShibollethAuthentification\t\t\t\t\t\t" as Shibolleth
+
+BenutzerVerwaltung .up..> Shibolleth : "  <<use>>"
+BenutzerVerwaltung -down- BenutzerRepository
+
+@enduml

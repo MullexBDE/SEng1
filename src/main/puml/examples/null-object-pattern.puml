@@ -1,0 +1,58 @@
+@startuml
+
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+interface Abstraction <<interface>> {
+    + operationA() {abstract}
+    + operationB() {abstract}
+}
+
+hide Abstraction fields
+
+class Concrete1 {
+    + operationA()
+    + operationB()
+}
+
+class Concrete2 {
+    + operationA()
+    + operationB()
+}
+
+class NullObject {
+    + operationA()
+    + operationB()
+}
+
+note right of NullObject : Leere Implementierung\nvon beiden Methoden.
+
+note as concrete
+    Konkrete
+     Lösung
+end note
+
+Concrete1 .right[#gray,dotted]. concrete
+concrete .right[#gray,dotted]. Concrete2
+
+Abstraction <|.. Concrete1 :\t
+Abstraction <|.. Concrete2 :\t
+Abstraction <|. NullObject :\t
+@enduml

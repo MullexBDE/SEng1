@@ -1,0 +1,53 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+abstract class InputStream <<abstract>> {
+    read(): int {abstract}
+}
+
+class FileInputStream extends InputStream {
+    read(): int
+}
+
+class StringBufferInputStream extends InputStream {
+    read(): int
+}
+
+class FilterInputStream  {
+    filtered: InputStream
+    read(): int
+}
+
+class BufferedInputStream extends FilterInputStream {
+    read(): int
+}
+
+class LineNumberInputStream extends FilterInputStream {
+    read(): int
+}
+
+class CipherInputStream extends FilterInputStream {
+    read(): int
+}
+
+FilterInputStream -up-|> InputStream : "\t"
+FilterInputStream ..> InputStream : "<<call>>"
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+interface Iterable <<interface>>
+interface Collection <<interface>>
+interface List <<interface>>
+
+hide Iterable fields
+hide Collection fields
+hide List fields
+
+interface Iterable<E > {
+    {abstract} iterator(): Iterator<E>
+}
+
+interface Collection<E > {
+    {abstract} size(): Integer
+    {abstract} isEmpty(): Boolean
+    {abstract} add(element: E)
+}
+
+interface List<E > {
+    {abstract} get(index: Integer): E
+}
+
+abstract AbstractCollection<E > {
+    isEmpty(): Boolean
+}
+
+abstract AbstractList<E > {
+    add(element: E)
+}
+
+class ArrayList<E > {
+    elementData: Object[]
+    size(): Integer
+    get(index: Integer): E
+}
+
+Iterable <|-- Collection
+Collection <|-- List
+Collection <|. AbstractCollection : \t\t
+
+AbstractCollection <|-- AbstractList
+AbstractList <|- ArrayList : \t\t
+List <|. AbstractList: \t\t\t
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+
+class StdOutPrinter {
+    + print(issue: Issue)
+}
+
+class Issue {
+    -id: UUID
+    toString(): String
+    {method} [...]
+}
+
+class Report {
+    + print()
+    {method} [...]
+}
+
+note top of Report : public void print() {\n\tStdOutPrinter printer \n\t\t= new StdOutPrinter();\n\tforEach(printer::print);\n}
+
+Report o- Issue :  issues
+
+Report ..> StdOutPrinter : <<use>>
+StdOutPrinter .> Issue : <<use>>
+
+@enduml

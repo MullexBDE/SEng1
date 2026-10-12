@@ -1,0 +1,54 @@
+@startuml
+
+skinparam component {
+  BackgroundColor #FFFF00
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+skinparam interface {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+skinparam componentStyle uml2
+
+component "\t\tJakarta EE Persistence API\t\t\t" as JDK #lightgray {
+    interface "PersistenceManager" as S
+    interface "Entity" as H
+}
+
+component Hibernate
+component [Eclipse Link] #white
+
+[Analysis Dashboard] .> S
+[Analysis Dashboard] - H
+S - [Hibernate] : \t
+H <. [Hibernate] : \t <<use>>
+
+S - [Eclipse Link] : \t
+H <. [Eclipse Link] : \t <<use>>
+
+[Hibernate] .[hidden]. [Eclipse Link]
+
+S .[hidden]. H
+@enduml

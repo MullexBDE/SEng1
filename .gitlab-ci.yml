@@ -1,0 +1,42 @@
+workflow:
+  name: CI/CD
+
+variables:
+  PAGES_CONTENT: "spezifikation.html"
+  MAVEN_CLI_OPTS: >-
+    --batch-mode
+    --color always
+    --errors
+    --fail-at-end
+    --show-version
+    -ntp
+    -s .mvn/settings.xml
+    -Duser.timezone=Europe/Berlin
+
+image:
+  name: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/maven:3.9.16-eclipse-temurin-25-alpine
+
+stages:
+  - build
+  - publish
+
+build:
+  stage: build
+  artifacts:
+    when: always
+    paths:
+      - target/generated-docs/**/*.pdf
+      - target/generated-docs/**/*.html
+  script:
+    - mvn $MAVEN_CLI_OPTS verify
+
+pages:
+  stage: publish
+  artifacts:
+    paths:
+      - public
+  script:
+    - mkdir public
+    - cp -v target/generated-docs/html/$PAGES_CONTENT public/index.html
+    - cp -v target/generated-docs/html/*.html public/
+    - cp -rv target/generated-docs/html/examples public/

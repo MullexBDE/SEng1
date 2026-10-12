@@ -1,0 +1,61 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+interface Text <<interface>> {
+    render(): String
+}
+
+hide Text fields
+
+class HtmlText {
+    content: String
+    render(): String
+}
+
+class HtmlPrinter {
+    print(text: Text)
+}
+
+abstract class TextDecorator {
+    delegate: Text
+    getDelegate() : Text
+}
+
+class ItalicText {
+    render(): String
+}
+
+class BoldText {
+    render(): String
+}
+
+note right: @Override\npublic String render() {\n    return String.format('~<b>%s</b>', getDelegate().render());\n }\n
+
+Text <|.left... HtmlText: "\t"
+Text <|.. TextDecorator: "\t"
+TextDecorator <|-- BoldText: "\t"
+TextDecorator <|-- ItalicText: "\t"
+
+TextDecorator ..> Text: <<call>>
+
+HtmlPrinter ..left..> Text: <<call>>
+ItalicText -right[hidden]- BoldText
+@enduml

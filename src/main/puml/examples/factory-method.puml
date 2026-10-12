@@ -1,0 +1,45 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+abstract Creator <<abstract>>{
+    createProduct(): Product
+}
+
+class ConcreteCreator #gold {
+    createProduct(): ConcreteProduct
+}
+
+interface Product as " Product " {
+}
+
+hide Product fields
+
+class ConcreteProduct #gold implements Product {
+}
+
+note bottom of ConcreteCreator: @Override\npublic ConcreteProduct createProduct() {\n    return new ConcreteProduct();\n }\n
+
+Creator <|-- ConcreteCreator
+ConcreteCreator .right.> ConcreteProduct : <<create>> \t
+Creator .right.> Product : <<call>> \t\t
+
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+[Anwendung] as I
+
+package "Bibliothek in Version n" {
+    interface "API" as S
+    [Library] as E
+}
+
+I .> S : \t
+S - E
+
+@enduml

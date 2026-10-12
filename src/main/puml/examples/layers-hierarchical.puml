@@ -1,0 +1,39 @@
+@startuml
+
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+hide stereotype
+
+package "Präsentation" {
+    package View {
+    }
+    package "Presentation Model" {
+    }
+    package "Client State" {
+    }
+    package "Use Case Proxy" {
+    }
+}
+
+"Use Case Proxy" ..> Geschäftslogik : <<imports>>
+Geschäftslogik ..> Datenhaltung : <<imports>>
+
+View .> "Presentation Model": <<import>>
+"Presentation Model" .> "Client State" : <<import>>
+"Client State" .> "Use Case Proxy" : <<import>>
+
+package "Geschäftslogik" {
+
+}
+
+package "Datenhaltung" {
+}
+
+
+
+@enduml

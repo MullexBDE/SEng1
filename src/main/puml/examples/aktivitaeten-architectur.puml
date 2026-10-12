@@ -1,0 +1,25 @@
+@startuml
+
+skinparam handwritten true
+skinparam defaultFontName Arial
+
+skinparam activity {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+
+(*)  -> "Anforderungen und\nEinflussfaktoren klären"
+"Anforderungen und\nEinflussfaktoren klären" -> "Risiken\nidentifizieren"
+"Risiken\nidentifizieren" -> "Strukturen und\ntechnische Konzepte\nentwerfen"
+"Strukturen und\ntechnische Konzepte\nentwerfen" --> "Architektur kommunizieren"
+"Architektur kommunizieren" -left> "Umsetzung begleiten"
+"Umsetzung begleiten" -left> "Architektur bewerten"
+"Architektur bewerten" -up> "Anforderungen und\nEinflussfaktoren klären"
+
+@enduml

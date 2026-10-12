@@ -1,0 +1,56 @@
+@startuml
+
+skinparam package {
+  BackgroundColor #dddddd
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+class Student {
+    -vorname: String
+    -nachname: String
+    -email<<pk>>: String
+}
+
+class Team {
+}
+
+class Veranstaltung {
+    -name: String
+}
+
+class Praktikum {
+    -nummer: Integer
+}
+
+Veranstaltung "1" - "*" Praktikum : \t\t
+
+Veranstaltung "*" -- "*" Student
+Praktikum "*" -- "*"  Student
+
+Team "*" -- "1"  Veranstaltung: \t\t
+Team "*" -- "*"  Student
+
+@enduml

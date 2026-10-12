@@ -1,0 +1,48 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+hide IssuePrinter fields
+
+interface IssuePrinter <<interface>> {
+    {abstract} print(issue: Issue)
+}
+note top of Report : public void print(IssuePrinter printer) {\n\tforEach(printer::print);\n}
+
+class Issue {
+    -id: UUID
+    toString(): String
+}
+
+class Report {
+    + print(printer: IssuePrinter)
+    {method} [...]
+}
+
+class Issue
+
+class StdOutPrinter
+
+Report o- Issue : \t 
+Report ..> IssuePrinter
+IssuePrinter <|.. StdOutPrinter
+IssuePrinter <|.. Slf4JPrinter
+IssuePrinter <|.. NullPrinter
+
+@enduml

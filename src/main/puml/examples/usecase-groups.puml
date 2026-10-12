@@ -1,0 +1,39 @@
+@startuml
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+skinparam usecase {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+left to right direction
+
+:Dozent:
+
+rectangle Scheineverwaltung #FFFF00 {
+    (Scheine drucken) -up- Dozent
+}
+
+
+rectangle Teilnehmerverwaltung #FFFF00 {
+    Dozent -- (Kursliste anzeigen)
+    Dozent -- (Kursteilnehmer ändern)
+}
+
+@enduml

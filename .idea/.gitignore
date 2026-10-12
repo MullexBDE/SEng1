@@ -1,0 +1,13 @@
+*.xml
+!checkstyle-idea.xml
+!codeStyles/codeStyleConfig.xml
+!codeStyles/Project.xml
+!inspectionProfiles/Project_Default.xml
+!palantir-java-format.xml
+!PMDPlugin.xml
+!misc.xml
+!runConfigurations/*.xml
+!compiler.xml
+
+libraries
+scopes

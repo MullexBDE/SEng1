@@ -1,0 +1,48 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+
+skinparam node {
+  BackgroundColor #e6e6e6
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+}
+
+skinparam artifact {
+  BackgroundColor #3E46D9
+  StereotypeFontColor #white
+  FontColor #white
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor #white
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+node ":MacBook Pro M4" <<device>> as laptop {
+    node ":macOS Tahoe v26.5" <<execution environment>> as macos {
+        node ":Browser (Dia 1.33.0)" <<execution environment>> as browser  {
+        }
+    }
+}
+
+
+node ":Server" <<device>> {
+    node ":Ubuntu 26.04" <<execution environment>> as ubuntu {
+        node ":Jetty 12.1.10" <<execution environment>> as jetty  {
+        }
+    }
+}
+
+browser -> jetty :\t HTTPS:8080 \t
+
+@enduml

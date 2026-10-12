@@ -1,0 +1,31 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 24
+skinparam defaultFontSize 20
+skinparam classFontName Arial
+
+hide circle
+
+class Benutzer {
+    -vorname: String
+    -nachname: String
+    -email<<pk>>: String
+}
+
+class Dozent {
+    -büro: Raum
+    setSprechstunde(tag: Tag, beginn: Uhrzeit)
+}
+
+Benutzer <|-- Dozent
+
+class Modul {
+    -name: String
+    -ects: Integer
+    getZusammenfassung(): String
+}
+
+Modul "*" - "<&caret-right> Verantwortlicher 1" Dozent: \t\t\t\t
+
+@enduml

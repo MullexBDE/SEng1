@@ -1,0 +1,50 @@
+extends: default
+page:
+  margin: [2cm, 1.5cm, 1.5cm, 2cm]
+header:
+  height: $base_line_height_length * 4
+  border_color: dddddd
+  border_width: 0.25
+  recto:
+    center:
+      content: '{document-title}'
+    right:
+      content: image:hochschule-logo.svg[width=80, height=30]
+  verso:
+    left:
+      content: image:hochschule-logo.svg[width=80, height=30]
+    center:
+      content: '{document-title}'
+footer:
+  recto:
+    right:
+      content: '{chapter-title} | *{page-number}*'
+  verso:
+    left:
+      content: '*{page-number}* | {chapter-title}'
+font:
+  catalog:
+    Noto Serif:
+      normal: GEM_FONTS_DIR/notoserif-regular-subset.ttf
+      bold: GEM_FONTS_DIR/notoserif-bold-subset.ttf
+      italic: GEM_FONTS_DIR/notoserif-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/notoserif-bold_italic-subset.ttf
+    # M+ 1mn supports ASCII and the circled numbers used for conums
+    M+ 1mn:
+      normal: GEM_FONTS_DIR/mplus1mn-regular-subset.ttf
+      bold: GEM_FONTS_DIR/mplus1mn-bold-subset.ttf
+      italic: GEM_FONTS_DIR/mplus1mn-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1mn-bold_italic-subset.ttf
+    NunitoSans:
+      normal: NunitoSans-Regular.ttf
+      italic: NunitoSans-Italic.ttf
+      bold: NunitoSans-Bold.ttf
+      bold_italic: NunitoSans-BoldItalic.ttf
+base:
+  font_family: NunitoSans
+heading:
+  font-family: NunitoSans
+h2:
+  font-color: '#da3131'
+codespan:
+  font_color: '#da3131'

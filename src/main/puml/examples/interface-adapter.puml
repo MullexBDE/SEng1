@@ -1,0 +1,22 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "Angeforderte Schnittstelle" {
+    [Importeur] as I
+    interface "SI" as S1
+}
+
+package "Angebotene Schnittstelle" {
+    [Exporteur] as E
+    interface "SE" as S2
+}
+
+[Adapter]
+
+S1 <. I :\n
+S1 -- Adapter:\n
+Adapter ..> S2:\n
+S2 - E :\n
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam interface {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+left to right direction
+class P
+class C1
+class C2
+interface A1
+circle A2
+C1 ..> A1
+C2 --( A2
+A1 <|.. B1
+A1 <|.. B2
+B1 --|> P
+B2 --|> P
+A2 -- B2
+
+@enduml

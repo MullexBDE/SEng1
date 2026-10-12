@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+hide stereotype
+
+skinparam component {
+  BackgroundColor #f8f8f8
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+}
+
+[Nachbarsystem]
+
+@enduml

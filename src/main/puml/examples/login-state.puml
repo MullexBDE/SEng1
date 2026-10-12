@@ -1,0 +1,52 @@
+@startuml
+
+skinparam linetype polyline
+
+skinparam state {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  ArrowThickness 2
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam activity {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  ArrowThickness 2
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+skinparam activityDiamondBackgroundColor #4AD386
+skinparam activityDiamondBorderColor black
+skinparam activityDiamondFont Arial Unicode MS
+skinparam activityArrowFontSize 20
+skinparam activityArrowFont Arial Unicode MS
+
+state Kursliste
+state Logout1 <<end>>
+state Logout2 <<end>>
+
+[*] -> Kursliste
+Gebucht -> Logout1 : Logout
+
+Kursliste -> Raumbuchung : Raumbuchung
+Raumbuchung -> Kursliste: Kursliste
+
+
+Raumbuchung --> Raumbuchung : Suchen [Parameter gesetzt] / \n suchergebnisAnzeigen
+
+Raumbuchung --> Gebucht : Buchen [Raum selektiert]
+Kursliste --> Logout2 : Logout
+
+@enduml

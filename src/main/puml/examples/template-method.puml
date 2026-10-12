@@ -1,0 +1,32 @@
+@startuml
+
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+hide stereotype
+
+
+abstract class TemplateAlgorithm {
+    +runTemplateMethod()
+    #primitiveMethod1() {abstract}
+    #primitiveMethod2() {abstract}
+}
+
+class Alternative1 {
+    #primitiveMethod1()
+    #primitiveMethod2()
+}
+
+class Alternative2 {
+    #primitiveMethod1()
+    #primitiveMethod2()
+}
+
+TemplateAlgorithm <|- Alternative1
+TemplateAlgorithm <|-- Alternative2
+
+@enduml

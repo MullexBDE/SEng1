@@ -1,0 +1,61 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+interface List <<interface>>
+
+hide List fields
+
+interface List<E > {
+}
+
+abstract AbstractList<E > {
+
+}
+
+class SynchronizedList<E > #gold {
+    delegate: List<E>
+
+    SynchronizedList(list: List<E>)
+}
+
+class UnmodifiableList<E > #gold {
+    delegate: List<E>
+
+    UnmodifiableList(list: List<E>)
+}
+
+class ArrayList<E > {
+}
+
+class LinkedList<E > {
+}
+
+
+List <|.down. AbstractList: \t\t
+List <|.left. SynchronizedList: \t\t
+List <.. SynchronizedList: <<call>>
+List <|.right. UnmodifiableList: \t\t
+List <.. UnmodifiableList: <<call>>
+
+AbstractList <|-- ArrayList : \t
+AbstractList <|-- LinkedList : \t
+
+@enduml

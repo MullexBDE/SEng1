@@ -1,0 +1,47 @@
+@startuml
+
+skinparam componentStyle uml2
+hide stereotype
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam class {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam component {
+  BackgroundColor #f8f8f8
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  ArrowFontName  Arial Unicode MS
+  ArrowFontSize 18
+}
+
+:Dozent:
+[ZPA] <<Main>>
+
+:Dozent: -right-> [ZPA] : Kursdaten
+[ZPA] -left-> :Dozent: : Teilnehmerlisten
+
+[ZPA] -up-> [Shibboleth] : Zugangsdaten
+[Shibboleth] -> [ZPA] : Zugangstoken
+
+
+@enduml

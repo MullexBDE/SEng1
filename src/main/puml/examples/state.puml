@@ -1,0 +1,10 @@
+@startuml
+
+[*] -> Aktiv
+
+Aktiv --> Abgelaufen : [letzteAktivität + 1 Stunde \n < aktuelle Zeit]
+Aktiv: entry / letzteAktivität = aktuelle Zeit
+Abgelaufen -> [*]
+
+
+@enduml

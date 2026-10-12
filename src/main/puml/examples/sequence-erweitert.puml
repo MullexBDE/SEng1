@@ -1,0 +1,72 @@
+@startuml
+
+skin rose
+
+skinparam sequence {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+
+  LifeLineBorderColor black
+  LifeLineBackgroundColor AE396
+
+  ParticipantBackgroundColor 4AD386
+  ParticipantBorderColor black
+}
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+
+  LifeLineBorderColor black
+  LifeLineBackgroundColor AE396
+
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 1
+
+hide circle
+hide footbox
+
+actor Akteur
+participant ":Klasse" as unnamed
+participant "rot:ZweiteKlasse" as rot
+participant "blau:ZweiteKlasse" as blau
+
+activate unnamed
+Akteur -> unnamed: start(1, 3, 2)
+create rot
+unnamed -->> rot : new
+unnamed -> rot: synchron({1, 3, 2})
+activate rot
+rot ->> blau: asynchron("Sortiere...")
+activate blau
+blau -> blau: arbeite(A)
+activate blau
+deactivate blau
+blau -->> rot
+blau -> blau: arbeite(B)
+activate blau
+deactivate blau
+blau -->> rot
+rot -->> unnamed : "{1, 2, 3}"
+deactivate blau
+unnamed -->> Akteur
+deactivate rot
+deactivate unnamed
+
+@enduml

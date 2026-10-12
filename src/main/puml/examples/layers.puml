@@ -1,0 +1,26 @@
+@startuml
+
+skinparam FontName Arial Black
+skinparam classFontName Arial
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+skinparam classFontSize 24
+skinparam componentStyle uml2
+skinparam ArrowColor black
+hide stereotype
+
+package "Präsentation" {
+}
+
+package "Geschäftslogik" {
+
+}
+
+package "Datenhaltung" {
+}
+
+
+Präsentation ..> Geschäftslogik : <<imports>>
+Geschäftslogik ..> Datenhaltung : <<imports>>
+
+@enduml

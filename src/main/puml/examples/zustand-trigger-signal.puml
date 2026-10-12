@@ -1,0 +1,28 @@
+@startuml
+
+skinparam state {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  ArrowThickness 2
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+skinparam activityDiamondBackgroundColor #4AD386
+skinparam activityDiamondBorderColor black
+skinparam activityDiamondFont Arial Unicode MS
+skinparam activityArrowFontSize 20
+skinparam activityArrowFont Arial Unicode MS
+
+state Quelle
+state Ziel
+
+Quelle -> Ziel : Event [Guard]  / Verhalten
+
+@enduml

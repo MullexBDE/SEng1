@@ -1,0 +1,11 @@
+@startuml
+
+(*)  --> Analyse
+Analyse  --> Entwurf
+Entwurf  --> Implementierung
+Implementierung --up> Test
+Test  -up-> Abnahme
+Abnahme -up-> (*)
+Analyse -[hidden]> Abnahme
+
+@enduml

@@ -1,0 +1,102 @@
+= Softwareengineering 1 - ZPA Next Generation
+Autor1, Autor2, ...
+
+include::{docdir}/locale/attributes-de.adoc[]
+:includedir: {docdir}/../puml/
+
+:!chapter-signifier:
+:xrefstyle: short
+:sectnums:
+:partnums:
+
+== Einleitung
+
+An der Fakultät für Informatik und Mathematik ist eine Neuentwicklung des bisherigen ZPA-Systems geplant.
+Ziel ist es eine einheitliche und benutzerfreundliche Plattform zu entwickeln, die allen Beteiligten eine Erleichterung bewirkt.
+Im bisherigen ZPA-System können sich Studierende für FWP-Fächer, praxisbegleitenden Unterricht, Praktikumsgruppen und Seminare eintragen.
+Lehrkräfte nutzen es, um die Einteilung der Praktikumsgruppen abzurufen oder den Stundenplan anzuzeigen.
+Das Dekanatsteam verschafft sich mithilfe des Systems einen Überblick über die Auslastung und Verteilung der Kursteilnehmer.
+Admins haben die Möglichkeit, Kurse und Räume zu verwalten.
+
+Da eine Anbindung weitere Systeme an das aktuelle System technisch nicht machbar erscheint, soll eine Neuentwicklung eine offenere Plattform für weitere Systeme schaffen.
+Folgende Systeme sollen u.a. integriert werden:
+
+* Primuss: hochschulweites System zur Verwaltung der Noten
+* Moodle: hochschulweite Lernplattform
+
+Zudem weist das aktuelle System zahlreiche Fehler auf und hält den Ansturm der Studierenden nicht immer statt.
+Das System soll auch benutzerfreundlicher werden und eine moderne Benutzeroberfläche bekommen, die auf verschiedensten Plattformen nutzbar ist.
+Zur Realisierung des Projekts steht ein Gesamtbudget von 250.000 € zur Verfügung.
+Der Betrieb der Anwendung soll auf den Systemen des LRZ erfolgen.
+Die Einführung des neuen ZPA Next Generation ist schrittweise in den nächsten 3 Jahren geplant.
+Zunächst soll die Fächerauswahl umgesetzt werden, danach in mehreren Iterationen die nächst wichtigen Features.
+Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orientiert, soll im Projekt das Vorgehen Scrum angewendet werden.
+
+== Architektur Überblick
+
+== Rollen
+
+Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
+
+== Funktionale Anforderungen
+
+In diesem Abschnitt sind die funktionalen Anforderungen aufgelistet.
+
+== Nichtfunktionale Anforderungen
+
+In diesem Abschnitt sind die nichtfunktionalen Anforderungen aufgelistet.
+
+== Anwendungsfälle
+
+In diesem Abschnitt sind alle Anwendungsfälle des Systems aufgeführt.
+
+== User Stories
+
+In diesem Abschnitt sind alle User Stories des Systems aufgeführt.
+
+== Datenmodell
+
+Für das ZPA System sind die folgenden Entitäten relevant.
+
+=== Entitäten
+
+Dieser Abschnitte beschreibt alle Entitäten des ZPA im Detail.
+
+=== Fachliche Datentypen
+
+Dieser Abschnitte beschreibt alle fachlichen Datentypen des ZPA im Detail.
+
+== Dialoge
+
+Im ZPA System sind die in den folgenden Abschnitten beschriebenen Masken relevant.
+
+== Schnittstellen und Nachbarsysteme
+
+Das ZPA System hat Schnittstellen zu den in den folgenden Abschnitten aufgeführten Nachbarsystemen.
+
+=== Nachbarsysteme
+
+Das ZPA ist mit den folgenden Nachbarsystemen über eine Schnittstelle verbunden.
+
+=== Schnittstellen
+
+Das ZPA benutzt die in den folgenden Abschnitten aufgeführten Schnittstellen.
+
+== Migration
+
+Historische Informationen aus dem bestehenden System sind nicht relevant und müssen daher nicht in das neue System migriert werden.
+
+== Glossar
+
+[cols="1,3,8"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Abkürzung*
+|{set:cellbgcolor:#e8e8e8} *Begriff*
+|{set:cellbgcolor:#e8e8e8} *Definition*
+
+|{set:cellbgcolor:!} ZPA
+|Zentrale Praktika Anmeldung
+|Das ZPA System ist eine Webanwendung, die zur Anmeldung und Gruppierung von Studierenden in die Lehrveranstaltungen,
+Praktika, Übungen und sonstigen Veranstaltungen, die an der FK07 stattfinden, dient.
+
+|===

@@ -1,0 +1,22 @@
+@startuml
+
+start
+fork
+:     Fleisch
+[unbehandelt] ]
+:Fleisch klopfen;
+:     Fleisch
+[flachgeklopft] ]
+fork again
+:  Öl
+[kalt] ]
+:Pfanne erhitzen;
+:  Öl
+[heiß] ]
+fork end
+:Fleisch braten;
+:   Fleisch
+[gebraten] ]
+stop
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+
+skinparam component {
+  BackgroundColor #FFFF00
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  StereotypeFontSize 14
+}
+
+skinparam interface {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+skinparam componentStyle uml2
+
+[Main] <<component>>
+[lang-direct]as "Commons Lang\n       3.20.0" <<component>>  #lightGreen
+[lang-transitive] as "Commons Lang\n       3.17.0" <<component>> #salmon
+[io] as " Commons IO\n      2.22.0" <<component>> #lightGreen
+
+Main ..> [lang-direct] : "  <<use>>"
+Main .right.> io : "  <<use>>"
+io ..> [lang-transitive] : "  <<use>>"
+
+@enduml

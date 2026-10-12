@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+[Importeur] as I
+
+package "Callback Schnittstelle" {
+    interface "S\t " as S
+    [Exporteur] as E
+}
+
+I -- S : \t
+S <. E
+
+@enduml

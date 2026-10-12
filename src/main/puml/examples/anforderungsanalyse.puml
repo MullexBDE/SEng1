@@ -1,0 +1,23 @@
+@startuml
+
+skinparam activity {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+
+(*)  --> "Vision entwickeln"
+"Vision entwickeln" --> "Stakeholder identifizieren"
+"Stakeholder identifizieren" --> "Rollen finden"
+"Rollen finden" -> "Kontext analysieren"
+"Kontext analysieren" -> "Anforderungen ermitteln"
+"Anforderungen ermitteln" -up-> "Anforderungen dokumentieren"
+"Anforderungen dokumentieren" -up-> "Anforderungen validieren" #FFFF00
+"Anforderungen validieren" -up-> (*)
+
+@enduml

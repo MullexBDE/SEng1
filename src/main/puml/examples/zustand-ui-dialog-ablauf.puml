@@ -1,0 +1,40 @@
+@startuml
+
+skinparam state {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  ArrowThickness 2
+  FontName Arial Unicode MS
+  FontSize 20
+}
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+skinparam activityDiamondBackgroundColor #4AD386
+skinparam activityDiamondBorderColor black
+skinparam activityDiamondFont Arial Unicode MS
+skinparam activityArrowFontSize 20
+skinparam activityArrowFont Arial Unicode MS
+
+state Anmeldung
+state Logout <<end>>
+state LoginCheck <<choice>>
+
+[*] -> Anmeldung
+Anmeldung --> LoginCheck : <U+0020>Anmelden / passwortPrüfen \t
+LoginCheck --> Anmeldung :  <U+0020>[Login nicht erfolgreich]
+LoginCheck -down-> Kursliste : <U+0020>[Login erfolgreich]
+
+Kursliste -> Teilnehmerliste : Kurs öffnen [Kurs ist ausgewählt]
+Teilnehmerliste -> Kursliste: zurück
+
+Kursliste --> Logout : Logout
+
+Teilnehmerliste --> Logout : Suchen / Logout
+
+
+@enduml

@@ -1,0 +1,64 @@
+= Softwareengineering 1
+Prof. Jan Philipps <jan.philipps@hm.edu>
+
+include::{localedir}/attributes-de.adoc[]
+
+Dieses Dokument dient zur Unterstützung der Vorlesung Softwareengineering 1.
+Es enthält alle in der Vorlesung verwendeten UML-Diagramme.
+
+== Vorlesungsthemen
+
+Die Vorlesung behandelt die in Abbildung dargestellten Phasen eines Software-Projekts.
+
+[plantuml]
+.Phasen eines Softwareprojektes
+----
+include::{pumldir}/examples/phasen.puml[Phasen eines Softwareprojektes]
+----
+
+Die einzelnen Phasen werden in den nachfolgenden Abschnitten beschrieben.
+
+=== Anforderungsanalyse
+
+Die folgenden Aktivitäten sind in der Phase *Anforderungsanalyse* relevant:
+
+[plantuml]
+.Anforderungsanalyse
+----
+include::{pumldir}/examples/anforderungsanalyse.puml[Anforderungsanalyse]
+----
+
+In der Anforderungsanalyse werden die folgenden Diagramme benutzt.
+
+==== Kontext Diagramm
+
+Ein Kontext Diagramm ist kein offizielles UML-Diagramm - es kombiniert Elemente des Anwendungsfall- und Komponentendiagramms.
+Kontext Diagramme gibt es in zwei Ausprägungen, in der einfachen Variante werden nur Systeme und Akteure dargestellt, jeweils mit einer Linie verbunden.
+In der ausführlichen Variante werden zusätzlich die Datenströme dargestellt.
+Das zu entwickelnde System steht meist in der Mitte und ist hervorgehoben.
+
+===== Einfaches Kontext Diagramm
+
+[plantuml]
+.Einfaches Kontext Diagramm
+----
+include::{pumldir}/examples/kontext-einfach.puml[Einfaches Kontext Diagramm]
+----
+
+===== Kontext Diagramm mit Datenfluss
+
+[plantuml]
+.Kontext Diagramm mit Datenfluss
+----
+include::{pumldir}/examples/kontext-datenfluss.puml[Kontext Diagramm mit Datenfluss]
+----
+
+=== Anforderungsspezifikation
+
+Die folgenden Aktivitäten sind in der Phase *Anforderungsspezifikation* relevant:
+
+.Anforderungsspezifikation
+[plantuml]
+----
+include::{pumldir}/examples/anforderungsspezifikation.puml[Anforderungsspezifikation]
+----

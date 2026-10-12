@@ -1,0 +1,63 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #DBFCDD
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> gold
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam classFontSize 24
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 20
+
+skinparam ArrowColor black
+skinparam ArrowThickness 2
+
+hide circle
+
+interface List <<interface>>
+interface MutableList <<interface>>
+interface ImmutableList <<interface>>
+interface ListIterable <<interface>>
+
+hide List fields
+hide MutableList fields
+hide ImmutableList fields
+hide ListIterable fields
+
+interface ListIterable<E > {
+    {abstract} listIterator(): ListIterator<E>
+}
+
+interface ImmutableList<E > {
+    {abstract} newWith(E element): ImmutableList<E> 
+    {abstract} contains(E element): boolean 
+}
+
+interface MutableList<E > {
+    {abstract} iterator(): Iterator<E>
+}
+
+interface List<E > {
+    {abstract} get(index: Integer): E
+}
+
+class FastList<E> {
+    elementData: E[]
+}
+
+class ImmutableArrayList<E> {
+    elementData: E[]
+}
+
+ListIterable <|-- ImmutableList
+ListIterable <|-- MutableList
+List <|-- MutableList
+MutableList <|.. FastList : \t\t
+ImmutableList <|.. ImmutableArrayList : \t\t
+
+@enduml
