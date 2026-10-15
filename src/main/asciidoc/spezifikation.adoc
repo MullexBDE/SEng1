@@ -65,6 +65,28 @@ Stakeholder hat ein Interesse am Projekterfolg.
 |{set:cellbgcolor:!} Wie relevant ist der Stakeholder für das Projekt.
 |===
 
+=== ZPA Admin
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Systemadministrator, Vertreter des / Schnittstelle zum IT-Operations Team der HM
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 0.009
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} 089 99998123
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} zpa.admin@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
+|===
+
 == Rollen
 
 Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
