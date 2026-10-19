@@ -108,6 +108,28 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
 |===
 
+=== Student
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Endnutzer des Systems, entnimmt Informationen aus dem System
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R0.012 (Fachschaftsraum)
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 (0) 89 12 65 – 3777
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} info@fs.cs.hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} grundsätzlich während der Unizeiten Mo–Fr 10:00 – 15:00 Uhr
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Bedürfnisse, welche Informationen von dem System bereitgestellt werden müssen. Erfahrungswerte mit Studienmanagement-Systemen
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Zuverlässige Plattform, welche intuitiv verwendet werden kann.
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Kennt Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Hauptnutzer des neuen Systems sein. Relevanz daher hoch.
+|===
+
 === API-User
 
 [cols="3,9"]
