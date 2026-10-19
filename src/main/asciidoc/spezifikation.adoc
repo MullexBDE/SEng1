@@ -42,12 +42,78 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 * Fakultät
 * API-User
 
-=== Vorname Nachname von Stakeholder 1
+=== Prof. Jan Philipps (Lehrende / Professoren)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
-|{set:cellbgcolor:!} Welche Rolle bzw. Funktion hat der Stakeholder im Projekt. Nicht zu verwechseln mit der Rolle im zu erstellenden System.
+|{set:cellbgcolor:!} Vertreter der Lehrkräfte; Ansprechpartner für Anforderungen aus Sicht der Lehrenden sowie für Qualitäts- und Architekturfragen
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 2.037
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} jan.philipps@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Während der Vorlesungszeit nach vorheriger Absprache (per E-Mail)
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt die Abläufe bei Praktikumseinteilungen, Kursverwaltung, Vorlesungsplanung und Notenvergabe; weiß, welche Übersichten zur Kurs- und Gruppenbelegung benötigt werden und welche Daten mit Nachbarsystemen (z. B. Moodle, Primuss) ausgetauscht werden müssen
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Einfache und übersichtliche Verwaltung von Teilnehmerlisten und Praktikumsgruppen; unkomplizierte Planung von Vorlesungsterminen und Arbeitszeiten; direkte Anbindung an Moodle und Primuss ohne doppelte Datenpflege; stabiles und zuverlässiges System
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Hoch, da Lehrkräfte zu den Hauptnutzern des Systems gehören. Ihr Feedback und ihre Abnahme sind wichtig für den Projekterfolg, da sie das Wissen über die täglichen Abläufe in der Lehre einbringen.
+|===
+
+=== Klaus Dietrichs (Fakultät)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Herr Dietrichs nimmt im ZPA die Rolle _Fakultätsmitarbeiter_ ein und ist täglicher Anwender des Systems. Er sieht Daten von Professoren und Studierenden ein oder ändert diese. Zudem vermittelt er zwischen den Professoren und der Hochschulverwaltung. Im Projekt fungiert er als Ansprechpartner für Anforderungen. Er liefert Anforderungen für die Fächerauswahl und nimmt umgesetzte Features aus Sicht der Fakultät ab.
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R3.046
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 1522 8817386
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} klaus.dietrichs@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr Bevorzugter Kontaktweg: Email
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Herr Dietrichs ist fachlich verantwortlich für die Stundenpläne und die Arbeitszeiten der Professoren. Er ist außerdem Ansprechpartner für organisatorische Anliegen der Studierenden. Er hat außerdem Einblick in die Auslastung und Verteilung der Kursteilnehmer. Die Abläufe im bisherigen ZPA kennt er aus der täglichen Nutzung.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Herr Dietrichs wünscht sich ein System, das seine täglichen Aufgaben an einem Ort bündelt: Stundenplanpflege, Pflege der Arbeitszeiten, Auskunft an Studierende. Dabei soll die Bedienung klar besser sein als im bisherigen ZPA. Als Mängel des Altsystems sieht er die nicht einheitliche UI und das Fehlen wichtiger Informationen und die daraus erzwungenen Systemwechsel.
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Die Fakultät gehört zu den Hauptnutzergruppen des ZPA. Herrn Dietrichs' Feedback fließt deshalb mit hoher Priorität in die Anforderungen und die Reihenfolge der Features ein. Da er die Fakultät allein vertritt, sollten seine Aussagen bei zentralen Entscheidungen zusätzlich mit weiteren Fakultätsmitarbeitern abgeglichen werden.
+|===
+
+=== ZPA Admin
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Systemadministrator, Vertreter des / Schnittstelle zum IT-Operations Team der HM
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 0.009
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} 089 99998123
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} zpa.admin@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
+|===
+
+=== API-User
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Nutzer wie Studierende oder Lehrende sowie deren automatisierte Clients und KI-Agenten, die das ZPA über die API im Rahmen ihrer jeweiligen Rollenberechtigungen nutzen; Ansprechpartner für Anforderungen an die Schnittstelle
 |{set:cellbgcolor:#e8e8e8} *Raum*
 |{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Telefon*
@@ -55,14 +121,13 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:#e8e8e8} *Email*
 |{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
-|{set:cellbgcolor:!} Von wann bis wann ist der Stakeholder für das Projekt verfügbar. Wichtiger Punkt, um Meetings, Workshops oder ähnliches zu planen.
+|{set:cellbgcolor:!} Nach Absprache, automatisierte Zugriffe erfolgen durchgehend
 |{set:cellbgcolor:#e8e8e8} *Wissen*
-|{set:cellbgcolor:!} Welches Wissensgebiet bzw. welchen Wissensumfang hat der Stakeholder.
+|{set:cellbgcolor:!} Kennt die typischen Abläufe seiner jeweiligen Rolle, die automatisiert werden sollen; tiefes Programmierwissen ist nicht zwingend nötig, da KI-Agenten und externe Tools direkt auf die API-Dokumentation und Schnittstellen zugreifen können
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
-|{set:cellbgcolor:!} Welche Interessen und Ziele bezogen auf das Projekt hat der Stakeholder. Achtung: nicht jeder
-Stakeholder hat ein Interesse am Projekterfolg.
+|{set:cellbgcolor:!} Eine einfache, stabile und gut dokumentierte API, über die rollenspezifische Aktionen mit GET und POST automatisiert ausgeführt werden können, ohne die Webseite scrapen zu müssen. Großer Funktionsumfang für eigene Workflows und KI-Agenten, etwa zur automatischen Kurseinbuchung und für Wochenübersichten bei Studierenden oder für automatische Benachrichtigungen bei Kursausfällen und fehlenden Abgaben durch Professoren, sowie eine hohe Verfügbarkeit.
 |{set:cellbgcolor:#e8e8e8} *Relevanz*
-|{set:cellbgcolor:!} Wie relevant ist der Stakeholder für das Projekt.
+|{set:cellbgcolor:!} Ermöglicht eine produktivere und schnellere Nutzung des Systems durch eigene Dashboards, KI-Agenten und externe Tools zur Integration. Da es ein Zusatz zu den bestehenden Grundfunktionen ist, ist die Relevanz eher zweitrangig.
 |===
 
 === ZPA Admin
