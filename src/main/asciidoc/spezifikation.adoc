@@ -34,6 +34,50 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 
 == Architektur Überblick
 
+Das ZPA System ist in die Systemlandschaft der Hochschule München eingebettet und tauscht Daten mit Nachbarsystemen aus.
+
+=== Gesamtübersicht
+
+Die Gesamtübersicht zeigt alle Akteure und Nachbarsysteme des ZPA mit ihren wichtigsten Datenflüssen.
+
+[plantuml]
+.Systemkontext des ZPA
+----
+include::{pumldir}/kontext/kontext-gesamt.puml[Systemkontext des ZPA]
+----
+
+=== Kontext Student
+
+Studierende wählen im ZPA ihre FWP-Fächer über Kursprioritäten und melden sich für Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an oder ab.
+Die Anmeldung erfolgt über Shibboleth, das dem ZPA nach erfolgreicher Authentifizierung ein Zugangstoken übermittelt.
+Aus Primuss erhält das ZPA Studiengang, Fachsemester und bereits bestandene Module, um die Auswahl der Kurse auf zulässige Fächer zu beschränken.
+Das ZPA liefert den Studierenden ihren persönlichen Stundenplan sowie ihre Kursbelegung und Gruppenzuteilung.
+Die Gruppenzuteilung wird an Moodle weitergegeben, damit Studierende automatisch in die passenden Moodle-Kurse eingetragen werden.
+Benachrichtigungen, z.B. über eine Zuteilung oder einen Kursausfall, versendet das ZPA per E-Mail über den SMTP-Server des LRZ.
+Über einen im ZPA integrierten Chatbot können Studierende Fragen stellen, etwa zu ihren Kursen oder ihrem Stundenplan.
+Das ZPA reichert die Frage mit den passenden Kontextdaten an und leitet sie an ein KI-Modell weiter, das vom LRZ gehostet wird.
+Die generierte Antwort wird den Studierenden im ZPA angezeigt.
+Da das Modell beim LRZ betrieben wird, werden personenbezogene Daten nicht an kommerzielle KI-Anbieter übermittelt.
+
+[plantuml]
+.Kontext Diagramm Student
+----
+include::{pumldir}/kontext/kontext-student.puml[Kontext Diagramm Student]
+----
+
+=== Kontext Primuss
+
+Primuss ist das hochschulweite System zur Verwaltung der Prüfungsanmeldungen und Noten.
+Primuss stellt dem ZPA die Stammdaten der Studierenden (Matrikelnummer, Studiengang, Fachsemester), bestandene Module mit Noten sowie die Prüfungsanmeldungen bereit.
+An Primuss übermittelt das ZPA ausschließlich die von den Lehrenden im ZPA erfassten Testate, die als Prüfungszulassung dienen.
+Die Prüfungsanmeldung durch Studierende und die Notenvergabe durch Lehrende erfolgen weiterhin direkt in Primuss.
+
+[plantuml]
+.Kontext Diagramm Primuss
+----
+include::{pumldir}/kontext/kontext-primuss.puml[Kontext Diagramm Primuss]
+----
+
 == Stakeholder
 
 === Louis Vietmeier (Studierende)

@@ -1,0 +1,53 @@
+@startuml
+
+skinparam componentStyle uml2
+hide stereotype
+skinparam defaultTextAlignment center
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam component {
+  BackgroundColor #f8f8f8
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  ArrowFontName  Arial Unicode MS
+  ArrowFontSize 16
+}
+
+left to right direction
+
+:Student:
+
+[ZPA] <<Main>>
+
+[Shibboleth]
+[Primuss]
+[Moodle]
+[LRZ\nKI-Service] as KI
+[LRZ\nSMTP-Server] as SMTP
+
+Student --> ZPA : Kursprioritäten (FWP),\nAn- und Abmeldungen\n(Praktika, Seminare, PLV),\nChatfragen
+Student <-- ZPA : persönlicher Stundenplan,\nKursbelegung,\nGruppenzuteilung,\nChatantworten
+
+Student --> Shibboleth : Zugangsdaten
+Shibboleth --> ZPA : Zugangstoken
+
+ZPA <-- Primuss : Studiengang, Semester,\nbestandene Module
+ZPA --> Moodle : Gruppenzuteilung\ndes Studenten
+ZPA --> KI : Chatfrage mit Kontext\n(Kurse, Stundenplan)
+ZPA <-- KI : generierte\nAntwort
+ZPA --> SMTP : Benachrichtigung\n(Zuteilung, Kursausfall)
+Student <-- SMTP : E-Mail
+
+@enduml
