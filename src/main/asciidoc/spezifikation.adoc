@@ -356,7 +356,26 @@ Historische Informationen aus dem bestehenden System sind nicht relevant und mü
 |{set:cellbgcolor:#e8e8e8} *Begriff*
 |{set:cellbgcolor:#e8e8e8} *Definition*
 
-|{set:cellbgcolor:!} ZPA
+|{set:cellbgcolor:!} FWP
+|Fachwissenschaftliches Wahlpflichtfach
+|Lehrveranstaltung, die Studierende aus einem Angebot von Fächern frei wählen können.
+Die Vergabe der Plätze erfolgt im ZPA anhand der von den Studierenden angegebenen Kursprioritäten.
+
+|LRZ
+|Leibniz-Rechenzentrum
+|Rechenzentrum der Bayerischen Akademie der Wissenschaften und IT-Dienstleister der Münchner Hochschulen.
+Das LRZ betreibt das ZPA, den SMTP-Server für den E-Mail-Versand und den KI-Service für den Chatbot.
+
+|PLV
+|Praxisbegleitende Lehrveranstaltung
+|Lehrveranstaltung, die Studierende begleitend zum praktischen Studiensemester besuchen und für die sie sich im ZPA anmelden.
+
+|SMTP
+|Simple Mail Transfer Protocol
+|Protokoll zum Versenden von E-Mails.
+Das ZPA versendet Benachrichtigungen über den SMTP-Server des LRZ.
+
+|ZPA
 |Zentrale Praktika Anmeldung
 |Das ZPA System ist eine Webanwendung, die zur Anmeldung und Gruppierung von Studierenden in die Lehrveranstaltungen,
 Praktika, Übungen und sonstigen Veranstaltungen, die an der FK07 stattfinden, dient.
