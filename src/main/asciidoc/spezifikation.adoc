@@ -36,11 +36,27 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 
 == Stakeholder
 
-* Studenten
-* Professoren
-* ZPA-Admin
-* Fakultät
-* API-User
+=== Louis Vietmeier (Studierende)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Vertretung der Studierenden durch die Fachschaft; Endnutzer des Systems, der sich für FWP-Fächer, Praktikumsgruppen und Seminare anmeldet und Informationen wie Stundenplan und Gruppeneinteilung abruft; Ansprechpartner für Anforderungen aus Sicht der Studierenden
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R0.012 (Fachschaftsraum)
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12653777
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} fachschaftsleitung@fs.cs.hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} grundsätzlich während der Unizeiten Mo–Fr 10:00 – 15:00 Uhr
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Bedürfnisse, welche Informationen von dem System bereitgestellt werden müssen. Erfahrungswerte mit Studienmanagement-Systemen
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Zuverlässige, intuitiv bedienbare Plattform, die auch beim Ansturm zu Anmeldebeginn stabil läuft und mobil nutzbar ist; faire und transparente Anmeldung mit klaren Fristen und Wartelisten; Stundenplan und Gruppeneinteilung an einem Ort; verständliche Fehlermeldungen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Kennt Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Hauptnutzer des neuen Systems sein. Relevanz daher hoch.
+|===
 
 === Prof. Jan Philipps (Lehrende / Professoren)
 
@@ -51,7 +67,7 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:#e8e8e8} *Raum*
 |{set:cellbgcolor:!} R 2.037
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} +49 89 12653773
 |{set:cellbgcolor:#e8e8e8} *Email*
 |{set:cellbgcolor:!} jan.philipps@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
@@ -77,7 +93,7 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:#e8e8e8} *Email*
 |{set:cellbgcolor:!} klaus.dietrichs@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
-|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr Bevorzugter Kontaktweg: Email
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr. Bevorzugter Kontaktweg: Email
 |{set:cellbgcolor:#e8e8e8} *Wissen*
 |{set:cellbgcolor:!} Herr Dietrichs ist fachlich verantwortlich für die Stundenpläne und die Arbeitszeiten der Professoren. Er ist außerdem Ansprechpartner für organisatorische Anliegen der Studierenden. Er hat außerdem Einblick in die Auslastung und Verteilung der Kursteilnehmer. Die Abläufe im bisherigen ZPA kennt er aus der täglichen Nutzung.
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
@@ -86,62 +102,106 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:!} Die Fakultät gehört zu den Hauptnutzergruppen des ZPA. Herrn Dietrichs' Feedback fließt deshalb mit hoher Priorität in die Anforderungen und die Reihenfolge der Features ein. Da er die Fakultät allein vertritt, sollten seine Aussagen bei zentralen Entscheidungen zusätzlich mit weiteren Fakultätsmitarbeitern abgeglichen werden.
 |===
 
-=== ZPA Admin
+=== Dr. Sabine Hartmann (Datenschutzbeauftragter)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
-|{set:cellbgcolor:!} Systemadministrator, Vertreter des / Schnittstelle zum IT-Operations Team der HM
+|{set:cellbgcolor:!} Datenschutzbeauftragte der HM; Ansprechpartnerin für datenschutzrechtliche Anforderungen an das ZPA und für die Freigabe der Verarbeitung personenbezogener Daten
 |{set:cellbgcolor:#e8e8e8} *Raum*
-|{set:cellbgcolor:!} R 0.009
+|{set:cellbgcolor:!} R 0.016
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!} 089 99998123
+|{set:cellbgcolor:!} +49 871 2054940
 |{set:cellbgcolor:#e8e8e8} *Email*
-|{set:cellbgcolor:!} zpa.admin@hm.edu
+|{set:cellbgcolor:!} datenschutzbeauftragter@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
-|{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
+|{set:cellbgcolor:!} Mo-Do 09:00 - 15:00 Uhr, bevorzugt nach vorheriger Terminvereinbarung per E-Mail
 |{set:cellbgcolor:#e8e8e8} *Wissen*
-|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
+|{set:cellbgcolor:!} Kennt die Anforderungen der DSGVO und des Bayerischen Datenschutzgesetzes, die Vorgaben der HM zum Umgang mit Studierenden- und Beschäftigtendaten sowie die Anforderungen an Auftragsverarbeitung, Löschkonzepte und Zugriffsprotokollierung. Weiß, welche Daten bei der Anbindung von Primuss und Moodle übertragen werden dürfen.
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
-|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
+|{set:cellbgcolor:!} Datensparsamkeit und Zweckbindung bei allen gespeicherten Daten; nachvollziehbares Rollen- und Rechtekonzept; definierte Aufbewahrungs- und Löschfristen; Protokollierung von Zugriffen auf personenbezogene Daten; datenschutzkonformer Betrieb auf den Systemen des LRZ und bei der Nutzung der API
 |{set:cellbgcolor:#e8e8e8} *Relevanz*
-|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
+|{set:cellbgcolor:!} Hoch, da das System personenbezogene Daten von Studierenden und Lehrenden verarbeitet. Ohne ihre Freigabe ist ein Produktivbetrieb nicht möglich. Datenschutzanforderungen sollten daher früh im Projekt berücksichtigt werden, nicht erst kurz vor der Einführung.
 |===
 
-=== Student
+=== Prof. Dr. Edda Eich-Söllner (Prüfungsausschuss)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
-|{set:cellbgcolor:!} Endnutzer des Systems, entnimmt Informationen aus dem System
+|{set:cellbgcolor:!} Vorsitzende des Prüfungsausschusses; Ansprechpartner für Anforderungen aus Sicht der Prüfungsorganisation, etwa Anmeldefristen, Zulassungsvoraussetzungen und Prüfungsanmeldungen
 |{set:cellbgcolor:#e8e8e8} *Raum*
-|{set:cellbgcolor:!} R0.012 (Fachschaftsraum)
+|{set:cellbgcolor:!} R 3.027
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!} +49 (0) 89 12 65 – 3777
+|{set:cellbgcolor:!} +49 89 12653729
 |{set:cellbgcolor:#e8e8e8} *Email*
-|{set:cellbgcolor:!} info@fs.cs.hm.edu
+|{set:cellbgcolor:!} edda.eich@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
-|{set:cellbgcolor:!} grundsätzlich während der Unizeiten Mo–Fr 10:00 – 15:00 Uhr
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr. Bevorzugter Kontaktweg: Email
 |{set:cellbgcolor:#e8e8e8} *Wissen*
-|{set:cellbgcolor:!} Bedürfnisse, welche Informationen von dem System bereitgestellt werden müssen. Erfahrungswerte mit Studienmanagement-Systemen
+|{set:cellbgcolor:!} Kennt die Studien- und Prüfungsordnungen, die Regeln zu Zulassung, Wiederholung, Nachteilsausgleich und Fristen sowie die Entscheidungsprozesse des Prüfungsausschusses. Weiß, welche Voraussetzungen vor einer Prüfungsanmeldung erfüllt sein müssen und welche Daten dazu aus Primuss benötigt werden.
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
-|{set:cellbgcolor:!} Zuverlässige Plattform, welche intuitiv verwendet werden kann.
+|{set:cellbgcolor:!} Korrekte und regelkonforme Umsetzung der Prüfungsordnungen im System; automatische Prüfung von Zulassungsvoraussetzungen und Fristen; nachvollziehbare Dokumentation von Anmeldungen und Änderungen; keine Widersprüche zwischen ZPA und Primuss
 |{set:cellbgcolor:#e8e8e8} *Relevanz*
-|{set:cellbgcolor:!} Kennt Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Hauptnutzer des neuen Systems sein. Relevanz daher hoch.
+|{set:cellbgcolor:!} Mittel bis hoch. Das System muss die rechtlichen Vorgaben der Prüfungsordnungen einhalten, sonst drohen Anfechtungen von Prüfungsergebnissen oder Anmeldungen. Eine Abstimmung ist vor allem bei Funktionen mit Prüfungsbezug nötig.
 |===
 
-=== API-User
+=== Prof. Dr. Martin Leitner (Universitätsvertretung)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Präsident der HM und Vertreter der Hochschulleitung; Auftraggeber auf Leitungsebene und Ansprechpartner für strategische Entscheidungen zum ZPA Next Generation, etwa Budget, Gesamtzeitplan und Betrieb auf den Systemen des LRZ
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 0.016
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12655907
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} praesident@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr. Bevorzugter Kontaktweg: Email
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt die strategischen Ziele der HM, die Digitalisierungsstrategie der Hochschule sowie die organisatorischen und rechtlichen Rahmenbedingungen für hochschulweite IT-Systeme. Überblickt die Zusammenarbeit mit dem LRZ und die Verfügbarkeit von Haushaltsmitteln. Kennt die Abläufe in den Hochschulgremien und die Anforderungen der Fakultäten an das System.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Ein zuverlässiges, modernes System, das Studierenden, Lehrenden und der Verwaltung den Alltag erleichtert und den Ruf der HM als moderne Hochschule stärkt; Einhaltung des Gesamtbudgets von 250.000 € und des Zeitplans von 3 Jahren; stabiler Betrieb auch bei hoher Last zu Semesterbeginn; Anbindung an hochschulweite Systeme wie Primuss und Moodle; Einhaltung von Datenschutz und IT-Sicherheit; Übertragbarkeit der Lösung auf andere Fakultäten
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Hoch. Der Präsident hat die höchste Entscheidungsbefugnis im Projektumfeld, gibt Budget und Betrieb frei und kann Prioritäten setzen. Er ist im Tagesgeschäft nicht beteiligt, sollte aber in regelmäßigen Abständen, etwa nach größeren Meilensteinen wie der Fächerauswahl, über Fortschritt, Kosten und Risiken informiert werden.
+|===
+
+=== Prof. Dr. Matthias Bauer (Studiengangsleitung)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Leiter des Studiengangs Geodata Science; Ansprechpartner für Anforderungen zur Studienorganisation, zur Verteilung der Kursteilnehmer und zur Planung des Lehrangebots
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 4.018
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12653714
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} matthias.bauer@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Während der Vorlesungszeit Mi 13:00 - 15:00 Uhr, sonst nach vorheriger Absprache per E-Mail
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt den Aufbau und die Inhalte des Studiengangs, die Modulplanung und die Kapazitäten bei Praktika, FWP-Fächern und Seminaren. Weiß, wie viele Plätze pro Semester benötigt werden und an welchen Stellen es regelmäßig zu Engpässen kommt.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Übersichtliche Auswertungen zu Auslastung und Verteilung der Kursteilnehmer als Grundlage für die Planung des Lehrangebots; verlässliche Anmeldung für alle Studierenden; geringer Verwaltungsaufwand für Lehrende und Fakultät; Unterstützung der Studienorganisation, etwa durch die Berücksichtigung von Studienverlaufsplänen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Hoch. Die Studiengangsleitung trägt die Verantwortung für die Qualität der Lehre und kann Anforderungen an Auswertungen und Verteilungsregeln fachlich priorisieren. Ihre Unterstützung ist wichtig für die Akzeptanz des Systems in der Fakultät.
+|===
+
+=== Claude Amodei (API-User)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
 |{set:cellbgcolor:!} Nutzer wie Studierende oder Lehrende sowie deren automatisierte Clients und KI-Agenten, die das ZPA über die API im Rahmen ihrer jeweiligen Rollenberechtigungen nutzen; Ansprechpartner für Anforderungen an die Schnittstelle
 |{set:cellbgcolor:#e8e8e8} *Raum*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} R3.046
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} +49 89 99998205
 |{set:cellbgcolor:#e8e8e8} *Email*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} claude.amodei@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
 |{set:cellbgcolor:!} Nach Absprache, automatisierte Zugriffe erfolgen durchgehend
 |{set:cellbgcolor:#e8e8e8} *Wissen*
@@ -152,6 +212,28 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:!} Ermöglicht eine produktivere und schnellere Nutzung des Systems durch eigene Dashboards, KI-Agenten und externe Tools zur Integration. Da es ein Zusatz zu den bestehenden Grundfunktionen ist, ist die Relevanz eher zweitrangig.
 |===
 
+=== Thomas Vogler (ZPA Admin)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Systemadministrator, Vertreter des / Schnittstelle zum IT-Operations Team der HM
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 1.017
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12653718
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} zpa-fk07@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
+|===
+
 == Rollen
 
 Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
@@ -159,13 +241,17 @@ Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen r
 * Gast
 * Student
 * Lehrende
-** intern
-** extern
+** Professor
+*** Modulverantwortlicher
+** Lehrbeauftragter
+** Tutor
 * Sachbearbeiter
 ** Sekretär
 ** Fakultätsmitarbeiter
 ** Facilitymanager
 ** Securitymanager
+** Prüfungsplaner
+** Stundenplaner
 * ZPA-Admin
 ** Developer
 ** Daily Manager
