@@ -9,28 +9,43 @@ include::{docdir}/locale/attributes-de.adoc[]
 :sectnums:
 :partnums:
 
-== Einleitung
+== Einleitung und Systemidee
 
-An der Fakultät für Informatik und Mathematik ist eine Neuentwicklung des bisherigen ZPA-Systems geplant.
-Ziel ist es eine einheitliche und benutzerfreundliche Plattform zu entwickeln, die allen Beteiligten eine Erleichterung bewirkt.
-Im bisherigen ZPA-System können sich Studierende für FWP-Fächer, praxisbegleitenden Unterricht, Praktikumsgruppen und Seminare eintragen.
+An der Fakultät für Informatik und Mathematik (FK07) ist eine Neuentwicklung des bisherigen ZPA-Systems unter dem Namen „ZPA Next Generation“ geplant, welches das bestehende System ablöst.
+Ziel ist es, eine einheitliche und benutzerfreundliche Plattform zu entwickeln, die allen Beteiligten den Hochschulalltag erleichtert.
+Im bisherigen ZPA-System können sich Studierende für FWP-Fächer, praxisbegleitenden Unterricht (PLV), Praktikumsgruppen und Seminare eintragen.
 Lehrkräfte nutzen es, um die Einteilung der Praktikumsgruppen abzurufen oder den Stundenplan anzuzeigen.
-Das Dekanatsteam verschafft sich mithilfe des Systems einen Überblick über die Auslastung und Verteilung der Kursteilnehmer.
-Admins haben die Möglichkeit, Kurse und Räume zu verwalten.
+Das Dekanatsteam und die Sachbearbeiter der Fakultät verschaffen sich mithilfe des Systems einen Überblick über die Auslastung und Verteilung der Kursteilnehmer sowie über die Arbeitszeiten.
+ZPA-Admins haben die Möglichkeit, Kurse, Räume, Rollen und den Systembetrieb zu verwalten.
 
-Da eine Anbindung weitere Systeme an das aktuelle System technisch nicht machbar erscheint, soll eine Neuentwicklung eine offenere Plattform für weitere Systeme schaffen.
-Folgende Systeme sollen u.a. integriert werden:
+Für die Nutzerinnen und Nutzer soll das neue System den Funktionsumfang sinnvoll erweitern und typische Hürden beseitigen:
 
-* Primuss: hochschulweites System zur Verwaltung der Noten
-* Moodle: hochschulweite Lernplattform
+* *Studierende & Erstsemester:* Vereinfachte, visuelle Tools zur Stundenplanung ermöglichen ein unkompliziertes Einwählen in Fächer (z. B. über Kursprioritäten bei FWP-Fächern) und Praktikumsgruppen, ohne dass es zu zeitlichen Überschneidungen kommt. Studierende können ihre Kursbelegung eigenständig verwalten, sehen wichtige Termine und Fristen direkt aufgelistet und finden leichter Kontaktinformationen sowie Sprechstunden der Lehrenden. Für Erstsemester ist der Einstieg klar und verständlich aufgebaut. Zudem hilft ein integrierter KI-Chatbot auf der Webseite direkt bei Fragen zu Kursen oder dem Stundenplan.
+* *Gäste & Studieninteressierte:* Das System bietet ohne Login einen übersichtlichen ersten Anlaufpunkt mit einer Suchfunktion für öffentliche Kurs- und Rauminformationen.
+* *Lehrende & Sachbearbeiter:* Lehrende können ihre Kursdaten, Sprechstunden, Teilnehmerlisten und Testate für die Prüfungszulassung übersichtlich an einem Ort verwalten. Sachbearbeiter profitieren von einer gebündelten Pflege der Stundenpläne, Raumdaten und Arbeitszeiten.
 
-Zudem weist das aktuelle System zahlreiche Fehler auf und hält den Ansturm der Studierenden nicht immer statt.
-Das System soll auch benutzerfreundlicher werden und eine moderne Benutzeroberfläche bekommen, die auf verschiedensten Plattformen nutzbar ist.
+Da eine Anbindung weiterer Systeme an das aktuelle System technisch nicht machbar erscheint, soll die Neuentwicklung eine offenere Plattform schaffen.
+Folgende Nachbarsysteme sollen integriert werden:
+
+* *Shibboleth:* zentraler Authentifizierungsdienst der Hochschule München für den sicheren Login
+* *Primuss:* hochschulweites System zur Verwaltung der Prüfungsanmeldungen und Noten (Lieferung von Studierendendaten und bestandenen Modulen sowie Übermittlung von Testaten als Prüfungszulassung)
+* *Moodle:* hochschulweite Lernplattform (automatische Übertragung der Kurse und Gruppenzuteilungen)
+* *StundenPLAN 1.0:* interne Anwendung der FK07 zum Generieren und Importieren von Stundenplänen
+* *SMTP-Server des LRZ:* E-Mail-Service zum automatischen Versenden von Benachrichtigungen (z. B. bei Gruppenzuteilungen oder Kursausfällen)
+* *KI-Service des LRZ:* lokal beim LRZ betriebenes KI-Modell für den integrierten Chatbot, sodass keine personenbezogenen Daten an externe Anbieter abfließen
+
+Darüber hinaus soll das System offene Schnittstellen wie eine REST-API und MCP-Unterstützung bereitstellen, damit Nutzer eigene KI-Agenten, Dashboards und Automatisierungen im Rahmen ihrer jeweiligen Berechtigungen anbinden können.
+
+Zudem weist das aktuelle System zahlreiche Fehler auf und hält dem Ansturm der Studierenden nicht immer stand.
+Gerade bei der Veröffentlichung der Stundenpläne oder der Wahl und Umbelegung von Fächern kommt es regelmäßig zu Ausfällen.
+Das neue System soll daher deutlich stabiler und benutzerfreundlicher werden sowie ein modernes, aufgeräumtes und barrierefreies Design erhalten.
+Ein besonderer Fokus liegt dabei auf einem Mobile-First-Ansatz, sodass sich die Plattform auf dem Smartphone genauso flüssig wie eine native App nutzen lässt.
+
 Zur Realisierung des Projekts steht ein Gesamtbudget von 250.000 € zur Verfügung.
 Der Betrieb der Anwendung soll auf den Systemen des LRZ erfolgen.
 Die Einführung des neuen ZPA Next Generation ist schrittweise in den nächsten 3 Jahren geplant.
-Zunächst soll die Fächerauswahl umgesetzt werden, danach in mehreren Iterationen die nächst wichtigen Features.
-Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orientiert, soll im Projekt das Vorgehen Scrum angewendet werden.
+Zunächst soll die Fächerauswahl umgesetzt werden, danach folgen in mehreren Iterationen die nächstwichtigen Features.
+Damit sich die Reihenfolge der Umsetzung an der Wichtigkeit der Features orientiert, soll im Projekt das Vorgehen Scrum angewendet werden.
 
 == Architektur Überblick
 
@@ -112,6 +127,28 @@ include::{pumldir}/kontext/kontext-primuss.puml[Kontext Diagramm Primuss]
 |{set:cellbgcolor:!} R 2.037
 |{set:cellbgcolor:#e8e8e8} *Telefon*
 |{set:cellbgcolor:!} +49 89 12653773
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} jan.philipps@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Während der Vorlesungszeit nach vorheriger Absprache (per E-Mail)
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt die Abläufe bei Praktikumseinteilungen, Kursverwaltung, Vorlesungsplanung und Notenvergabe; weiß, welche Übersichten zur Kurs- und Gruppenbelegung benötigt werden und welche Daten mit Nachbarsystemen (z. B. Moodle, Primuss) ausgetauscht werden müssen
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Einfache und übersichtliche Verwaltung von Teilnehmerlisten und Praktikumsgruppen; unkomplizierte Planung von Vorlesungsterminen und Arbeitszeiten; direkte Anbindung an Moodle und Primuss ohne doppelte Datenpflege; stabiles und zuverlässiges System
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Hoch, da Lehrkräfte zu den Hauptnutzern des Systems gehören. Ihr Feedback und ihre Abnahme sind wichtig für den Projekterfolg, da sie das Wissen über die täglichen Abläufe in der Lehre einbringen.
+|===
+
+=== Prof. Jan Philipps (Lehrende / Professoren)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Vertreter der Lehrkräfte; Ansprechpartner für Anforderungen aus Sicht der Lehrenden sowie für Qualitäts- und Architekturfragen
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 2.037
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Email*
 |{set:cellbgcolor:!} jan.philipps@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
@@ -276,6 +313,28 @@ include::{pumldir}/kontext/kontext-primuss.puml[Kontext Diagramm Primuss]
 |{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
 |{set:cellbgcolor:#e8e8e8} *Relevanz*
 |{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
+|===
+
+=== API-User
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Nutzer wie Studierende oder Lehrende sowie deren automatisierte Clients und KI-Agenten, die das ZPA über die API im Rahmen ihrer jeweiligen Rollenberechtigungen nutzen; Ansprechpartner für Anforderungen an die Schnittstelle
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Nach Absprache, automatisierte Zugriffe erfolgen durchgehend
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt die typischen Abläufe seiner jeweiligen Rolle, die automatisiert werden sollen; tiefes Programmierwissen ist nicht zwingend nötig, da KI-Agenten und externe Tools direkt auf die API-Dokumentation und Schnittstellen zugreifen können
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Eine einfache, stabile und gut dokumentierte API, über die rollenspezifische Aktionen mit GET und POST automatisiert ausgeführt werden können, ohne die Webseite scrapen zu müssen. Großer Funktionsumfang für eigene Workflows und KI-Agenten, etwa zur automatischen Kurseinbuchung und für Wochenübersichten bei Studierenden oder für automatische Benachrichtigungen bei Kursausfällen und fehlenden Abgaben durch Professoren, sowie eine hohe Verfügbarkeit.
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Ermöglicht eine produktivere und schnellere Nutzung des Systems durch eigene Dashboards, KI-Agenten und externe Tools zur Integration. Da es ein Zusatz zu den bestehenden Grundfunktionen ist, ist die Relevanz eher zweitrangig.
 |===
 
 == Rollen
