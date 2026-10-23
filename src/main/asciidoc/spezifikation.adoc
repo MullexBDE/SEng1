@@ -298,7 +298,7 @@ include::{pumldir}/kontext/kontext-primuss.puml[Kontext Diagramm Primuss]
 Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
 
 [plantuml]
-.Systemkontext des ZPA
+.Rollenhierarchie des ZPA
 ----
 include::{pumldir}/rollen/rollen.puml[Vererbungsübersicht]
 ----
@@ -310,20 +310,30 @@ Ein Gast ist ein nicht angemeldeter Nutzer des ZPA. Er benötigt keine Authentif
 +
 Ein Student ist der standardmäßige verifizierte Benutzer des ZPA und meldet sich über Shibboleth an. Er erbt alle Leserechte des Gasts und kann zusätzlich personalisierte Informationen wie den eigenen Stundenplan, die Kursbelegung und Gruppenzuteilungen einsehen. Außerdem kann er sich im Rahmen seines Studiengangs und Fachsemesters für FWP-Fächer, Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an- und abmelden, Kursprioritäten verwalten sowie Benachrichtigungen und den integrierten Chatbot nutzen. Die zulässige Kursauswahl wird anhand der aus Primuss übernommenen Studien- und Prüfungsdaten eingeschränkt.
 * Lehrende
-** Professor
-*** Modulverantwortlicher
-** Lehrbeauftragter
-** Tutor
++
+Ein Lehrender umfasst alle unterrichtenden Personen der Fakultät und erbt alle Leserechte des Gasts. Lehrende authentifizieren sich über Shibboleth und verwalten ihre zugeordneten Lehrveranstaltungen, Vorlesungen, Übungen und Praktika. Sie können Teilnehmerlisten und Gruppeneinteilungen ihrer Kurse einsehen, Sprechstundentermine hinterlegen und Testate erfassen, die als Prüfungsvoraussetzung automatisch an Primuss übermittelt werden. Zudem werden Kurs- und Gruppendaten zur Bereitstellung der Kursräume kontinuierlich mit Moodle synchronisiert.
+* Professor
++
+Ein Professor ist ein fest an der Fakultät für Informatik und Mathematik angestelltes Mitglied der Lehrer und erbt alle Rechte der Lehrenden. Professoren leiten Lehrveranstaltungen eigenverantwortlich und besitzen umfassende Verwaltungsrechte für ihre Lehrangebote. Sie können Tutoren für ihre Praktika und Übungen einteilen, Testate verbindlich freigeben sowie Raum- und Ressourcenbuchungen an der Fakultät vornehmen. Darüber hinaus bringen sie fachliche Anforderungen in die Semester- und Curriculumsplanung ein.
+* Modulverantwortlicher
++
+Der Modulverantwortliche ist ein Professor mit übergeordneter Verantwortung für ein gesamtes Modul des Studienplans und erbt alle Rechte des Professors. Er definiert und pflegt die modulspezifischen Rahmenbedingungen wie Modulbeschreibungen, Lehrinhalte, Gruppengrößen und Zulassungskriterien. Zudem koordiniert er die beteiligten Dozenten und Lehrbeauftragten, überwacht die gleichmäßige Auslastung aller Kursgruppen innerhalb des Moduls und fungiert als primärer Ansprechpartner für das Studiendekanat und Studierende bei modulspezifischen Fragen.
+* Lehrbeauftragter
++
+Ein Lehrbeauftragter ist eine (externe) Lehrkraft, die im Rahmen eines Lehrauftrags spezifische Lehrveranstaltungen an der Fakultät durchführt, und erbt alle Rechte der Lehrenden. Seine Berechtigungen sind strikt auf die ihm zugewiesenen Lehrveranstaltungen beschränkt. Ein Lehrbeauftragter kann Teilnehmerlisten und Einteilungen seiner Kurse einsehen, Sprechstunden hinterlegen sowie Testate für die eigenen Studierenden eintragen. Zugriff auf fakultätsweite Verwaltungsabläufe oder weiterführende Planungswerkzeuge besteht nicht.
+* Tutor
++
+Ein Tutor ist eine studentische Hilfskraft (in der Regel ein höhersemestriger Student), die Lehrkräfte bei der Betreuung und Durchführung von Praktika, Übungen oder Seminaren unterstützt. Er besitzt primär alle Rechte der Rolle Student und erhält für die ihm zugewiesenen Übungs- und Praktikumsgruppen zusätzliche, auf die Betreuung beschränkte Rechte. Er kann Teilnehmerlisten abrufen, Anwesenheiten erfassen sowie studentische Abgaben zur Vorbereitung der Testatvergabe durch den verantwortlichen Professor prüfen und vorbewerten. Eigene Lehrveranstaltungen verwalten oder Testate verbindlich erteilen darf er nicht.
 * Sachbearbeiter
-** Sekretär
-** Fakultätsmitarbeiter
-** Facilitymanager
-** Securitymanager
-** Prüfungsplaner
-** Stundenplaner
+* Sekretär
+* Fakultätsmitarbeiter
+* Facilitymanager
+* Securitymanager
+* Prüfungsplaner
+* Stundenplaner
 * ZPA-Admin
-** Developer
-** Dailymanager
+* Developer
+* Dailymanager
 
 == Funktionale Anforderungen
 

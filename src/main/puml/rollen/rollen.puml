@@ -38,11 +38,11 @@ actor Developer
 actor "Dailymanager" as DailyManager
 
 Gast <|-- Student
-Student <|-- Lehrende
+Student <|-- Tutor
+Gast <|-- Lehrende
 Lehrende <|-- Professor
 Professor <|-- Modulverantwortlicher
 Lehrende <|-- Lehrbeauftragter
-Lehrende <|-- Tutor
 
 Gast <|-- Sachbearbeiter
 Sachbearbeiter <|-- Securitymanager
