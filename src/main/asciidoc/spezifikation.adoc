@@ -346,8 +346,14 @@ Ein Prüfungsplaner organisiert die Prüfungszeiträume der Fakultät und erbt a
 +
 Ein Stundenplaner ist für die Erstellung der Stundenpläne der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er generiert die Stundenpläne mit der fakultätsinternen Anwendung StundenPLAN 1.0 und importiert sie anschließend in das ZPA. Dabei ordnet er Lehrveranstaltungen, Lehrende und Räume den Zeitslots zu und prüft den Plan auf Überschneidungen innerhalb der Studiengänge und Fachsemester. Nach der Prüfung veröffentlicht er die Stundenpläne für Studierende und Lehrende und pflegt spätere Änderungen wie Raumwechsel oder Terminverschiebungen ein, über die die Betroffenen automatisch benachrichtigt werden.
 * ZPA-Admin
++
+Ein ZPA-Admin ist ein Systemadministrator aus dem IT-Operations-Team der Hochschule oder Fakultät und verfügt neben den Gastrechten über mehr Befugnisse. Er ist für die technische Gesamtverwaltung und den stabilen Systembetrieb des ZPA verantwortlich. Über einen administrativen Zugang verwaltet er Benutzerkonten, Rollen und Berechtigungen. In fachliche Lehr- und Prüfungsinhalte greift er nicht ein.
 * Developer
++
+Ein Developer ist ein Softwareentwickler oder technischer Betreuer der Plattform und erbt alle Rechte des ZPA-Admins. Er ist für die Weiterentwicklung, Fehlerbehebung und funktionale Erweiterung des ZPA Next Generation zuständig. Neben den administrativen Standardrechten besitzt er erweiterten Zugriff auf Entwicklungs- und Testumgebungen. Ein Developer implementiert und testet neue Systemfunktionen und Schnittstellen (wie REST-APIs und MCP). Direkte Eingriffe in die Produktionsdatenbank führt er ausschließlich im Rahmen autorisierter Wartungsarbeiten durch.
 * Dailymanager
++
+Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesgeschäft des ZPA zuständig und erbt alle Rechte des ZPA-Admins. Sein Schwerpunkt liegt auf der Sicherstellung reibungsloser täglicher Betriebsabläufe sowie dem First- und Second-Level-Support bei operativen Problemen im Hochschulalltag. Bei Problemen greift er manuell ein, stößt fehlerhafte Jobs erneut an und unterstützt Studierende, Lehrende sowie Sachbearbeiter bei akuten Anliegen im laufenden Semesterbetrieb.
 
 == Funktionale Anforderungen
 
