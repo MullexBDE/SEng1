@@ -1,0 +1,77 @@
+@startuml
+
+top to bottom direction
+
+skinparam nodesep 40
+skinparam ranksep 60
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  ArrowColor black
+  FontName Arial Unicode MS
+  FontSize 16
+}
+
+skinparam rectangle {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+}
+
+actor Gast
+actor Student
+actor Lehrende
+actor Professor
+actor Modulverantwortlicher
+actor Lehrbeauftragter
+actor Tutor
+actor Sachbearbeiter
+actor Sekretär
+actor Fakultätsmitarbeiter
+actor Facilitymanager
+actor Securitymanager
+actor Prüfungsplaner
+actor Stundenplaner
+actor "ZPA-Admin" as ZPAAdmin
+actor Developer
+actor "Dailymanager" as DailyManager
+
+Gast <|-- Student
+Student <|-- Tutor
+Gast <|-- Lehrende
+Lehrende <|-- Professor
+Professor <|-- Modulverantwortlicher
+Lehrende <|-- Lehrbeauftragter
+
+Gast <|-- Sachbearbeiter
+Sachbearbeiter <|-- Securitymanager
+Sachbearbeiter <|-- Sekretär
+Sachbearbeiter <|-- Fakultätsmitarbeiter
+Sachbearbeiter <|-- Facilitymanager
+Sachbearbeiter <|-- Prüfungsplaner
+Sachbearbeiter <|-- Stundenplaner
+
+Gast <|-- ZPAAdmin
+ZPAAdmin <|-- Developer
+ZPAAdmin <|-- DailyManager
+
+' Layout: Student in der Mitte, Sachbearbeiter rechts neben ZPA-Admin.
+rectangle "                    " as StudentGap
+rectangle "                    " as SachbearbeiterGap
+rectangle "                    " as LehrendeGap
+rectangle "                    " as DeveloperGap
+rectangle "                    " as SecuritymanagerGap
+
+Student -[hidden]right- StudentGap
+StudentGap -[hidden]right- ZPAAdmin
+ZPAAdmin -[hidden]right- SachbearbeiterGap
+SachbearbeiterGap -[hidden]right- Sachbearbeiter
+Lehrende -[hidden]right- LehrendeGap
+LehrendeGap -[hidden]right- DailyManager
+Developer -[hidden]right- DailyManager
+Developer -[hidden]right- DeveloperGap
+DeveloperGap -[hidden]right- SecuritymanagerGap
+SecuritymanagerGap -[hidden]right- Securitymanager
+
+@enduml

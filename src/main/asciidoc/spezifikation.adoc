@@ -9,38 +9,113 @@ include::{docdir}/locale/attributes-de.adoc[]
 :sectnums:
 :partnums:
 
-== Einleitung
+== Einleitung und Systemidee
 
-An der Fakultät für Informatik und Mathematik ist eine Neuentwicklung des bisherigen ZPA-Systems geplant.
-Ziel ist es eine einheitliche und benutzerfreundliche Plattform zu entwickeln, die allen Beteiligten eine Erleichterung bewirkt.
-Im bisherigen ZPA-System können sich Studierende für FWP-Fächer, praxisbegleitenden Unterricht, Praktikumsgruppen und Seminare eintragen.
+An der Fakultät für Informatik und Mathematik (FK07) ist eine Neuentwicklung des bisherigen ZPA-Systems unter dem Namen „ZPA Next Generation“ geplant, welches das bestehende System ablöst.
+Ziel ist es, eine einheitliche und benutzerfreundliche Plattform zu entwickeln, die allen Beteiligten den Hochschulalltag erleichtert.
+Im bisherigen ZPA-System können sich Studierende für FWP-Fächer, praxisbegleitenden Unterricht (PLV), Praktikumsgruppen und Seminare eintragen.
 Lehrkräfte nutzen es, um die Einteilung der Praktikumsgruppen abzurufen oder den Stundenplan anzuzeigen.
-Das Dekanatsteam verschafft sich mithilfe des Systems einen Überblick über die Auslastung und Verteilung der Kursteilnehmer.
-Admins haben die Möglichkeit, Kurse und Räume zu verwalten.
+Das Dekanatsteam und die Sachbearbeiter der Fakultät verschaffen sich mithilfe des Systems einen Überblick über die Auslastung und Verteilung der Kursteilnehmer sowie über die Arbeitszeiten.
+ZPA-Admins haben die Möglichkeit, Kurse, Räume, Rollen und den Systembetrieb zu verwalten.
 
-Da eine Anbindung weitere Systeme an das aktuelle System technisch nicht machbar erscheint, soll eine Neuentwicklung eine offenere Plattform für weitere Systeme schaffen.
-Folgende Systeme sollen u.a. integriert werden:
+Für die Nutzerinnen und Nutzer soll das neue System den Funktionsumfang sinnvoll erweitern und typische Hürden beseitigen:
 
-* Primuss: hochschulweites System zur Verwaltung der Noten
-* Moodle: hochschulweite Lernplattform
+* *Studierende & Erstsemester:* Vereinfachte, visuelle Tools zur Stundenplanung ermöglichen ein unkompliziertes Einwählen in Fächer (z. B. über Kursprioritäten bei FWP-Fächern) und Praktikumsgruppen, ohne dass es zu zeitlichen Überschneidungen kommt. Studierende können ihre Kursbelegung eigenständig verwalten, sehen wichtige Termine und Fristen direkt aufgelistet und finden leichter Kontaktinformationen sowie Sprechstunden der Lehrenden. Für Erstsemester ist der Einstieg klar und verständlich aufgebaut. Zudem hilft ein integrierter KI-Chatbot auf der Webseite direkt bei Fragen zu Kursen oder dem Stundenplan.
+* *Gäste & Studieninteressierte:* Das System bietet ohne Login einen übersichtlichen ersten Anlaufpunkt mit einer Suchfunktion für öffentliche Kurs- und Rauminformationen.
+* *Lehrende & Sachbearbeiter:* Lehrende können ihre Kursdaten, Sprechstunden, Teilnehmerlisten und Testate für die Prüfungszulassung übersichtlich an einem Ort verwalten. Sachbearbeiter profitieren von einer gebündelten Pflege der Stundenpläne, Raumdaten und Arbeitszeiten.
 
-Zudem weist das aktuelle System zahlreiche Fehler auf und hält den Ansturm der Studierenden nicht immer statt.
-Das System soll auch benutzerfreundlicher werden und eine moderne Benutzeroberfläche bekommen, die auf verschiedensten Plattformen nutzbar ist.
+Da eine Anbindung weiterer Systeme an das aktuelle System technisch nicht machbar erscheint, soll die Neuentwicklung eine offenere Plattform schaffen.
+Folgende Nachbarsysteme sollen integriert werden:
+
+* *Shibboleth:* zentraler Authentifizierungsdienst der Hochschule München für den sicheren Login
+* *Primuss:* hochschulweites System zur Verwaltung der Prüfungsanmeldungen und Noten (Lieferung von Studierendendaten und bestandenen Modulen sowie Übermittlung von Testaten als Prüfungszulassung)
+* *Moodle:* hochschulweite Lernplattform (automatische Übertragung der Kurse und Gruppenzuteilungen)
+* *StundenPLAN 1.0:* interne Anwendung der FK07 zum Generieren und Importieren von Stundenplänen
+* *SMTP-Server des LRZ:* E-Mail-Service zum automatischen Versenden von Benachrichtigungen (z. B. bei Gruppenzuteilungen oder Kursausfällen)
+* *KI-Service des LRZ:* lokal beim LRZ betriebenes KI-Modell für den integrierten Chatbot, sodass keine personenbezogenen Daten an externe Anbieter abfließen
+
+Darüber hinaus soll das System offene Schnittstellen wie eine REST-API und MCP-Unterstützung bereitstellen, damit Nutzer eigene KI-Agenten, Dashboards und Automatisierungen im Rahmen ihrer jeweiligen Berechtigungen anbinden können.
+
+Zudem weist das aktuelle System zahlreiche Fehler auf und hält dem Ansturm der Studierenden nicht immer stand.
+Gerade bei der Veröffentlichung der Stundenpläne oder der Wahl und Umbelegung von Fächern kommt es regelmäßig zu Ausfällen.
+Das neue System soll daher deutlich stabiler und benutzerfreundlicher werden sowie ein modernes, aufgeräumtes und barrierefreies Design erhalten.
+Ein besonderer Fokus liegt dabei auf einem Mobile-First-Ansatz, sodass sich die Plattform auf dem Smartphone genauso flüssig wie eine native App nutzen lässt.
+
 Zur Realisierung des Projekts steht ein Gesamtbudget von 250.000 € zur Verfügung.
 Der Betrieb der Anwendung soll auf den Systemen des LRZ erfolgen.
 Die Einführung des neuen ZPA Next Generation ist schrittweise in den nächsten 3 Jahren geplant.
-Zunächst soll die Fächerauswahl umgesetzt werden, danach in mehreren Iterationen die nächst wichtigen Features.
-Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orientiert, soll im Projekt das Vorgehen Scrum angewendet werden.
+Zunächst soll die Fächerauswahl umgesetzt werden, danach folgen in mehreren Iterationen die nächstwichtigen Features.
+Damit sich die Reihenfolge der Umsetzung an der Wichtigkeit der Features orientiert, soll im Projekt das Vorgehen Scrum angewendet werden.
 
 == Architektur Überblick
 
+Das ZPA System ist in die Systemlandschaft der Hochschule München eingebettet und tauscht Daten mit Nachbarsystemen aus.
+
+=== Gesamtübersicht
+
+Die Gesamtübersicht zeigt alle Akteure und Nachbarsysteme des ZPA mit ihren wichtigsten Datenflüssen.
+
+[plantuml]
+.Systemkontext des ZPA
+----
+include::{pumldir}/kontext/kontext-gesamt.puml[Systemkontext des ZPA]
+----
+
+=== Kontext Student
+
+Studierende wählen im ZPA ihre FWP-Fächer über Kursprioritäten und melden sich für Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an oder ab.
+Die Anmeldung erfolgt über Shibboleth, das dem ZPA nach erfolgreicher Authentifizierung ein Zugangstoken übermittelt.
+Aus Primuss erhält das ZPA Studiengang, Fachsemester und bereits bestandene Module, um die Auswahl der Kurse auf zulässige Fächer zu beschränken.
+Das ZPA liefert den Studierenden ihren persönlichen Stundenplan sowie ihre Kursbelegung und Gruppenzuteilung.
+Die Gruppenzuteilung wird an Moodle weitergegeben, damit Studierende automatisch in die passenden Moodle-Kurse eingetragen werden.
+Benachrichtigungen, z.B. über eine Zuteilung oder einen Kursausfall, versendet das ZPA per E-Mail über den SMTP-Server des LRZ.
+Über einen im ZPA integrierten Chatbot können Studierende Fragen stellen, etwa zu ihren Kursen oder ihrem Stundenplan.
+Das ZPA reichert die Frage mit den passenden Kontextdaten an und leitet sie an ein KI-Modell weiter, das vom LRZ gehostet wird.
+Die generierte Antwort wird den Studierenden im ZPA angezeigt.
+Da das Modell beim LRZ betrieben wird, werden personenbezogene Daten nicht an kommerzielle KI-Anbieter übermittelt.
+
+[plantuml]
+.Kontext Diagramm Student
+----
+include::{pumldir}/kontext/kontext-student.puml[Kontext Diagramm Student]
+----
+
+=== Kontext Primuss
+
+Primuss ist das hochschulweite System zur Verwaltung der Prüfungsanmeldungen und Noten.
+Primuss stellt dem ZPA die Stammdaten der Studierenden (Matrikelnummer, Studiengang, Fachsemester), bestandene Module mit Noten sowie die Prüfungsanmeldungen bereit.
+An Primuss übermittelt das ZPA ausschließlich die von den Lehrenden im ZPA erfassten Testate, die als Prüfungszulassung dienen.
+Die Prüfungsanmeldung durch Studierende und die Notenvergabe durch Lehrende erfolgen weiterhin direkt in Primuss.
+
+[plantuml]
+.Kontext Diagramm Primuss
+----
+include::{pumldir}/kontext/kontext-primuss.puml[Kontext Diagramm Primuss]
+----
+
 == Stakeholder
 
-* Studenten
-* Professoren
-* ZPA-Admin
-* Fakultät
-* API-User
+=== Louis Vietmeier (Studierende)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Vertretung der Studierenden durch die Fachschaft; Endnutzer des Systems, der sich für FWP-Fächer, Praktikumsgruppen und Seminare anmeldet und Informationen wie Stundenplan und Gruppeneinteilung abruft; Ansprechpartner für Anforderungen aus Sicht der Studierenden
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R0.012 (Fachschaftsraum)
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12653777
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} fachschaftsleitung@fs.cs.hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} grundsätzlich während der Unizeiten Mo–Fr 10:00 – 15:00 Uhr
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Bedürfnisse, welche Informationen von dem System bereitgestellt werden müssen. Erfahrungswerte mit Studienmanagement-Systemen
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Zuverlässige, intuitiv bedienbare Plattform, die auch beim Ansturm zu Anmeldebeginn stabil läuft und mobil nutzbar ist; faire und transparente Anmeldung mit klaren Fristen und Wartelisten; Stundenplan und Gruppeneinteilung an einem Ort; verständliche Fehlermeldungen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Kennt Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Hauptnutzer des neuen Systems sein. Relevanz daher hoch.
+|===
 
 === Prof. Jan Philipps (Lehrende / Professoren)
 
@@ -51,7 +126,7 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:#e8e8e8} *Raum*
 |{set:cellbgcolor:!} R 2.037
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} +49 89 12653773
 |{set:cellbgcolor:#e8e8e8} *Email*
 |{set:cellbgcolor:!} jan.philipps@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
@@ -77,7 +152,7 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:#e8e8e8} *Email*
 |{set:cellbgcolor:!} klaus.dietrichs@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
-|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr Bevorzugter Kontaktweg: Email
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr. Bevorzugter Kontaktweg: Email
 |{set:cellbgcolor:#e8e8e8} *Wissen*
 |{set:cellbgcolor:!} Herr Dietrichs ist fachlich verantwortlich für die Stundenpläne und die Arbeitszeiten der Professoren. Er ist außerdem Ansprechpartner für organisatorische Anliegen der Studierenden. Er hat außerdem Einblick in die Auslastung und Verteilung der Kursteilnehmer. Die Abläufe im bisherigen ZPA kennt er aus der täglichen Nutzung.
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
@@ -86,40 +161,106 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:!} Die Fakultät gehört zu den Hauptnutzergruppen des ZPA. Herrn Dietrichs' Feedback fließt deshalb mit hoher Priorität in die Anforderungen und die Reihenfolge der Features ein. Da er die Fakultät allein vertritt, sollten seine Aussagen bei zentralen Entscheidungen zusätzlich mit weiteren Fakultätsmitarbeitern abgeglichen werden.
 |===
 
-=== ZPA Admin
+=== Dr. Sabine Hartmann (Datenschutzbeauftragter)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
-|{set:cellbgcolor:!} Systemadministrator, Vertreter des / Schnittstelle zum IT-Operations Team der HM
+|{set:cellbgcolor:!} Datenschutzbeauftragte der HM; Ansprechpartnerin für datenschutzrechtliche Anforderungen an das ZPA und für die Freigabe der Verarbeitung personenbezogener Daten
 |{set:cellbgcolor:#e8e8e8} *Raum*
-|{set:cellbgcolor:!} R 0.009
+|{set:cellbgcolor:!} R 0.016
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!} 089 99998123
+|{set:cellbgcolor:!} +49 871 2054940
 |{set:cellbgcolor:#e8e8e8} *Email*
-|{set:cellbgcolor:!} zpa.admin@hm.edu
+|{set:cellbgcolor:!} datenschutzbeauftragter@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
-|{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
+|{set:cellbgcolor:!} Mo-Do 09:00 - 15:00 Uhr, bevorzugt nach vorheriger Terminvereinbarung per E-Mail
 |{set:cellbgcolor:#e8e8e8} *Wissen*
-|{set:cellbgcolor:!} Tiefgehendes Wissen über die Architektur/Betrieb des bisherigen ZPA-Systems, benötigte Schnittstellen zu Nachbarsystemen (Shibboleth, ...) und Betriebsabläufe
+|{set:cellbgcolor:!} Kennt die Anforderungen der DSGVO und des Bayerischen Datenschutzgesetzes, die Vorgaben der HM zum Umgang mit Studierenden- und Beschäftigtendaten sowie die Anforderungen an Auftragsverarbeitung, Löschkonzepte und Zugriffsprotokollierung. Weiß, welche Daten bei der Anbindung von Primuss und Moodle übertragen werden dürfen.
 |{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
-|{set:cellbgcolor:!} Wartungsarme, zuverlässige Plattform (insbesondere bei hoher Auslastung zu Semesterbeginn Scaling), intuitives Rollen- und Rechtesystem, Logging, Monitoring, einfache Adminstration, schneller und zuverlässiger Support bei Problemen
+|{set:cellbgcolor:!} Datensparsamkeit und Zweckbindung bei allen gespeicherten Daten; nachvollziehbares Rollen- und Rechtekonzept; definierte Aufbewahrungs- und Löschfristen; Protokollierung von Zugriffen auf personenbezogene Daten; datenschutzkonformer Betrieb auf den Systemen des LRZ und bei der Nutzung der API
 |{set:cellbgcolor:#e8e8e8} *Relevanz*
-|{set:cellbgcolor:!} Kennt technische Details und Probleme des bisherigen Systems (ggf. wertvolle Erfahrung/Learnings), wird Betreuer des neuen Systems sein. Relevanz daher sehr hoch.
+|{set:cellbgcolor:!} Hoch, da das System personenbezogene Daten von Studierenden und Lehrenden verarbeitet. Ohne ihre Freigabe ist ein Produktivbetrieb nicht möglich. Datenschutzanforderungen sollten daher früh im Projekt berücksichtigt werden, nicht erst kurz vor der Einführung.
 |===
 
-=== API-User
+=== Prof. Dr. Edda Eich-Söllner (Prüfungsausschuss)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Vorsitzende des Prüfungsausschusses; Ansprechpartner für Anforderungen aus Sicht der Prüfungsorganisation, etwa Anmeldefristen, Zulassungsvoraussetzungen und Prüfungsanmeldungen
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 3.027
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12653729
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} edda.eich@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr. Bevorzugter Kontaktweg: Email
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt die Studien- und Prüfungsordnungen, die Regeln zu Zulassung, Wiederholung, Nachteilsausgleich und Fristen sowie die Entscheidungsprozesse des Prüfungsausschusses. Weiß, welche Voraussetzungen vor einer Prüfungsanmeldung erfüllt sein müssen und welche Daten dazu aus Primuss benötigt werden.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Korrekte und regelkonforme Umsetzung der Prüfungsordnungen im System; automatische Prüfung von Zulassungsvoraussetzungen und Fristen; nachvollziehbare Dokumentation von Anmeldungen und Änderungen; keine Widersprüche zwischen ZPA und Primuss
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Mittel bis hoch. Das System muss die rechtlichen Vorgaben der Prüfungsordnungen einhalten, sonst drohen Anfechtungen von Prüfungsergebnissen oder Anmeldungen. Eine Abstimmung ist vor allem bei Funktionen mit Prüfungsbezug nötig.
+|===
+
+=== Prof. Dr. Martin Leitner (Universitätsvertretung)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Präsident der HM und Vertreter der Hochschulleitung; Auftraggeber auf Leitungsebene und Ansprechpartner für strategische Entscheidungen zum ZPA Next Generation, etwa Budget, Gesamtzeitplan und Betrieb auf den Systemen des LRZ
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 0.016
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12655907
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} praesident@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Mo-Fr 08:00-12:00 Uhr und 13:00-15:30 Uhr. Bevorzugter Kontaktweg: Email
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt die strategischen Ziele der HM, die Digitalisierungsstrategie der Hochschule sowie die organisatorischen und rechtlichen Rahmenbedingungen für hochschulweite IT-Systeme. Überblickt die Zusammenarbeit mit dem LRZ und die Verfügbarkeit von Haushaltsmitteln. Kennt die Abläufe in den Hochschulgremien und die Anforderungen der Fakultäten an das System.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Ein zuverlässiges, modernes System, das Studierenden, Lehrenden und der Verwaltung den Alltag erleichtert und den Ruf der HM als moderne Hochschule stärkt; Einhaltung des Gesamtbudgets von 250.000 € und des Zeitplans von 3 Jahren; stabiler Betrieb auch bei hoher Last zu Semesterbeginn; Anbindung an hochschulweite Systeme wie Primuss und Moodle; Einhaltung von Datenschutz und IT-Sicherheit; Übertragbarkeit der Lösung auf andere Fakultäten
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Hoch. Der Präsident hat die höchste Entscheidungsbefugnis im Projektumfeld, gibt Budget und Betrieb frei und kann Prioritäten setzen. Er ist im Tagesgeschäft nicht beteiligt, sollte aber in regelmäßigen Abständen, etwa nach größeren Meilensteinen wie der Fächerauswahl, über Fortschritt, Kosten und Risiken informiert werden.
+|===
+
+=== Prof. Dr. Matthias Bauer (Studiengangsleitung)
+
+[cols="3,9"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Projektrolle*
+|{set:cellbgcolor:!} Leiter des Studiengangs Geodata Science; Ansprechpartner für Anforderungen zur Studienorganisation, zur Verteilung der Kursteilnehmer und zur Planung des Lehrangebots
+|{set:cellbgcolor:#e8e8e8} *Raum*
+|{set:cellbgcolor:!} R 4.018
+|{set:cellbgcolor:#e8e8e8} *Telefon*
+|{set:cellbgcolor:!} +49 89 12653714
+|{set:cellbgcolor:#e8e8e8} *Email*
+|{set:cellbgcolor:!} matthias.bauer@hm.edu
+|{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
+|{set:cellbgcolor:!} Während der Vorlesungszeit Mi 13:00 - 15:00 Uhr, sonst nach vorheriger Absprache per E-Mail
+|{set:cellbgcolor:#e8e8e8} *Wissen*
+|{set:cellbgcolor:!} Kennt den Aufbau und die Inhalte des Studiengangs, die Modulplanung und die Kapazitäten bei Praktika, FWP-Fächern und Seminaren. Weiß, wie viele Plätze pro Semester benötigt werden und an welchen Stellen es regelmäßig zu Engpässen kommt.
+|{set:cellbgcolor:#e8e8e8} *Interessen und Ziele*
+|{set:cellbgcolor:!} Übersichtliche Auswertungen zu Auslastung und Verteilung der Kursteilnehmer als Grundlage für die Planung des Lehrangebots; verlässliche Anmeldung für alle Studierenden; geringer Verwaltungsaufwand für Lehrende und Fakultät; Unterstützung der Studienorganisation, etwa durch die Berücksichtigung von Studienverlaufsplänen
+|{set:cellbgcolor:#e8e8e8} *Relevanz*
+|{set:cellbgcolor:!} Hoch. Die Studiengangsleitung trägt die Verantwortung für die Qualität der Lehre und kann Anforderungen an Auswertungen und Verteilungsregeln fachlich priorisieren. Ihre Unterstützung ist wichtig für die Akzeptanz des Systems in der Fakultät.
+|===
+
+=== Claude Amodei (API-User)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
 |{set:cellbgcolor:!} Nutzer wie Studierende oder Lehrende sowie deren automatisierte Clients und KI-Agenten, die das ZPA über die API im Rahmen ihrer jeweiligen Rollenberechtigungen nutzen; Ansprechpartner für Anforderungen an die Schnittstelle
 |{set:cellbgcolor:#e8e8e8} *Raum*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} R3.046
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} +49 89 99998205
 |{set:cellbgcolor:#e8e8e8} *Email*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} claude.amodei@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
 |{set:cellbgcolor:!} Nach Absprache, automatisierte Zugriffe erfolgen durchgehend
 |{set:cellbgcolor:#e8e8e8} *Wissen*
@@ -130,18 +271,18 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 |{set:cellbgcolor:!} Ermöglicht eine produktivere und schnellere Nutzung des Systems durch eigene Dashboards, KI-Agenten und externe Tools zur Integration. Da es ein Zusatz zu den bestehenden Grundfunktionen ist, ist die Relevanz eher zweitrangig.
 |===
 
-=== ZPA Admin
+=== Thomas Vogler (ZPA Admin)
 
 [cols="3,9"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Projektrolle*
 |{set:cellbgcolor:!} Systemadministrator, Vertreter des / Schnittstelle zum IT-Operations Team der HM
 |{set:cellbgcolor:#e8e8e8} *Raum*
-|{set:cellbgcolor:!} R 0.009
+|{set:cellbgcolor:!} R 1.017
 |{set:cellbgcolor:#e8e8e8} *Telefon*
-|{set:cellbgcolor:!} 089 99998123
+|{set:cellbgcolor:!} +49 89 12653718
 |{set:cellbgcolor:#e8e8e8} *Email*
-|{set:cellbgcolor:!} zpa.admin@hm.edu
+|{set:cellbgcolor:!} zpa-fk07@hm.edu
 |{set:cellbgcolor:#e8e8e8} *Verfügbarkeit*
 |{set:cellbgcolor:!} grundsätzlich während der Arbeitszeiten Mo–Fr 09:00 – 16:00 Uhr
 |{set:cellbgcolor:#e8e8e8} *Wissen*
@@ -156,19 +297,57 @@ Damit die Reihenfolge der Umsetzung sich an der Wichtigkeit der Features orienti
 
 Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen relevant.
 
+[plantuml]
+.Rollenhierarchie des ZPA
+----
+include::{pumldir}/rollen/rollen.puml[Vererbungsübersicht]
+----
+
 * Gast
++
+Ein Gast ist ein nicht angemeldeter Nutzer des ZPA. Er benötigt keine Authentifizierung und darf ausschließlich öffentlich freigegebene Informationen einsehen, insbesondere Kurs- und Rauminformationen. Personenbezogene oder studiengangsbezogene Daten sowie Funktionen zur Änderung von Kursbelegungen stehen Gästen nicht zur Verfügung.
 * Student
++
+Ein Student ist der standardmäßige verifizierte Benutzer des ZPA und meldet sich über Shibboleth an. Er erbt alle Leserechte des Gasts und kann zusätzlich personalisierte Informationen wie den eigenen Stundenplan, die Kursbelegung und Gruppenzuteilungen einsehen. Außerdem kann er sich im Rahmen seines Studiengangs und Fachsemesters für FWP-Fächer, Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an- und abmelden, Kursprioritäten verwalten sowie Benachrichtigungen und den integrierten Chatbot nutzen. Die zulässige Kursauswahl wird anhand der aus Primuss übernommenen Studien- und Prüfungsdaten eingeschränkt.
 * Lehrende
-** intern
-** extern
++
+Ein Lehrender umfasst alle unterrichtenden Personen der Fakultät und erbt alle Leserechte des Gasts. Lehrende authentifizieren sich über Shibboleth und verwalten ihre zugeordneten Lehrveranstaltungen, Vorlesungen, Übungen und Praktika. Sie können Teilnehmerlisten und Gruppeneinteilungen ihrer Kurse einsehen, Sprechstundentermine hinterlegen und Testate erfassen, die als Prüfungsvoraussetzung automatisch an Primuss übermittelt werden. Zudem werden Kurs- und Gruppendaten zur Bereitstellung der Kursräume kontinuierlich mit Moodle synchronisiert.
+* Professor
++
+Ein Professor ist ein fest an der Fakultät für Informatik und Mathematik angestelltes Mitglied der Lehrer und erbt alle Rechte der Lehrenden. Professoren leiten Lehrveranstaltungen eigenverantwortlich und besitzen umfassende Verwaltungsrechte für ihre Lehrangebote. Sie können Tutoren für ihre Praktika und Übungen einteilen, Testate verbindlich freigeben sowie Raum- und Ressourcenbuchungen an der Fakultät vornehmen. Darüber hinaus bringen sie fachliche Anforderungen in die Semester- und Curriculumsplanung ein.
+* Modulverantwortlicher
++
+Der Modulverantwortliche ist ein Professor mit übergeordneter Verantwortung für ein gesamtes Modul des Studienplans und erbt alle Rechte des Professors. Er definiert und pflegt die modulspezifischen Rahmenbedingungen wie Modulbeschreibungen, Lehrinhalte, Gruppengrößen und Zulassungskriterien. Zudem koordiniert er die beteiligten Dozenten und Lehrbeauftragten, überwacht die gleichmäßige Auslastung aller Kursgruppen innerhalb des Moduls und fungiert als primärer Ansprechpartner für das Studiendekanat und Studierende bei modulspezifischen Fragen.
+* Lehrbeauftragter
++
+Ein Lehrbeauftragter ist eine (externe) Lehrkraft, die im Rahmen eines Lehrauftrags spezifische Lehrveranstaltungen an der Fakultät durchführt, und erbt alle Rechte der Lehrenden. Seine Berechtigungen sind strikt auf die ihm zugewiesenen Lehrveranstaltungen beschränkt. Ein Lehrbeauftragter kann Teilnehmerlisten und Einteilungen seiner Kurse einsehen, Sprechstunden hinterlegen sowie Testate für die eigenen Studierenden eintragen. Zugriff auf fakultätsweite Verwaltungsabläufe oder weiterführende Planungswerkzeuge besteht nicht.
+* Tutor
++
+Ein Tutor ist eine studentische Hilfskraft (in der Regel ein höhersemestriger Student), die Lehrkräfte bei der Betreuung und Durchführung von Praktika, Übungen oder Seminaren unterstützt. Er besitzt primär alle Rechte der Rolle Student und erhält für die ihm zugewiesenen Übungs- und Praktikumsgruppen zusätzliche, auf die Betreuung beschränkte Rechte. Er kann Teilnehmerlisten abrufen, Anwesenheiten erfassen sowie studentische Abgaben zur Vorbereitung der Testatvergabe durch den verantwortlichen Professor prüfen und vorbewerten. Eigene Lehrveranstaltungen verwalten oder Testate verbindlich erteilen darf er nicht.
 * Sachbearbeiter
-** Sekretär
-** Fakultätsmitarbeiter
-** Facilitymanager
-** Securitymanager
++
+Ein Sachbearbeiter ist ein Mitarbeiter der Fakultät oder der Hochschulverwaltung, der organisatorische Aufgaben im ZPA übernimmt, und erbt alle Leserechte des Gasts. Sachbearbeiter authentifizieren sich über Shibboleth und erhalten fakultätsweiten Lesezugriff auf Kurs-, Raum- und Stundenplandaten sowie auf die Auslastung und Verteilung der Kursteilnehmer. Die Rolle bildet die gemeinsame Grundlage aller Verwaltungsrollen; welche Daten darüber hinaus gepflegt werden dürfen, legen die spezialisierten Rollen fest. Personenbezogene Daten der Studierenden sind nur für die Rollen freigegeben, die sie für ihre Aufgaben benötigen. Lehrveranstaltungen verwalten oder Testate erfassen darf ein Sachbearbeiter nicht.
+* Sekretär
++
+Ein Sekretär ist ein Mitarbeiter des Dekanatssekretariats und erbt alle Rechte des Sachbearbeiters. Er ist die erste Anlaufstelle der Fakultät für Studierende, Lehrende und Gäste und nutzt das ZPA vor allem, um Auskünfte zu Kursen, Räumen und Ansprechpartnern zu geben. Dazu pflegt er die Kontaktdaten und Öffnungszeiten des Dekanats sowie fakultätsweite Termine und Fristen, die den Studierenden im ZPA direkt angezeigt werden. Änderungen an Kursbelegungen, Stundenplänen oder Prüfungsdaten darf er nicht vornehmen.
+* Fakultätsmitarbeiter
++
+Ein Fakultätsmitarbeiter ist ein Verwaltungsmitarbeiter der Fakultät für Informatik und Mathematik und erbt alle Rechte des Sachbearbeiters. Er ist täglicher Anwender des ZPA und kann die Daten von Professoren und Studierenden einsehen und ändern, um organisatorische Anliegen der Studierenden zu bearbeiten. Zudem pflegt er die Arbeitszeiten der Professoren, die in die Stundenplanung einfließen, stimmt die Stundenpläne fachlich mit dem Stundenplaner ab und vermittelt zwischen den Professoren und der Hochschulverwaltung. Die Erstellung und Veröffentlichung der Stundenpläne selbst übernimmt der Stundenplaner.
+* Facilitymanager
++
+Ein Facilitymanager ist für die Räume der Fakultät und deren Ausstattung zuständig und erbt alle Rechte des Sachbearbeiters. Er pflegt im ZPA die Raumdaten wie Kapazität, technische Ausstattung und Barrierefreiheit, die als Grundlage für die Stunden- und Prüfungsplanung sowie für Raumbuchungen dienen. Bei Wartungs- oder Umbauarbeiten kann er Räume für bestimmte Zeiträume sperren; betroffene Lehrende und Studierende werden darüber automatisch per E-Mail benachrichtigt. Auf personenbezogene Daten der Studierenden hat er keinen Zugriff.
+* Securitymanager
++
+Ein Securitymanager ist für die Sicherheit der Gebäude und Räume der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er nutzt das ZPA, um sich einen Überblick über die Raumbelegungen zu verschaffen, insbesondere über Veranstaltungen außerhalb der regulären Öffnungszeiten. Zudem pflegt er die Schließzeiten der Gebäude und Räume sowie die Zugangsberechtigungen für besonders geschützte Räume wie Labore. Bei Notfällen oder Gefahrenlagen kann er Sperrmeldungen an die betroffenen Lehrenden und Studierenden versenden. Kurs- und Stundenplandaten kann er nicht ändern.
+* Prüfungsplaner
++
+Ein Prüfungsplaner organisiert die Prüfungszeiträume der Fakultät und erbt alle Rechte des Sachbearbeiters. Auf Grundlage der aus Primuss übernommenen Prüfungsanmeldungen legt er im ZPA Prüfungstermine und -räume fest und achtet darauf, dass sich die Prüfungen der angemeldeten Studierenden zeitlich nicht überschneiden. Zudem teilt er die Prüfungsaufsichten ein und veröffentlicht den fertigen Prüfungsplan für Studierende und Lehrende. Die Prüfungsanmeldung und die Notenvergabe erfolgen weiterhin direkt in Primuss und liegen nicht in seinem Zuständigkeitsbereich.
+* Stundenplaner
++
+Ein Stundenplaner ist für die Erstellung der Stundenpläne der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er generiert die Stundenpläne mit der fakultätsinternen Anwendung StundenPLAN 1.0 und importiert sie anschließend in das ZPA. Dabei ordnet er Lehrveranstaltungen, Lehrende und Räume den Zeitslots zu und prüft den Plan auf Überschneidungen innerhalb der Studiengänge und Fachsemester. Nach der Prüfung veröffentlicht er die Stundenpläne für Studierende und Lehrende und pflegt spätere Änderungen wie Raumwechsel oder Terminverschiebungen ein, über die die Betroffenen automatisch benachrichtigt werden.
 * ZPA-Admin
-** Developer
-** Daily Manager
+* Developer
+* Dailymanager
 
 == Funktionale Anforderungen
 
@@ -226,7 +405,26 @@ Historische Informationen aus dem bestehenden System sind nicht relevant und mü
 |{set:cellbgcolor:#e8e8e8} *Begriff*
 |{set:cellbgcolor:#e8e8e8} *Definition*
 
-|{set:cellbgcolor:!} ZPA
+|{set:cellbgcolor:!} FWP
+|Fachwissenschaftliches Wahlpflichtfach
+|Lehrveranstaltung, die Studierende aus einem Angebot von Fächern frei wählen können.
+Die Vergabe der Plätze erfolgt im ZPA anhand der von den Studierenden angegebenen Kursprioritäten.
+
+|LRZ
+|Leibniz-Rechenzentrum
+|Rechenzentrum der Bayerischen Akademie der Wissenschaften und IT-Dienstleister der Münchner Hochschulen.
+Das LRZ betreibt das ZPA, den SMTP-Server für den E-Mail-Versand und den KI-Service für den Chatbot.
+
+|PBLV
+|Praxisbegleitende Lehrveranstaltung
+|Lehrveranstaltung, die Studierende begleitend zum praktischen Studiensemester besuchen und für die sie sich im ZPA anmelden.
+
+|SMTP
+|Simple Mail Transfer Protocol
+|Protokoll zum Versenden von E-Mails.
+Das ZPA versendet Benachrichtigungen über den SMTP-Server des LRZ.
+
+|ZPA
 |Zentrale Praktika Anmeldung
 |Das ZPA System ist eine Webanwendung, die zur Anmeldung und Gruppierung von Studierenden in die Lehrveranstaltungen,
 Praktika, Übungen und sonstigen Veranstaltungen, die an der FK07 stattfinden, dient.

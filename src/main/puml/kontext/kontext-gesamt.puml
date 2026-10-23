@@ -1,0 +1,85 @@
+@startuml
+
+<style>
+document {
+  Margin 30
+}
+</style>
+
+skinparam componentStyle uml2
+hide stereotype
+skinparam defaultTextAlignment center
+
+skinparam actor {
+  BackgroundColor #4AD386
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  ArrowColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+}
+
+skinparam component {
+  BackgroundColor #f8f8f8
+  BorderColor #a0a0a0
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  FontName  Arial Unicode MS
+  FontSize 20
+  ArrowFontName  Arial Unicode MS
+  ArrowFontSize 16
+}
+
+left to right direction
+
+:Gast:
+:Student:
+:Lehrende:
+:Sachbearbeiter:
+:ZPA-Admin: as Admin
+:API-User: as Api
+
+[ZPA] <<Main>>
+
+[Primuss]
+[Moodle]
+[StundenPLAN 1.0] as Stundenplan
+[LRZ\nSMTP-Server] as SMTP
+[Shibboleth]
+[LRZ\nKI-Service] as KI
+
+Gast --> ZPA : Suchanfragen
+Gast <-- ZPA : öffentliche Kurs-\nund Rauminformationen
+
+Student --> ZPA : Fächerwahl,\nKursanmeldungen
+Student <-- ZPA : Stundenplan,\nGruppenzuteilung
+
+Lehrende --> ZPA : Kursdaten,\nSprechstunden
+Lehrende <-- ZPA : Teilnehmerlisten
+
+Sachbearbeiter --> ZPA : Stundenplan-Import,\nArbeitszeiten, Raumdaten
+Sachbearbeiter <-- ZPA : Auslastung,\nKursbelegung
+
+Admin --> ZPA : Kurs-, Raum- und\nRollenverwaltung
+Admin <-- ZPA : Logs,\nMonitoring
+
+Api --> ZPA : API-Anfragen
+Api <-- ZPA : API-Antworten
+
+ZPA --> Primuss : Testate
+ZPA <-- Primuss : Studierendendaten,\nNoten
+
+ZPA --> Moodle : Kurse,\nTeilnehmer
+
+ZPA <-- Stundenplan : generierter\nStundenplan
+
+ZPA --> SMTP : E-Mail-\nNachrichten
+
+ZPA --> Shibboleth : Zugangsdaten
+ZPA <-- Shibboleth : Zugangstoken
+
+ZPA --> KI : Chatanfragen\nmit Kontextdaten
+ZPA <-- KI : Chatantworten
+
+@enduml
