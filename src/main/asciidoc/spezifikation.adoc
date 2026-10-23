@@ -325,12 +325,26 @@ Ein Lehrbeauftragter ist eine (externe) Lehrkraft, die im Rahmen eines Lehrauftr
 +
 Ein Tutor ist eine studentische Hilfskraft (in der Regel ein höhersemestriger Student), die Lehrkräfte bei der Betreuung und Durchführung von Praktika, Übungen oder Seminaren unterstützt. Er besitzt primär alle Rechte der Rolle Student und erhält für die ihm zugewiesenen Übungs- und Praktikumsgruppen zusätzliche, auf die Betreuung beschränkte Rechte. Er kann Teilnehmerlisten abrufen, Anwesenheiten erfassen sowie studentische Abgaben zur Vorbereitung der Testatvergabe durch den verantwortlichen Professor prüfen und vorbewerten. Eigene Lehrveranstaltungen verwalten oder Testate verbindlich erteilen darf er nicht.
 * Sachbearbeiter
++
+Ein Sachbearbeiter ist ein Mitarbeiter der Fakultät oder der Hochschulverwaltung, der organisatorische Aufgaben im ZPA übernimmt, und erbt alle Leserechte des Gasts. Sachbearbeiter authentifizieren sich über Shibboleth und erhalten fakultätsweiten Lesezugriff auf Kurs-, Raum- und Stundenplandaten sowie auf die Auslastung und Verteilung der Kursteilnehmer. Die Rolle bildet die gemeinsame Grundlage aller Verwaltungsrollen; welche Daten darüber hinaus gepflegt werden dürfen, legen die spezialisierten Rollen fest. Personenbezogene Daten der Studierenden sind nur für die Rollen freigegeben, die sie für ihre Aufgaben benötigen. Lehrveranstaltungen verwalten oder Testate erfassen darf ein Sachbearbeiter nicht.
 * Sekretär
++
+Ein Sekretär ist ein Mitarbeiter des Dekanatssekretariats und erbt alle Rechte des Sachbearbeiters. Er ist die erste Anlaufstelle der Fakultät für Studierende, Lehrende und Gäste und nutzt das ZPA vor allem, um Auskünfte zu Kursen, Räumen und Ansprechpartnern zu geben. Dazu pflegt er die Kontaktdaten und Öffnungszeiten des Dekanats sowie fakultätsweite Termine und Fristen, die den Studierenden im ZPA direkt angezeigt werden. Änderungen an Kursbelegungen, Stundenplänen oder Prüfungsdaten darf er nicht vornehmen.
 * Fakultätsmitarbeiter
++
+Ein Fakultätsmitarbeiter ist ein Verwaltungsmitarbeiter der Fakultät für Informatik und Mathematik und erbt alle Rechte des Sachbearbeiters. Er ist täglicher Anwender des ZPA und kann die Daten von Professoren und Studierenden einsehen und ändern, um organisatorische Anliegen der Studierenden zu bearbeiten. Zudem pflegt er die Arbeitszeiten der Professoren, die in die Stundenplanung einfließen, stimmt die Stundenpläne fachlich mit dem Stundenplaner ab und vermittelt zwischen den Professoren und der Hochschulverwaltung. Die Erstellung und Veröffentlichung der Stundenpläne selbst übernimmt der Stundenplaner.
 * Facilitymanager
++
+Ein Facilitymanager ist für die Räume der Fakultät und deren Ausstattung zuständig und erbt alle Rechte des Sachbearbeiters. Er pflegt im ZPA die Raumdaten wie Kapazität, technische Ausstattung und Barrierefreiheit, die als Grundlage für die Stunden- und Prüfungsplanung sowie für Raumbuchungen dienen. Bei Wartungs- oder Umbauarbeiten kann er Räume für bestimmte Zeiträume sperren; betroffene Lehrende und Studierende werden darüber automatisch per E-Mail benachrichtigt. Auf personenbezogene Daten der Studierenden hat er keinen Zugriff.
 * Securitymanager
++
+Ein Securitymanager ist für die Sicherheit der Gebäude und Räume der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er nutzt das ZPA, um sich einen Überblick über die Raumbelegungen zu verschaffen, insbesondere über Veranstaltungen außerhalb der regulären Öffnungszeiten. Zudem pflegt er die Schließzeiten der Gebäude und Räume sowie die Zugangsberechtigungen für besonders geschützte Räume wie Labore. Bei Notfällen oder Gefahrenlagen kann er Sperrmeldungen an die betroffenen Lehrenden und Studierenden versenden. Kurs- und Stundenplandaten kann er nicht ändern.
 * Prüfungsplaner
++
+Ein Prüfungsplaner organisiert die Prüfungszeiträume der Fakultät und erbt alle Rechte des Sachbearbeiters. Auf Grundlage der aus Primuss übernommenen Prüfungsanmeldungen legt er im ZPA Prüfungstermine und -räume fest und achtet darauf, dass sich die Prüfungen der angemeldeten Studierenden zeitlich nicht überschneiden. Zudem teilt er die Prüfungsaufsichten ein und veröffentlicht den fertigen Prüfungsplan für Studierende und Lehrende. Die Prüfungsanmeldung und die Notenvergabe erfolgen weiterhin direkt in Primuss und liegen nicht in seinem Zuständigkeitsbereich.
 * Stundenplaner
++
+Ein Stundenplaner ist für die Erstellung der Stundenpläne der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er generiert die Stundenpläne mit der fakultätsinternen Anwendung StundenPLAN 1.0 und importiert sie anschließend in das ZPA. Dabei ordnet er Lehrveranstaltungen, Lehrende und Räume den Zeitslots zu und prüft den Plan auf Überschneidungen innerhalb der Studiengänge und Fachsemester. Nach der Prüfung veröffentlicht er die Stundenpläne für Studierende und Lehrende und pflegt spätere Änderungen wie Raumwechsel oder Terminverschiebungen ein, über die die Betroffenen automatisch benachrichtigt werden.
 * ZPA-Admin
 * Developer
 * Dailymanager
