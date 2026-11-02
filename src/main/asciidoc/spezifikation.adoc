@@ -375,11 +375,71 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 
 == Funktionale Anforderungen
 
-In diesem Abschnitt sind die funktionalen Anforderungen aufgelistet.
+[caption="FR {counter:fr-counter} - "]
+.ANFORDERUNGSNAME EINFÜGEN
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
 
 == Nichtfunktionale Anforderungen
 
-In diesem Abschnitt sind die nichtfunktionalen Anforderungen aufgelistet.
+[caption="NFR {counter:nfr-counter} - "]
+.ANFORDERUNGSNAME EINFÜGEN
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
 
 == Anwendungsfälle
 
