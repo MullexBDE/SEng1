@@ -375,8 +375,681 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 
 == Funktionale Anforderungen
 
-[caption="FR {counter:fr-counter} - "]
-.ANFORDERUNGSNAME EINFÜGEN
+:anforderungs-caption: FR
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Persönlichen Stundenplan anzeigen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Unbelegte Unterrichtsräume auflisten
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Hochschul-E-Mails abrufen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Ungelesene Moodle-Benachrichtigungen anzeigen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Studienfortschritt anzeigen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Studienfortschritt nach Notenimport berechnen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Moduldetail aus Stundenplan öffnen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Prüfungsergebnisse abrufen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Schwarzes Brett anzeigen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Schwarzes Brett per E-Mail abonnieren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Module für kommendes Semester auswählen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Modulkatalog durchsuchen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Für Lehrveranstaltungen anmelden
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Wöchentliche Sprechstunden eintragen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Für Sprechstunde anmelden
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Scheinübersicht als PDF exportieren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Beitrag am Schwarzen Brett veröffentlichen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Fehlerhafte Raumbelegung löschen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Virtuelle Campustour starten
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Aufgaben in To-Do-Liste speichern
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Persönliches Dashboard konfigurieren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+.Noten aus PRIMUSS importieren
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
@@ -409,8 +1082,649 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 
 == Nichtfunktionale Anforderungen
 
-[caption="NFR {counter:nfr-counter} - "]
-.ANFORDERUNGSNAME EINFÜGEN
+:anforderungs-caption: NFR
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Benutzeroberfläche innerhalb von zwei Sekunden aufbauen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.1000 gleichzeitige Benutzeranfragen verarbeiten
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Verfügbarkeit von 99,9 Prozent gewährleisten
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Mobile Applikation auf iOS 15 bedienen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Mobile Applikation auf Android 10 bedienen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Desktop-Anwendung auf Windows 10 bedienen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Desktop-Anwendung auf macOS 12 bedienen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Benutzerdaten mit AES-256 verschlüsseln
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Datenverkehr über HTTPS übertragen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Fehlgeschlagene Anmeldeversuche protokollieren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Login nach drei Fehlversuchen sperren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Webanwendung vollständig per Tastatur bedienen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Texte mit Kontrastverhältnis 4,5:1 anzeigen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Benutzer nach 15 Minuten automatisch abmelden
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Bei Serverausfall E-Mail an Administrator senden
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.System über Docker-Image installieren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Systemprotokolle als CSV exportieren
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Datenbank-Backup erstellen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Mobile Installationsdatei auf 50 MB begrenzen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Kernfunktionen ohne Schulung bedienen
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
+
+[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+.Benutzeroberfläche auf Deutsch anzeigen
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
