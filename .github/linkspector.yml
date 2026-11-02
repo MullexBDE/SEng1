@@ -6,3 +6,4 @@ dirs:
 useGitIgnore: true
 ignorePatterns:
   - pattern: '^http://localhost:.*$'
+  - pattern: '^https?://(?:[^/]+\.)?pages\.gitlab\.lrz\.de(?:/|$)'

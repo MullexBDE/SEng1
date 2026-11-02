@@ -303,65 +303,143 @@ Für das ZPA System sind die in den folgenden Abschnitten beschriebenen Rollen r
 include::{pumldir}/rollen/rollen.puml[Vererbungsübersicht]
 ----
 
-* Gast
-+
+Die Rollenhirachie zeigt den Aufbau und die Vererbung (top-down) der Zugriffsrechte und technischen Berechtigungen der einzelnen Rollen. Eine erbende Rolle erhält alle Rechte und Pflichten der ihr vorgeschalteten Rolle und kann um weitere Berechtigungen ergänzt werden.
+
+=== Gast
+
 Ein Gast ist ein nicht angemeldeter Nutzer des ZPA. Er benötigt keine Authentifizierung und darf ausschließlich öffentlich freigegebene Informationen einsehen, insbesondere Kurs- und Rauminformationen. Personenbezogene oder studiengangsbezogene Daten sowie Funktionen zur Änderung von Kursbelegungen stehen Gästen nicht zur Verfügung.
-* Student
-+
+
+=== Student
+
 Ein Student ist der standardmäßige verifizierte Benutzer des ZPA und meldet sich über Shibboleth an. Er erbt alle Leserechte des Gasts und kann zusätzlich personalisierte Informationen wie den eigenen Stundenplan, die Kursbelegung und Gruppenzuteilungen einsehen. Außerdem kann er sich im Rahmen seines Studiengangs und Fachsemesters für FWP-Fächer, Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an- und abmelden, Kursprioritäten verwalten sowie Benachrichtigungen und den integrierten Chatbot nutzen. Die zulässige Kursauswahl wird anhand der aus Primuss übernommenen Studien- und Prüfungsdaten eingeschränkt.
-* Lehrende
-+
-Ein Lehrender umfasst alle unterrichtenden Personen der Fakultät und erbt alle Leserechte des Gasts. Lehrende authentifizieren sich über Shibboleth und verwalten ihre zugeordneten Lehrveranstaltungen, Vorlesungen, Übungen und Praktika. Sie können Teilnehmerlisten und Gruppeneinteilungen ihrer Kurse einsehen, Sprechstundentermine hinterlegen und Testate erfassen, die als Prüfungsvoraussetzung automatisch an Primuss übermittelt werden. Zudem werden Kurs- und Gruppendaten zur Bereitstellung der Kursräume kontinuierlich mit Moodle synchronisiert.
-* Professor
-+
-Ein Professor ist ein fest an der Fakultät für Informatik und Mathematik angestelltes Mitglied der Lehrer und erbt alle Rechte der Lehrenden. Professoren leiten Lehrveranstaltungen eigenverantwortlich und besitzen umfassende Verwaltungsrechte für ihre Lehrangebote. Sie können Tutoren für ihre Praktika und Übungen einteilen, Testate verbindlich freigeben sowie Raum- und Ressourcenbuchungen an der Fakultät vornehmen. Darüber hinaus bringen sie fachliche Anforderungen in die Semester- und Curriculumsplanung ein.
-* Modulverantwortlicher
-+
-Der Modulverantwortliche ist ein Professor mit übergeordneter Verantwortung für ein gesamtes Modul des Studienplans und erbt alle Rechte des Professors. Er definiert und pflegt die modulspezifischen Rahmenbedingungen wie Modulbeschreibungen, Lehrinhalte, Gruppengrößen und Zulassungskriterien. Zudem koordiniert er die beteiligten Dozenten und Lehrbeauftragten, überwacht die gleichmäßige Auslastung aller Kursgruppen innerhalb des Moduls und fungiert als primärer Ansprechpartner für das Studiendekanat und Studierende bei modulspezifischen Fragen.
-* Lehrbeauftragter
-+
-Ein Lehrbeauftragter ist eine (externe) Lehrkraft, die im Rahmen eines Lehrauftrags spezifische Lehrveranstaltungen an der Fakultät durchführt, und erbt alle Rechte der Lehrenden. Seine Berechtigungen sind strikt auf die ihm zugewiesenen Lehrveranstaltungen beschränkt. Ein Lehrbeauftragter kann Teilnehmerlisten und Einteilungen seiner Kurse einsehen, Sprechstunden hinterlegen sowie Testate für die eigenen Studierenden eintragen. Zugriff auf fakultätsweite Verwaltungsabläufe oder weiterführende Planungswerkzeuge besteht nicht.
-* Tutor
-+
+
+=== Tutor
+
 Ein Tutor ist eine studentische Hilfskraft (in der Regel ein höhersemestriger Student), die Lehrkräfte bei der Betreuung und Durchführung von Praktika, Übungen oder Seminaren unterstützt. Er besitzt primär alle Rechte der Rolle Student und erhält für die ihm zugewiesenen Übungs- und Praktikumsgruppen zusätzliche, auf die Betreuung beschränkte Rechte. Er kann Teilnehmerlisten abrufen, Anwesenheiten erfassen sowie studentische Abgaben zur Vorbereitung der Testatvergabe durch den verantwortlichen Professor prüfen und vorbewerten. Eigene Lehrveranstaltungen verwalten oder Testate verbindlich erteilen darf er nicht.
-* Sachbearbeiter
-+
+
+=== Lehrende
+
+Ein Lehrender umfasst alle unterrichtenden Personen der Fakultät und erbt alle Leserechte des Gasts. Lehrende authentifizieren sich über Shibboleth und verwalten ihre zugeordneten Lehrveranstaltungen, Vorlesungen, Übungen und Praktika. Sie können Teilnehmerlisten und Gruppeneinteilungen ihrer Kurse einsehen, Sprechstundentermine hinterlegen und Testate erfassen, die als Prüfungsvoraussetzung automatisch an Primuss übermittelt werden. Zudem werden Kurs- und Gruppendaten zur Bereitstellung der Kursräume kontinuierlich mit Moodle synchronisiert.
+
+=== Professor
+
+Ein Professor ist ein fest an der Fakultät für Informatik und Mathematik angestelltes Mitglied der Lehrer und erbt alle Rechte der Lehrenden. Professoren leiten Lehrveranstaltungen eigenverantwortlich und besitzen umfassende Verwaltungsrechte für ihre Lehrangebote. Sie können Tutoren für ihre Praktika und Übungen einteilen, Testate verbindlich freigeben sowie Raum- und Ressourcenbuchungen an der Fakultät vornehmen. Darüber hinaus bringen sie fachliche Anforderungen in die Semester- und Curriculumsplanung ein.
+
+=== Modulverantwortlicher
+
+Der Modulverantwortliche ist ein Professor mit übergeordneter Verantwortung für ein gesamtes Modul des Studienplans und erbt alle Rechte des Professors. Er definiert und pflegt die modulspezifischen Rahmenbedingungen wie Modulbeschreibungen, Lehrinhalte, Gruppengrößen und Zulassungskriterien. Zudem koordiniert er die beteiligten Dozenten und Lehrbeauftragten, überwacht die gleichmäßige Auslastung aller Kursgruppen innerhalb des Moduls und fungiert als primärer Ansprechpartner für das Studiendekanat und Studierende bei modulspezifischen Fragen.
+
+=== Lehrbeauftragter
+
+Ein Lehrbeauftragter ist eine (externe) Lehrkraft, die im Rahmen eines Lehrauftrags spezifische Lehrveranstaltungen an der Fakultät durchführt, und erbt alle Rechte der Lehrenden. Seine Berechtigungen sind strikt auf die ihm zugewiesenen Lehrveranstaltungen beschränkt. Ein Lehrbeauftragter kann Teilnehmerlisten und Einteilungen seiner Kurse einsehen, Sprechstunden hinterlegen sowie Testate für die eigenen Studierenden eintragen. Zugriff auf fakultätsweite Verwaltungsabläufe oder weiterführende Planungswerkzeuge besteht nicht.
+
+=== Sachbearbeiter
+
 Ein Sachbearbeiter ist ein Mitarbeiter der Fakultät oder der Hochschulverwaltung, der organisatorische Aufgaben im ZPA übernimmt, und erbt alle Leserechte des Gasts. Sachbearbeiter authentifizieren sich über Shibboleth und erhalten fakultätsweiten Lesezugriff auf Kurs-, Raum- und Stundenplandaten sowie auf die Auslastung und Verteilung der Kursteilnehmer. Die Rolle bildet die gemeinsame Grundlage aller Verwaltungsrollen; welche Daten darüber hinaus gepflegt werden dürfen, legen die spezialisierten Rollen fest. Personenbezogene Daten der Studierenden sind nur für die Rollen freigegeben, die sie für ihre Aufgaben benötigen. Lehrveranstaltungen verwalten oder Testate erfassen darf ein Sachbearbeiter nicht.
-* Sekretär
-+
+
+=== Sekretär
+
 Ein Sekretär ist ein Mitarbeiter des Dekanatssekretariats und erbt alle Rechte des Sachbearbeiters. Er ist die erste Anlaufstelle der Fakultät für Studierende, Lehrende und Gäste und nutzt das ZPA vor allem, um Auskünfte zu Kursen, Räumen und Ansprechpartnern zu geben. Dazu pflegt er die Kontaktdaten und Öffnungszeiten des Dekanats sowie fakultätsweite Termine und Fristen, die den Studierenden im ZPA direkt angezeigt werden. Änderungen an Kursbelegungen, Stundenplänen oder Prüfungsdaten darf er nicht vornehmen.
-* Fakultätsmitarbeiter
-+
+
+=== Fakultätsmitarbeiter
+
 Ein Fakultätsmitarbeiter ist ein Verwaltungsmitarbeiter der Fakultät für Informatik und Mathematik und erbt alle Rechte des Sachbearbeiters. Er ist täglicher Anwender des ZPA und kann die Daten von Professoren und Studierenden einsehen und ändern, um organisatorische Anliegen der Studierenden zu bearbeiten. Zudem pflegt er die Arbeitszeiten der Professoren, die in die Stundenplanung einfließen, stimmt die Stundenpläne fachlich mit dem Stundenplaner ab und vermittelt zwischen den Professoren und der Hochschulverwaltung. Die Erstellung und Veröffentlichung der Stundenpläne selbst übernimmt der Stundenplaner.
-* Facilitymanager
-+
+
+=== Facilitymanager
+
 Ein Facilitymanager ist für die Räume der Fakultät und deren Ausstattung zuständig und erbt alle Rechte des Sachbearbeiters. Er pflegt im ZPA die Raumdaten wie Kapazität, technische Ausstattung und Barrierefreiheit, die als Grundlage für die Stunden- und Prüfungsplanung sowie für Raumbuchungen dienen. Bei Wartungs- oder Umbauarbeiten kann er Räume für bestimmte Zeiträume sperren; betroffene Lehrende und Studierende werden darüber automatisch per E-Mail benachrichtigt. Auf personenbezogene Daten der Studierenden hat er keinen Zugriff.
-* Securitymanager
-+
+
+=== Securitymanager
+
 Ein Securitymanager ist für die Sicherheit der Gebäude und Räume der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er nutzt das ZPA, um sich einen Überblick über die Raumbelegungen zu verschaffen, insbesondere über Veranstaltungen außerhalb der regulären Öffnungszeiten. Zudem pflegt er die Schließzeiten der Gebäude und Räume sowie die Zugangsberechtigungen für besonders geschützte Räume wie Labore. Bei Notfällen oder Gefahrenlagen kann er Sperrmeldungen an die betroffenen Lehrenden und Studierenden versenden. Kurs- und Stundenplandaten kann er nicht ändern.
-* Prüfungsplaner
-+
+
+=== Prüfungsplaner
+
 Ein Prüfungsplaner organisiert die Prüfungszeiträume der Fakultät und erbt alle Rechte des Sachbearbeiters. Auf Grundlage der aus Primuss übernommenen Prüfungsanmeldungen legt er im ZPA Prüfungstermine und -räume fest und achtet darauf, dass sich die Prüfungen der angemeldeten Studierenden zeitlich nicht überschneiden. Zudem teilt er die Prüfungsaufsichten ein und veröffentlicht den fertigen Prüfungsplan für Studierende und Lehrende. Die Prüfungsanmeldung und die Notenvergabe erfolgen weiterhin direkt in Primuss und liegen nicht in seinem Zuständigkeitsbereich.
-* Stundenplaner
-+
+
+=== Stundenplaner
+
 Ein Stundenplaner ist für die Erstellung der Stundenpläne der Fakultät zuständig und erbt alle Rechte des Sachbearbeiters. Er generiert die Stundenpläne mit der fakultätsinternen Anwendung StundenPLAN 1.0 und importiert sie anschließend in das ZPA. Dabei ordnet er Lehrveranstaltungen, Lehrende und Räume den Zeitslots zu und prüft den Plan auf Überschneidungen innerhalb der Studiengänge und Fachsemester. Nach der Prüfung veröffentlicht er die Stundenpläne für Studierende und Lehrende und pflegt spätere Änderungen wie Raumwechsel oder Terminverschiebungen ein, über die die Betroffenen automatisch benachrichtigt werden.
-* ZPA-Admin
-+
+
+=== ZPA-Admin
+
 Ein ZPA-Admin ist ein Systemadministrator aus dem IT-Operations-Team der Hochschule oder Fakultät und verfügt neben den Gastrechten über mehr Befugnisse. Er ist für die technische Gesamtverwaltung und den stabilen Systembetrieb des ZPA verantwortlich. Über einen administrativen Zugang verwaltet er Benutzerkonten, Rollen und Berechtigungen. In fachliche Lehr- und Prüfungsinhalte greift er nicht ein.
-* Developer
-+
+
+=== Developer
+
 Ein Developer ist ein Softwareentwickler oder technischer Betreuer der Plattform und erbt alle Rechte des ZPA-Admins. Er ist für die Weiterentwicklung, Fehlerbehebung und funktionale Erweiterung des ZPA Next Generation zuständig. Neben den administrativen Standardrechten besitzt er erweiterten Zugriff auf Entwicklungs- und Testumgebungen. Ein Developer implementiert und testet neue Systemfunktionen und Schnittstellen (wie REST-APIs und MCP). Direkte Eingriffe in die Produktionsdatenbank führt er ausschließlich im Rahmen autorisierter Wartungsarbeiten durch.
-* Dailymanager
-+
+
+=== Dailymanager
+
 Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesgeschäft des ZPA zuständig und erbt alle Rechte des ZPA-Admins. Sein Schwerpunkt liegt auf der Sicherstellung reibungsloser täglicher Betriebsabläufe sowie dem First- und Second-Level-Support bei operativen Problemen im Hochschulalltag. Bei Problemen greift er manuell ein, stößt fehlerhafte Jobs erneut an und unterstützt Studierende, Lehrende sowie Sachbearbeiter bei akuten Anliegen im laufenden Semesterbetrieb.
 
 == Funktionale Anforderungen
 
-In diesem Abschnitt sind die funktionalen Anforderungen aufgelistet.
+[caption="FR {counter:fr-counter} - "]
+.ANFORDERUNGSNAME EINFÜGEN
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
 
 == Nichtfunktionale Anforderungen
 
-In diesem Abschnitt sind die nichtfunktionalen Anforderungen aufgelistet.
+[caption="NFR {counter:nfr-counter} - "]
+.ANFORDERUNGSNAME EINFÜGEN
+[cols="3,4,3,4"]
+|===
+|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
+|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:#e8e8e8} *Priorität*
+|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Beschreibung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Begründung*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Testkriterium*
+3+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Quelle*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Autor*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
+|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
+|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Konflikte*
+|{set:cellbgcolor:!}
+|{set:cellbgcolor:#e8e8e8} *Bemerkung*
+3+|{set:cellbgcolor:!}
+|===
 
 == Anwendungsfälle
 

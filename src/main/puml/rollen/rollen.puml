@@ -60,7 +60,6 @@ ZPAAdmin <|-- DailyManager
 rectangle "                    " as StudentGap
 rectangle "                    " as SachbearbeiterGap
 rectangle "                    " as LehrendeGap
-rectangle "                    " as DeveloperGap
 rectangle "                    " as SecuritymanagerGap
 
 Student -[hidden]right- StudentGap
@@ -69,9 +68,6 @@ ZPAAdmin -[hidden]right- SachbearbeiterGap
 SachbearbeiterGap -[hidden]right- Sachbearbeiter
 Lehrende -[hidden]right- LehrendeGap
 LehrendeGap -[hidden]right- DailyManager
-Developer -[hidden]right- DailyManager
-Developer -[hidden]right- DeveloperGap
-DeveloperGap -[hidden]right- SecuritymanagerGap
 SecuritymanagerGap -[hidden]right- Securitymanager
 
 @enduml
