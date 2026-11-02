@@ -537,163 +537,83 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Studienfortschritt nach Notenimport berechnen
-[cols="3,4,3,4"]
+.Das ZPA muss fähig sein, den Studienfortschritt nach Notenimport zu berechnen.
 |===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Moduldetail aus Stundenplan öffnen
-[cols="3,4,3,4"]
+.Das ZPA muss fähig sein, Moduldetails zu öffnen, nachdem ein Klick auf das Modul im Stundenplan erfolgte.
 |===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Prüfungsergebnisse abrufen
-[cols="3,4,3,4"]
+.Das ZPA muss fähig sein, Prüfungsergebnisse abzurufen und dem Benutzer anzuzeigen.
 |===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Schwarzes Brett anzeigen
+.Das ZPA muss fähig sein, ein Schwarzes Brett anzeigen.
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Normal
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
 3+|{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das ZPA muss fähig sein, ein Schwarzes Brett anzeigen.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Professoren und LBAs möchten Informationen/Ankündigen auf dem Schwarzen Brett platzieren.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Einloggen in das ZPA und Anzeigen des Schwarzen Bretts.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Projektleiter
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Daniel Altmann
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 2
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} - 
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} -
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Schwarzes Brett per E-Mail abonnieren
+Das System muss dem Benutzer die Möglichkeit beiten, das Schwarze Brett per E-Mail zu abonnieren.
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Niedrig
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
 3+|{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das System muss dem Benutzer die Möglichkeit beiten, das Schwarze Brett per E-Mail zu abonnieren.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Praktisch bei Ausfällen, etc.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Einloggen mit Testaccount, der berechtigt ist, Ankündigungen zu posten. Absetzen eines Posts auf dem Schwarzen Brett.
+Erhalt einer E-Mail auf einem Nutzer-Testaccount.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Projektleiter
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Daniel Altmann
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} -
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
@@ -1244,163 +1164,82 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Desktop-Anwendung auf Windows 10 bedienen
-[cols="3,4,3,4"]
+.Die Desktop-Anwendung des ZPA muss die Bedienung auf Windows 11 unterstützen.
 |===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Desktop-Anwendung auf macOS 12 bedienen
-[cols="3,4,3,4"]
+.Die Desktop-Anwendung des ZPA muss die Bedienung auf macOS 12 unterstützen.
 |===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Benutzerdaten mit AES-256 verschlüsseln
-[cols="3,4,3,4"]
+.Das ZPA muss alle Benutzerdaten mit AES-256 verschlüsseln.
 |===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Datenverkehr über HTTPS übertragen
+.Das ZPA muss den Datenverkehr über HTTPS übertragen.
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Nicht Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
 3+|{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das ZPA muss den Datenverkehr über HTTPS übertragen.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Sicherstellen einer einheitlichen und verschlüsselten Kommunikation mit den Clients sowie Nachbarsystemen (REST, SOAP, etc.).
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Es werden ausschließlich HTTPS-Verbindungen für jegliche Kommunikation (Clients, Nachbarsysteme, etc.) verwendet.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Datenschutzbeauftragter
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Daniel Altmann
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 2
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} -
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Fehlgeschlagene Anmeldeversuche protokollieren
+.Das ZPA muss dem Admin die Möglichkeit bieten, ein Protokoll aller fehlgeschlagenen Anmeldeversuche einzusehen.
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Nicht Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Normal
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
 3+|{set:cellbgcolor:!}
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das ZPA muss dem Admin die Möglichkeit bieten, ein Protokoll aller fehlgeschlagenen Anmeldeversuche einzusehen.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Relevant bei etwaigen Angriffsversuchen auf das System, um entsprechende Maßnahmen einleiten zu können (z.B. IP-Adressen ermitteln).
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Einloggen als Admin und überprüfen, dass eine Liste aller fehlgeschlagenen Anmeldeversuche einsehbar ist.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Thomas Vogler
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Daniel Altmann
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} -
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
