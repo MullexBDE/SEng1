@@ -858,227 +858,105 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Scheinübersicht als PDF exportieren
+====
+Das System muss angemeldeten Studierenden die Möglichkeit bieten, ihre persönliche Scheinübersicht mit allen erteilten Testaten und bestandenen Modulen als PDF-Datei zu exportieren.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Normal
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Scheinübersicht exportieren
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein angemeldeter Student kann seine persönliche Scheinübersicht auf Knopfdruck als PDF-Datei herunterladen. Die Übersicht enthält je Modul die Modulbezeichnung, das Semester und den Status (Testat erteilt bzw. Modul bestanden). Das PDF nennt zusätzlich den Namen und den Studiengang des Studenten sowie das Erstellungsdatum.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende benötigen einen Nachweis über ihre erbrachten Leistungen, etwa für die Anmeldung zum praktischen Studiensemester, für Bewerbungen oder Anträge. Der Export ersetzt manuelle Abschriften und Screenshots.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein angemeldeter Student mit mindestens einem erteilten Testat löst den Export aus. Das System erzeugt innerhalb von 5 Sekunden eine PDF-Datei, deren Einträge vollständig mit der im ZPA angezeigten Scheinübersicht übereinstimmen. Der Export einer fremden Scheinübersicht ist nicht möglich.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Melvin Lux
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 2
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 22 (Noten aus PRIMUSS importieren); Testate der Lehrenden
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das PDF enthält personenbezogene Daten. Der Inhalt ist mit der Datenschutzbeauftragten (Dr. Sabine Hartmann) abzustimmen.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Beitrag am Schwarzen Brett veröffentlichen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System muss angemeldeten Lehrenden und Sachbearbeitern die Möglichkeit bieten, Beiträge am Schwarzen Brett zu veröffentlichen.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Fehlerhafte Raumbelegung löschen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System muss Stundenplanern und Facilitymanagern die Möglichkeit bieten, fehlerhafte Raumbelegungen zu löschen.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Virtuelle Campustour starten
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System sollte Gästen die Möglichkeit bieten, eine virtuelle Campustour zu starten.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Aufgaben in To-Do-Liste speichern
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System sollte angemeldeten Nutzern die Möglichkeit bieten, Aufgaben in einer persönlichen To-Do-Liste zu speichern.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Persönliches Dashboard konfigurieren
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System sollte angemeldeten Nutzern die Möglichkeit bieten, die Inhalte ihres persönlichen Dashboards zu konfigurieren.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Noten aus PRIMUSS importieren
+====
+Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Primuss zu importieren.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Noten aus Primuss importieren
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das System ruft über die Schnittstelle zu Primuss die Noten und bestandenen Module der Studierenden ab und speichert sie im ZPA. Der Import läuft automatisch zeitgesteuert. Schlägt er fehl, kann ein Dailymanager ihn erneut anstoßen. Fehlerhafte Datensätze werden protokolliert und überschreiben keinen vorhandenen Datenbestand.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die importierten Daten sind die Grundlage für die Berechnung des Studienfortschritts, für die Abfrage der Prüfungsergebnisse und für die Einschränkung der zulässigen Kursauswahl anhand der Studien- und Prüfungsdaten. Der Import vermeidet doppelte Datenpflege in ZPA und Primuss.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Nach einem Import stimmen die Noten und bestandenen Module aller importierten Studierenden mit den Daten in Primuss überein (Stichprobe von mindestens 20 Datensätzen im Test). Bei einem fehlgeschlagenen Import bleibt der bisherige Datenbestand unverändert und der Fehler erscheint im Systemprotokoll.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Prof. Dr. Edda Eich-Söllner (Prüfungsausschuss); Prof. Jan Philipps (Lehrende)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Melvin Lux
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Schnittstelle zu Primuss; Voraussetzung für FR 5, FR 6, FR 8 und FR 16
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Datensparsamkeit (Dr. Sabine Hartmann) kann den Umfang der importierten Daten begrenzen
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Verfügbarkeit und Format der Primuss-Schnittstelle sind mit der Hochschulverwaltung zu klären.
 |===
+====
 
 == Nichtfunktionale Anforderungen
 
@@ -1565,195 +1443,99 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .System über Docker-Image installieren
+====
+Das System muss dem ZPA-Admin die Möglichkeit bieten, die Software über ein Docker-Image auf den Systemen des LRZ zu installieren.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Nicht Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} System auf der LRZ-Infrastruktur installieren
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das System wird einschließlich aller benötigten Komponenten als Docker-Image bereitgestellt. Ein ZPA-Admin installiert und aktualisiert das System, indem er das Image auf den Systemen des LRZ startet und über Konfigurationsparameter anpasst.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das ZPA wird auf den Systemen des LRZ betrieben. Ein Docker-Image macht die Installation reproduzierbar, vereinfacht Updates und Rollbacks und erleichtert das Hochskalieren bei hoher Last zu Semesterbeginn. Der ZPA-Admin wünscht sich eine wartungsarme Plattform.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein ZPA-Admin installiert das System auf einer neuen Testumgebung allein anhand der Installationsdokumentation und ohne manuelle Zusatzschritte außer der Konfiguration. Die Installation dauert höchstens 30 Minuten. Danach ist die Startseite des ZPA erreichbar.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Thomas Vogler (ZPA Admin)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Melvin Lux
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Docker-Laufzeitumgebung beim LRZ; NFR 18 (Datenbank-Backup erstellen)
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Der Betrieb von Docker-Containern auf den Systemen des LRZ ist mit dem LRZ abzustimmen.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Systemprotokolle als CSV exportieren
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System muss dem ZPA-Admin die Möglichkeit bieten, Systemprotokolle im CSV-Format zu exportieren.
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Datenbank-Backup erstellen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System muss dem ZPA-Admin die Möglichkeit bieten, ein Backup der Datenbank zu erstellen.
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Mobile Installationsdatei auf 50 MB begrenzen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System muss die Installationsdatei der mobilen Applikation auf eine Größe von höchstens 50 MB begrenzen.
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Kernfunktionen ohne Schulung bedienen
+====
+Das System muss Studierenden, Lehrenden und Sachbearbeitern die Möglichkeit bieten, die Kernfunktionen ohne vorherige Schulung zu bedienen.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Nicht Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Kernfunktionen nutzen
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Als Kernfunktionen gelten das Anzeigen des persönlichen Stundenplans, die Auswahl von Modulen für das kommende Semester und die Anmeldung für Lehrveranstaltungen. Neue Nutzer können diese Funktionen ohne Schulung, Handbuch oder persönliche Einweisung bedienen. Insbesondere Erstsemester finden sich im System sofort zurecht.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Das bisherige ZPA ist unübersichtlich und uneinheitlich. Studierende und Fakultät erwarten eine deutlich bessere Bedienbarkeit. Eine selbsterklärende Oberfläche verringert außerdem den Supportaufwand für Fakultät und Admins.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} In einem Usability-Test mit 10 Studierenden, die das System nicht kennen (davon mindestens 5 Erstsemester), schließen mindestens 90 % der Testpersonen jede der drei Kernaufgaben ohne fremde Hilfe in höchstens 3 Minuten ab.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende); Klaus Dietrichs (Fakultät)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Melvin Lux
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 1, FR 11, FR 13; NFR 21 (Benutzeroberfläche auf Deutsch anzeigen)
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Der Wunsch, alle Aufgaben an einem Ort zu bündeln (Klaus Dietrichs), kann die Einfachheit der Oberfläche gefährden
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Bedienbarkeit sollte früh mit einem Prototyp getestet werden.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Benutzeroberfläche auf Deutsch anzeigen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das System muss die Benutzeroberfläche in deutscher Sprache anzeigen.
+====
 
 == Anwendungsfälle
 
