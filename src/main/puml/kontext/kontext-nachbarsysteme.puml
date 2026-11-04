@@ -1,0 +1,56 @@
+@startuml
+!pragma layout smetana
+
+<style>
+document {
+  Margin 20
+}
+</style>
+
+skinparam componentStyle uml2
+hide stereotype
+skinparam defaultTextAlignment center
+skinparam component {
+  BackgroundColor #f8f8f8
+  BackgroundColor<<Main>> #FFFF00
+  BorderColor black
+  FontName Arial Unicode MS
+  FontSize 14
+  ArrowFontName Arial Unicode MS
+  ArrowFontSize 12
+}
+
+title Systemkontext der Nachbarsysteme\n\n\n\n
+
+left to right direction
+
+[ZPA] <<Main>>
+[Primuss]
+[Moodle]
+[StundenPLAN 1.0] as Stundenplan
+[E-Mail-Dienst\nHochschule München] as Postfach
+[LRZ\nSMTP-Server] as SMTP
+[Shibboleth]
+[LRZ\nKI-Service] as KI
+[Externe API-Clients\nund KI-Agenten] as Clients
+
+Primuss --> ZPA : Studierendendaten, Leistungen,\nPrüfungsanmeldungen
+ZPA --> Primuss : Testate
+
+ZPA --> Moodle : Kurse, Gruppenzuteilungen
+Moodle --> ZPA : ungelesene Benachrichtigungen
+
+Stundenplan --> ZPA : Stundenplandatei
+Postfach --> ZPA : E-Mails
+ZPA --> SMTP : E-Mail-Nachrichten
+
+ZPA --> Shibboleth : Zugangsdaten
+Shibboleth --> ZPA : Zugangstoken
+
+ZPA --> KI : Chatfragen, Kontextdaten
+KI --> ZPA : Chatantworten
+
+Clients --> ZPA : Kursprioritäten, Kursanmeldungen
+ZPA --> Clients : Kurs-, Raum- und Stundenplandaten
+
+@enduml

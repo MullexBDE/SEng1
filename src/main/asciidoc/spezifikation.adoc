@@ -24,12 +24,17 @@ Für die Nutzerinnen und Nutzer soll das neue System den Funktionsumfang sinnvol
 * *Gäste & Studieninteressierte:* Das System bietet ohne Login einen übersichtlichen ersten Anlaufpunkt mit einer Suchfunktion für öffentliche Kurs- und Rauminformationen.
 * *Lehrende & Sachbearbeiter:* Lehrende können ihre Kursdaten, Sprechstunden, Teilnehmerlisten und Testate für die Prüfungszulassung übersichtlich an einem Ort verwalten. Sachbearbeiter profitieren von einer gebündelten Pflege der Stundenpläne, Raumdaten und Arbeitszeiten.
 
+Zusätzlich sollen Studierende ihren persönlichen Wochenplan, freie Unterrichtsräume, ihr Hochschulpostfach, ungelesene Moodle-Benachrichtigungen und ihren Studienfortschritt im ZPA abrufen können.
+Der Studienfortschritt basiert auf den aus Primuss importierten Leistungen und den für den Studiengang erforderlichen ECTS-Punkten.
+Die mobile Weboberfläche soll auf den festgelegten iOS- und Android-Zielsystemen bedienbar sein.
+
 Da eine Anbindung weiterer Systeme an das aktuelle System technisch nicht machbar erscheint, soll die Neuentwicklung eine offenere Plattform schaffen.
 Folgende Nachbarsysteme sollen integriert werden:
 
 * *Shibboleth:* zentraler Authentifizierungsdienst der Hochschule München für den sicheren Login
 * *Primuss:* hochschulweites System zur Verwaltung der Prüfungsanmeldungen und Noten (Lieferung von Studierendendaten und bestandenen Modulen sowie Übermittlung von Testaten als Prüfungszulassung)
-* *Moodle:* hochschulweite Lernplattform (automatische Übertragung der Kurse und Gruppenzuteilungen)
+* *Moodle:* hochschulweite Lernplattform (automatische Übertragung der Kurse und Gruppenzuteilungen sowie Abruf der eigenen ungelesenen Benachrichtigungen)
+* *E-Mail-Dienst der Hochschule München:* autorisierter Lesezugriff auf das eigene Hochschulpostfach
 * *StundenPLAN 1.0:* interne Anwendung der FK07 zum Generieren und Importieren von Stundenplänen
 * *SMTP-Server des LRZ:* E-Mail-Service zum automatischen Versenden von Benachrichtigungen (z. B. bei Gruppenzuteilungen oder Kursausfällen)
 * *KI-Service des LRZ:* lokal beim LRZ betriebenes KI-Modell für den integrierten Chatbot, sodass keine personenbezogenen Daten an externe Anbieter abfließen
@@ -61,6 +66,17 @@ Die Gesamtübersicht zeigt alle Akteure und Nachbarsysteme des ZPA mit ihren wic
 include::{pumldir}/kontext/kontext-gesamt.puml[Systemkontext des ZPA]
 ----
 
+=== Systemkontext der Nachbarsysteme
+
+Die Übersicht zeigt das ZPA und seine Nachbarsysteme mit den ausgetauschten Daten.
+Der E-Mail-Dienst der Hochschule liefert die Postfachinhalte; der SMTP-Server des LRZ übernimmt den Versand.
+
+[plantuml]
+.Systemkontext ohne Benutzerrollen
+----
+include::{pumldir}/kontext/kontext-nachbarsysteme.puml[Systemkontext der Nachbarsysteme]
+----
+
 === Kontext Student
 
 Studierende wählen im ZPA ihre FWP-Fächer über Kursprioritäten und melden sich für Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an oder ab.
@@ -68,6 +84,8 @@ Die Anmeldung erfolgt über Shibboleth, das dem ZPA nach erfolgreicher Authentif
 Aus Primuss erhält das ZPA Studiengang, Fachsemester und bereits bestandene Module, um die Auswahl der Kurse auf zulässige Fächer zu beschränken.
 Das ZPA liefert den Studierenden ihren persönlichen Stundenplan sowie ihre Kursbelegung und Gruppenzuteilung.
 Die Gruppenzuteilung wird an Moodle weitergegeben, damit Studierende automatisch in die passenden Moodle-Kurse eingetragen werden.
+Für die Benachrichtigungsübersicht liefert Moodle die eigenen ungelesenen Benachrichtigungen einschließlich Verweisen auf die ursprünglichen Einträge.
+Über einen getrennten Lesezugriff auf den E-Mail-Dienst der Hochschule ruft das ZPA die Inhalte des eigenen Hochschulpostfachs ab.
 Benachrichtigungen, z.B. über eine Zuteilung oder einen Kursausfall, versendet das ZPA per E-Mail über den SMTP-Server des LRZ.
 Über einen im ZPA integrierten Chatbot können Studierende Fragen stellen, etwa zu ihren Kursen oder ihrem Stundenplan.
 Das ZPA reichert die Frage mit den passenden Kontextdaten an und leitet sie an ein KI-Modell weiter, das vom LRZ gehostet wird.
@@ -1468,6 +1486,10 @@ Historische Informationen aus dem bestehenden System sind nicht relevant und mü
 |{set:cellbgcolor:#e8e8e8} *Abkürzung*
 |{set:cellbgcolor:#e8e8e8} *Begriff*
 |{set:cellbgcolor:#e8e8e8} *Definition*
+
+|{set:cellbgcolor:!} ECTS
+|European Credit Transfer and Accumulation System
+|Leistungspunktesystem zur Beschreibung des Arbeitsaufwands von Studienleistungen. Für den Studienfortschritt zählt das ZPA die gemäß Studienordnung erworbenen ECTS-Punkte im Verhältnis zur erforderlichen Gesamtzahl des Studiengangs.
 
 |{set:cellbgcolor:!} FWP
 |Fachwissenschaftliches Wahlpflichtfach

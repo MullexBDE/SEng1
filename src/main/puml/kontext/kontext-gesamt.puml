@@ -31,6 +31,8 @@ skinparam component {
   ArrowFontSize 16
 }
 
+title Gesamtübersicht des ZPA\n\n\n\n\n
+
 left to right direction
 
 :Gast:
@@ -48,12 +50,14 @@ left to right direction
 [LRZ\nSMTP-Server] as SMTP
 [Shibboleth]
 [LRZ\nKI-Service] as KI
+[E-Mail-Dienst\nHochschule München] as Postfach
 
 Gast --> ZPA : Suchanfragen
 Gast <-- ZPA : öffentliche Kurs-\nund Rauminformationen
 
 Student --> ZPA : Fächerwahl,\nKursanmeldungen
 Student <-- ZPA : Stundenplan,\nGruppenzuteilung
+Student <-- ZPA : E-Mails, Moodle-Benachrichtigungen,\nStudienfortschritt
 
 Lehrende --> ZPA : Kursdaten,\nSprechstunden
 Lehrende <-- ZPA : Teilnehmerlisten
@@ -71,6 +75,9 @@ ZPA --> Primuss : Testate
 ZPA <-- Primuss : Studierendendaten,\nNoten
 
 ZPA --> Moodle : Kurse,\nTeilnehmer
+ZPA <-- Moodle : eigene ungelesene\nBenachrichtigungen
+
+ZPA <-- Postfach : eigene E-Mails
 
 ZPA <-- Stundenplan : generierter\nStundenplan
 
