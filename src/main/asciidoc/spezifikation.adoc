@@ -698,163 +698,93 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Module für kommendes Semester auswählen
+====
+Während der Wahlphase muss das ZPA angemeldeten Studierenden die Möglichkeit bieten, FWP-Module für das kommende Semester mit einer Priorität auszuwählen.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} FWP-Module mit Prioritäten auswählen
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Während der von der Fakultät festgelegten Wahlphase zeigt das ZPA dem Studenten alle FWP-Module, die im kommenden Semester angeboten werden und für die er laut den Daten aus Primuss zugelassen ist. Bereits bestandene Module erscheinen nicht. Der Student wählt höchstens so viele Module aus, wie die Fakultät für die Wahlphase festgelegt hat, und vergibt jedem gewählten Modul eine eigene Priorität (1 = höchste Priorität). Bis zum Ende der Wahlphase kann er seine Auswahl beliebig oft ändern (maßgeblich ist der zuletzt gespeicherte Stand). Die Vergabe der Plätze nach Ende der Wahlphase ist nicht Teil dieser Anforderung.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Fächerauswahl wird als erstes Feature des neuen ZPA umgesetzt. Da die Plätze nach Prioritäten und nicht nach dem Zeitpunkt der Anmeldung vergeben werden, ist die Wahl für alle Studierenden fair und es gibt keinen Wettlauf zu Beginn der Wahlphase, der im bisherigen System regelmäßig zu Ausfällen geführt hat. Die Studiengangsleitung erhält zudem frühzeitig einen Überblick über die Nachfrage nach den einzelnen Modulen.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Für das kommende Semester sind 8 FWP-Module angelegt, die Fakultät erlaubt 5 Module pro Student. Ein Testkonto hat laut Primuss eines der 8 Module bereits bestanden. Während der Wahlphase zeigt das ZPA diesem Testkonto genau die 7 übrigen Module. Der Student wählt 3 Module mit den Prioritäten 1 bis 3 und speichert. Nach einer erneuten Anmeldung zeigt das ZPA dieselben Module mit denselben Prioritäten. Eine doppelt vergebene Priorität, ein sechstes Modul und jede Änderung nach Ende der Wahlphase lehnt das ZPA mit einer Fehlermeldung ab.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende); Klaus Dietrichs (Fakultät)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Linus Pummer
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 22 (Noten aus PRIMUSS importieren); Modulangebot des kommenden Semesters; Shibboleth
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 13 (Für Lehrveranstaltungen anmelden) vergibt Plätze nach Verfügbarkeit statt nach Priorität. Für jede Lehrveranstaltung muss eindeutig festgelegt sein, welches Verfahren gilt.
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Regeln für die spätere Platzvergabe, z. B. bei gleicher Priorität, sind mit Klaus Dietrichs (Fakultät) und Prof. Dr. Matthias Bauer (Studiengangsleitung) abzustimmen.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Modulkatalog durchsuchen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das ZPA muss Gästen und angemeldeten Nutzern die Möglichkeit bieten, den Modulkatalog nach Modulname, Studiengang und Lehrenden zu durchsuchen.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Für Lehrveranstaltungen anmelden
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Innerhalb der Anmeldefrist muss das ZPA angemeldeten Studierenden die Möglichkeit bieten, sich für freie Plätze in Praktikumsgruppen, Seminaren und praxisbegleitenden Lehrveranstaltungen ihres Studiengangs anzumelden.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Wöchentliche Sprechstunden eintragen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das ZPA muss angemeldeten Lehrenden die Möglichkeit bieten, ihre wöchentliche Sprechstunde mit Wochentag, Beginn, Ende, Raum und Länge der Zeitslots einzutragen.
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Für Sprechstunde anmelden
+====
+Das ZPA muss angemeldeten Studierenden die Möglichkeit bieten, sich für einen freien Zeitslot in der Sprechstunde eines Lehrenden anzumelden.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Normal
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Für einen Sprechstundentermin anmelden
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Der Student wählt einen Lehrenden aus und sieht dessen Sprechstunden der nächsten vier Wochen, aufgeteilt in die vom Lehrenden festgelegten Zeitslots. Belegte Zeitslots sind als belegt gekennzeichnet. Der Student wählt einen freien Zeitslot und kann optional sein Anliegen mit höchstens 500 Zeichen eingeben. Jeder Zeitslot kann nur von einem Studenten belegt werden. Nach der Anmeldung erhält der Student eine Bestätigung per E-Mail. Der Lehrende sieht alle Anmeldungen zu seiner Sprechstunde mit Name und Anliegen.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ohne feste Termine warten Studierende oft vergeblich vor dem Büro oder stimmen Termine aufwendig per E-Mail ab. Feste Zeitslots vermeiden Wartezeiten, und Lehrende können sich anhand des Anliegens auf das Gespräch vorbereiten.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein Lehrender hat eine Sprechstunde von 10:00 bis 11:00 Uhr mit Zeitslots von 15 Minuten eingetragen. Testkonto A meldet sich für den Zeitslot um 10:15 Uhr an. Danach zeigt das ZPA diesen Zeitslot für Testkonto B als belegt an und lehnt eine Anmeldung von B für denselben Zeitslot ab. Melden sich A und B gleichzeitig für den Zeitslot um 10:30 Uhr an, ist genau eine der beiden Anmeldungen erfolgreich. Testkonto A erhält innerhalb von 5 Minuten eine Bestätigung per E-Mail, und der Lehrende sieht die Anmeldung von A mit dem eingegebenen Anliegen.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Linus Pummer
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 2
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 14 (Wöchentliche Sprechstunden eintragen); SMTP-Server des LRZ
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Das Anliegen als Freitext kann sensible personenbezogene Daten enthalten. Das steht im Widerspruch zur Datensparsamkeit (Dr. Sabine Hartmann).
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ob und bis wann sich Studierende wieder abmelden können und wie lange Anmeldungen nach dem Termin gespeichert bleiben, ist mit Prof. Jan Philipps (Lehrende) und Dr. Sabine Hartmann (Datenschutzbeauftragte) abzustimmen.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
 .Scheinübersicht als PDF exportieren
