@@ -1213,163 +1213,93 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Login nach drei Fehlversuchen sperren
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Nach drei aufeinanderfolgenden fehlgeschlagenen Anmeldeversuchen muss das ZPA das betroffene Benutzerkonto für 15 Minuten sperren.
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Webanwendung vollständig per Tastatur bedienen
+====
+Das ZPA muss Gästen und angemeldeten Nutzern die Möglichkeit bieten, alle Funktionen der Webanwendung ausschließlich mit der Tastatur zu bedienen.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:!} Nichtfunktional - Ergonomie
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Alle Anwendungsfälle der Webanwendung, insbesondere die Kernfunktionen aus NFR 20
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Alle interaktiven Elemente wie Links, Schaltflächen, Formularfelder, Menüs und Dialoge sind mit der Tabulatortaste in einer logischen Reihenfolge erreichbar und mit Eingabetaste, Leertaste oder Pfeiltasten bedienbar. Das aktuell fokussierte Element ist jederzeit sichtbar hervorgehoben. Der Tastaturfokus bleibt in keinem Element hängen, und geöffnete Dialoge lassen sich mit der Escape-Taste schließen.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende und Lehrende mit motorischen Einschränkungen oder Sehbehinderung sind auf die Bedienung per Tastatur angewiesen, auch in Verbindung mit einem Screenreader. Als öffentliche Stelle ist die Hochschule nach der Bayerischen Barrierefreie Informationstechnik-Verordnung (BayBITV) verpflichtet, ihre Webanwendungen barrierefrei anzubieten. Laut Systemidee soll das neue ZPA ein barrierefreies Design erhalten.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein Tester führt die drei Kernfunktionen aus NFR 20 in den aktuellen Versionen von Firefox, Chrome und Safari ohne Maus und Touchpad vollständig durch. Dabei ist jedes bediente Element sichtbar fokussiert, und der Fokus bleibt in keinem Element hängen. Die Erfolgskriterien 2.1.1 (Tastatur), 2.1.2 (Keine Tastaturfalle) und 2.4.7 (Fokus sichtbar) der WCAG 2.1 sind auf allen Seiten erfüllt.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende); Prof. Dr. Martin Leitner (Universitätsvertretung)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Linus Pummer
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} NFR 13 (Texte mit Kontrastverhältnis 4,5:1 anzeigen); NFR 20 (Kernfunktionen ohne Schulung bedienen)
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Bedienelemente mit Drag-and-Drop oder Wischgesten, z. B. zum Sortieren der Prioritäten in FR 11, brauchen eine gleichwertige Bedienung per Tastatur. Die Tastaturbedienung sollte früh an einem Prototyp geprüft werden.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Texte mit Kontrastverhältnis 4,5:1 anzeigen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das ZPA muss alle Texte mit einem Kontrastverhältnis von mindestens 4,5:1 zum Hintergrund anzeigen.
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Benutzer nach 15 Minuten automatisch abmelden
+====
+Nach 15 Minuten ohne Benutzeraktivität muss das ZPA angemeldete Nutzer automatisch abmelden.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:!} Nichtfunktional - Sicherheit
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Sitzung nach Inaktivität beenden
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Als Aktivität zählt jede Interaktion des Nutzers mit der Webanwendung, z. B. ein Seitenaufruf, ein Klick oder eine Eingabe. Zwei Minuten vor Ablauf zeigt das ZPA einen Hinweis an, über den der Nutzer seine Sitzung verlängern kann. Nach 15 Minuten ohne Aktivität beendet das ZPA die Sitzung und zeigt die Startseite mit einem Hinweis auf die Abmeldung an. Die Anforderung gilt für Sitzungen in der Webanwendung, nicht für Zugriffe über die REST-API.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende und Lehrende nutzen das ZPA häufig auf gemeinsam genutzten Rechnern, z. B. in PC-Pools oder der Bibliothek. Vergessen sie die Abmeldung, könnten Unbefugte personenbezogene Daten wie Noten einsehen oder Kursanmeldungen ändern. Die Datenschutzbeauftragte fordert den Schutz personenbezogener Daten vor unbefugtem Zugriff.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein Testkonto meldet sich an, öffnet den persönlichen Stundenplan und bleibt danach inaktiv. Nach 13 Minuten zeigt das ZPA den Hinweis auf die bevorstehende Abmeldung. Nach 15 Minuten ist die Sitzung beendet: Ein erneuter Aufruf des Stundenplans, auch über die Zurück-Taste des Browsers, führt zur Anmeldung über Shibboleth und zeigt keine persönlichen Daten. Ein zweites Testkonto, das alle 10 Minuten eine Seite aufruft, bleibt über 60 Minuten angemeldet.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Dr. Sabine Hartmann (Datenschutzbeauftragter); Thomas Vogler (ZPA Admin)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Linus Pummer
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Shibboleth
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Ein zu kurzer Zeitraum stört Nutzer bei längeren Eingaben, z. B. bei der Auswahl der FWP-Module (FR 11).
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Sitzung bei Shibboleth muss ebenfalls beendet werden, sonst meldet Shibboleth den Nutzer beim nächsten Aufruf ohne Passworteingabe wieder an. Das ist mit dem Betreiber von Shibboleth abzustimmen.
 |===
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .Bei Serverausfall E-Mail an Administrator senden
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Ist das ZPA länger als zwei Minuten nicht erreichbar, muss die Systemüberwachung des ZPA dem ZPA-Admin eine E-Mail senden.
+====
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
 .System über Docker-Image installieren
