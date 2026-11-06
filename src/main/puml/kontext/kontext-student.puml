@@ -42,15 +42,19 @@ left to right direction
 [Moodle]
 [LRZ\nKI-Service] as KI
 [LRZ\nSMTP-Server] as SMTP
+[E-Mail-Dienst\nHochschule München] as Postfach
 
 Student --> ZPA : Kursprioritäten (FWP),\nAn- und Abmeldungen\n(Praktika, Seminare, PLV),\nChatfragen
 Student <-- ZPA : persönlicher Stundenplan,\nKursbelegung,\nGruppenzuteilung,\nChatantworten
+Student <-- ZPA : E-Mails, Moodle-Benachrichtigungen,\nStudienfortschritt
 
 Student --> Shibboleth : Zugangsdaten
 Shibboleth --> ZPA : Zugangstoken
 
 ZPA <-- Primuss : Studiengang, Semester,\nbestandene Module
 ZPA --> Moodle : Gruppenzuteilung\ndes Studenten
+ZPA <-- Moodle : eigene ungelesene\nBenachrichtigungen
+ZPA <-- Postfach : eigene E-Mails
 ZPA --> KI : Chatfrage mit Kontext\n(Kurse, Stundenplan)
 ZPA <-- KI : generierte\nAntwort
 ZPA --> SMTP : Benachrichtigung\n(Zuteilung, Kursausfall)

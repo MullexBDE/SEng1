@@ -24,12 +24,17 @@ Für die Nutzerinnen und Nutzer soll das neue System den Funktionsumfang sinnvol
 * *Gäste & Studieninteressierte:* Das System bietet ohne Login einen übersichtlichen ersten Anlaufpunkt mit einer Suchfunktion für öffentliche Kurs- und Rauminformationen.
 * *Lehrende & Sachbearbeiter:* Lehrende können ihre Kursdaten, Sprechstunden, Teilnehmerlisten und Testate für die Prüfungszulassung übersichtlich an einem Ort verwalten. Sachbearbeiter profitieren von einer gebündelten Pflege der Stundenpläne, Raumdaten und Arbeitszeiten.
 
+Zusätzlich sollen Studierende ihren persönlichen Wochenplan, freie Unterrichtsräume, ihr Hochschulpostfach, ungelesene Moodle-Benachrichtigungen und ihren Studienfortschritt im ZPA abrufen können.
+Der Studienfortschritt basiert auf den aus Primuss importierten Leistungen und den für den Studiengang erforderlichen ECTS-Punkten.
+Die mobile Weboberfläche soll auf den festgelegten iOS- und Android-Zielsystemen bedienbar sein.
+
 Da eine Anbindung weiterer Systeme an das aktuelle System technisch nicht machbar erscheint, soll die Neuentwicklung eine offenere Plattform schaffen.
 Folgende Nachbarsysteme sollen integriert werden:
 
 * *Shibboleth:* zentraler Authentifizierungsdienst der Hochschule München für den sicheren Login
 * *Primuss:* hochschulweites System zur Verwaltung der Prüfungsanmeldungen und Noten (Lieferung von Studierendendaten und bestandenen Modulen sowie Übermittlung von Testaten als Prüfungszulassung)
-* *Moodle:* hochschulweite Lernplattform (automatische Übertragung der Kurse und Gruppenzuteilungen)
+* *Moodle:* hochschulweite Lernplattform (automatische Übertragung der Kurse und Gruppenzuteilungen sowie Abruf der eigenen ungelesenen Benachrichtigungen)
+* *E-Mail-Dienst der Hochschule München:* autorisierter Lesezugriff auf das eigene Hochschulpostfach
 * *StundenPLAN 1.0:* interne Anwendung der FK07 zum Generieren und Importieren von Stundenplänen
 * *SMTP-Server des LRZ:* E-Mail-Service zum automatischen Versenden von Benachrichtigungen (z. B. bei Gruppenzuteilungen oder Kursausfällen)
 * *KI-Service des LRZ:* lokal beim LRZ betriebenes KI-Modell für den integrierten Chatbot, sodass keine personenbezogenen Daten an externe Anbieter abfließen
@@ -61,6 +66,17 @@ Die Gesamtübersicht zeigt alle Akteure und Nachbarsysteme des ZPA mit ihren wic
 include::{pumldir}/kontext/kontext-gesamt.puml[Systemkontext des ZPA]
 ----
 
+=== Systemkontext der Nachbarsysteme
+
+Die Übersicht zeigt das ZPA und seine Nachbarsysteme mit den ausgetauschten Daten.
+Der E-Mail-Dienst der Hochschule liefert die Postfachinhalte; der SMTP-Server des LRZ übernimmt den Versand.
+
+[plantuml]
+.Systemkontext ohne Benutzerrollen
+----
+include::{pumldir}/kontext/kontext-nachbarsysteme.puml[Systemkontext der Nachbarsysteme]
+----
+
 === Kontext Student
 
 Studierende wählen im ZPA ihre FWP-Fächer über Kursprioritäten und melden sich für Praktikumsgruppen, Seminare und den praxisbegleitenden Unterricht an oder ab.
@@ -68,6 +84,8 @@ Die Anmeldung erfolgt über Shibboleth, das dem ZPA nach erfolgreicher Authentif
 Aus Primuss erhält das ZPA Studiengang, Fachsemester und bereits bestandene Module, um die Auswahl der Kurse auf zulässige Fächer zu beschränken.
 Das ZPA liefert den Studierenden ihren persönlichen Stundenplan sowie ihre Kursbelegung und Gruppenzuteilung.
 Die Gruppenzuteilung wird an Moodle weitergegeben, damit Studierende automatisch in die passenden Moodle-Kurse eingetragen werden.
+Für die Benachrichtigungsübersicht liefert Moodle die eigenen ungelesenen Benachrichtigungen einschließlich Verweisen auf die ursprünglichen Einträge.
+Über einen getrennten Lesezugriff auf den E-Mail-Dienst der Hochschule ruft das ZPA die Inhalte des eigenen Hochschulpostfachs ab.
 Benachrichtigungen, z.B. über eine Zuteilung oder einen Kursausfall, versendet das ZPA per E-Mail über den SMTP-Server des LRZ.
 Über einen im ZPA integrierten Chatbot können Studierende Fragen stellen, etwa zu ihren Kursen oder ihrem Stundenplan.
 Das ZPA reichert die Frage mit den passenden Kontextdaten an und leitet sie an ein KI-Modell weiter, das vom LRZ gehostet wird.
@@ -376,167 +394,109 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 == Funktionale Anforderungen
 
 :anforderungs-caption: FR
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+:fr-counter: 0
+
+[[fr-1]]
+
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Persönlichen Stundenplan anzeigen
+====
+Das ZPA muss angemeldeten Studierenden die Möglichkeit bieten, ihren persönlichen Stundenplan mit Zeiten, Räumen und Lehrenden für eine ausgewählte Woche anzuzeigen.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Persönlichen Stundenplan einer Vorlesungswoche anzeigen
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Wochenansicht enthält die Termine der eigenen Lehrveranstaltungen und zugeteilten Gruppen. Pro Termin erscheinen Veranstaltungsname, Datum, Beginn, Ende, Raum und Lehrende.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende benötigen einen Wochenplan mit den Terminen ihrer eigenen Lehrveranstaltungen und Praktikumsgruppen.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein Testkonto mit drei Veranstaltungsterminen ruft die betreffende Woche auf. Das ZPA zeigt genau diese Termine mit den hinterlegten Zeiten, Räumen und Lehrenden; Termine anderer Gruppen fehlen.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Jonas Huberts
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Shibboleth; Kurs- und Gruppenzuteilung; StundenPLAN 1.0
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Grundlage sind die eigene Kursbelegung und der zuletzt veröffentlichte Stundenplan.
 |===
+====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[[fr-2]]
+
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Unbelegte Unterrichtsräume auflisten
+====
+Das ZPA muss Studierenden die Möglichkeit bieten, für einen gewählten Zeitraum unbelegte und nicht gesperrte Unterrichtsräume mit Raumnummer und Sitzplatzanzahl aufzulisten.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
 |{set:cellbgcolor:!} Funktional
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Normal
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Freien Unterrichtsraum für einen Zeitraum finden
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Der Student wählt ein Datum sowie eine Beginn- und Endzeit. Die Ergebnisliste enthält die Raumnummer und Sitzplatzanzahl der Räume, deren Belegung oder Sperrung den gewählten Zeitraum nicht überschneidet.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende möchten freie Räume für Lerngruppen und die Vorbereitung von Praktika finden.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Für 10:00 bis 11:00 Uhr enthält die Ergebnisliste nur Räume ohne überschneidende Belegung oder Sperrung. Ein bis 10:00 Uhr belegter Raum zählt als frei; Raumnummer und Sitzplatzanzahl stimmen mit den Raumdaten überein.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende); Rolle Facilitymanager
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Jonas Huberts
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 3
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Raumdaten und Sperrzeiten; veröffentlichter Belegungsplan
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Anzeige berücksichtigt die im ZPA erfassten Belegungen und reserviert keinen Raum.
 |===
+====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[[fr-3]]
+
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Hochschul-E-Mails abrufen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das ZPA muss angemeldeten Studierenden die Möglichkeit bieten, E-Mails aus ihrem eigenen Hochschulpostfach abzurufen.
+====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[[fr-4]]
+
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Ungelesene Moodle-Benachrichtigungen anzeigen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das ZPA muss angemeldeten Studierenden die Möglichkeit bieten, ihre ungelesenen Moodle-Benachrichtigungen anzuzeigen.
+====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[[fr-5]]
+
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Studienfortschritt anzeigen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+====
+Das ZPA muss angemeldeten Studierenden die Möglichkeit bieten, ihren Studienfortschritt als erreichte und erforderliche ECTS-Punkte anzuzeigen.
+====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Studienfortschritt nach Notenimport berechnen
 [cols="3,4,3,4"]
 |===
@@ -568,7 +528,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Moduldetail aus Stundenplan öffnen
 [cols="3,4,3,4"]
 |===
@@ -600,7 +560,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Prüfungsergebnisse abrufen
 [cols="3,4,3,4"]
 |===
@@ -632,7 +592,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Schwarzes Brett anzeigen
 [cols="3,4,3,4"]
 |===
@@ -664,7 +624,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Schwarzes Brett per E-Mail abonnieren
 [cols="3,4,3,4"]
 |===
@@ -696,7 +656,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Module für kommendes Semester auswählen
 [cols="3,4,3,4"]
 |===
@@ -728,7 +688,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Modulkatalog durchsuchen
 [cols="3,4,3,4"]
 |===
@@ -760,7 +720,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Für Lehrveranstaltungen anmelden
 [cols="3,4,3,4"]
 |===
@@ -792,7 +752,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Wöchentliche Sprechstunden eintragen
 [cols="3,4,3,4"]
 |===
@@ -824,7 +784,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Für Sprechstunde anmelden
 [cols="3,4,3,4"]
 |===
@@ -856,7 +816,7 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Scheinübersicht als PDF exportieren
 ====
 Das System muss angemeldeten Studierenden die Möglichkeit bieten, ihre persönliche Scheinübersicht mit allen erteilten Testaten und bestandenen Modulen als PDF-Datei zu exportieren.
@@ -892,37 +852,37 @@ Das System muss angemeldeten Studierenden die Möglichkeit bieten, ihre persönl
 |===
 ====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Beitrag am Schwarzen Brett veröffentlichen
 ====
 Das System muss angemeldeten Lehrenden und Sachbearbeitern die Möglichkeit bieten, Beiträge am Schwarzen Brett zu veröffentlichen.
 ====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Fehlerhafte Raumbelegung löschen
 ====
 Das System muss Stundenplanern und Facilitymanagern die Möglichkeit bieten, fehlerhafte Raumbelegungen zu löschen.
 ====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Virtuelle Campustour starten
 ====
 Das System sollte Gästen die Möglichkeit bieten, eine virtuelle Campustour zu starten.
 ====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Aufgaben in To-Do-Liste speichern
 ====
 Das System sollte angemeldeten Nutzern die Möglichkeit bieten, Aufgaben in einer persönlichen To-Do-Liste zu speichern.
 ====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Persönliches Dashboard konfigurieren
 ====
 Das System sollte angemeldeten Nutzern die Möglichkeit bieten, die Inhalte ihres persönlichen Dashboards zu konfigurieren.
 ====
 
-[caption="{anforderungs-caption} {counter:{fr-counter} - "]
+[caption="{anforderungs-caption} {counter:fr-counter} - "]
 .Noten aus PRIMUSS importieren
 ====
 Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Primuss zu importieren.
@@ -961,167 +921,109 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 == Nichtfunktionale Anforderungen
 
 :anforderungs-caption: NFR
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+:nfr-counter: 0
+
+[[nfr-1]]
+
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Benutzeroberfläche innerhalb von zwei Sekunden aufbauen
+====
+Das ZPA muss den persönlichen Stundenplan, die Raumübersicht und die Studienfortschrittsübersicht bei 100 gleichzeitigen Nutzern in mindestens 95 % der Aufrufe innerhalb von zwei Sekunden vollständig anzeigen.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:!} Nichtfunktional - Effizienz
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Persönlichen Stundenplan, Raumübersicht und Studienfortschrittsübersicht aufrufen
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Antwortzeit wird vom Aufruf der Ansicht bis zur vollständigen Anzeige der Daten gemessen. Die Grenze von zwei Sekunden gilt bei 100 gleichzeitigen Nutzern für mindestens 95 % der Aufrufe je Ansicht.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende möchten ihre Übersichten im Hochschulalltag ohne lange Wartezeiten abrufen.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Ein Lasttest mit 100 gleichzeitigen Nutzern ruft jede der drei Ansichten 100-mal auf. Je Ansicht zeigen mindestens 95 Aufrufe die vollständigen Daten innerhalb von zwei Sekunden; Fehler zählen als Überschreitung.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende); Thomas Vogler (ZPA-Admin)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Jonas Huberts
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 4
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 1, FR 2, FR 5; LRZ-Testumgebung
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Messung erfolgt auf der LRZ-Testumgebung mit bereits importierten Daten.
 |===
+====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[[nfr-2]]
+
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .1000 gleichzeitige Benutzeranfragen verarbeiten
+====
+Das ZPA muss 1000 gleichzeitig eintreffende Leseanfragen innerhalb von zehn Sekunden ohne Serverfehler beantworten.
+====
+
+[[nfr-3]]
+
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
+.Verfügbarkeit von 99,9 Prozent erreichen
+====
+Das ZPA muss über einen Kalendermonat eine Verfügbarkeit von mindestens 99,9 % erreichen.
+
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
+|{set:cellbgcolor:!} Nichtfunktional - Zuverlässigkeit
 |{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
+|{set:cellbgcolor:!} Hoch
 |{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Persönlichen Stundenplan während des laufenden Betriebs abrufen
 |{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Eine externe Messstelle ruft jede Minute den Stundenplan eines Testkontos ab. Eine korrekte Antwort innerhalb von zehn Sekunden zählt als verfügbar; Wartungszeiten und fehlende Messwerte zählen als Ausfall.
 |{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Studierende benötigen einen zuverlässigen Zugriff auf ihre Daten, insbesondere vor Lehrveranstaltungen und Anmeldefristen.
 |{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Mindestens 99,9 % der Messungen eines Kalendermonats müssen erfolgreich sein. Bei 30 Tagen sind höchstens 43 von 43 200 Minutenmessungen erfolglos; ein absichtlicher Serverausfall muss als Ausfall erscheinen.
 |{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Louis Vietmeier (Studierende); Thomas Vogler (ZPA-Admin)
 |{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Jonas Huberts
 |{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
+|{set:cellbgcolor:!} 5
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} FR 1; externe Messstelle; Testkonto mit Termindaten; LRZ-Betrieb
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
+|{set:cellbgcolor:!} Keine bekannt
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
+3+|{set:cellbgcolor:!} Die Messung verwendet eine gültige Testsitzung und bereits im ZPA gespeicherte Daten.
 |===
+====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Verfügbarkeit von 99,9 Prozent gewährleisten
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+[[nfr-4]]
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Mobile Applikation auf iOS 15 bedienen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
+.Mobile Webanwendung unter iOS 15 bedienen
+====
+Das ZPA muss Studierenden die Möglichkeit bieten, die Webanwendung mit Safari unter iOS 15 per Touch zu bedienen.
+====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Mobile Applikation auf Android 10 bedienen
-[cols="3,4,3,4"]
-|===
-|{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
-|{set:cellbgcolor:!} Nicht Funktional
-|{set:cellbgcolor:#e8e8e8} *Priorität*
-|{set:cellbgcolor:!} [Hoch/Normal/Niedrig].
-|{set:cellbgcolor:#e8e8e8} *Anwendungsfälle*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Beschreibung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Begründung*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Testkriterium*
-3+|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Quelle*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Autor*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Zufriedenheit*
-|{set:cellbgcolor:!} [Zufriedenheit Stakeholder (1 = uninteressiert, 5 = extrem zufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Enttäuschung*
-|{set:cellbgcolor:!} [Enttäuschung Stakeholder (1 = hat keinen Einfluss, 5 = extrem unzufrieden)]
-|{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!}
-|{set:cellbgcolor:#e8e8e8} *Bemerkung*
-3+|{set:cellbgcolor:!}
-|===
+[[nfr-5]]
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
+.Mobile Webanwendung unter Android 10 bedienen
+====
+Das ZPA muss Studierenden die Möglichkeit bieten, die Webanwendung mit Chrome unter Android 10 per Touch zu bedienen.
+====
+
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Desktop-Anwendung auf Windows 10 bedienen
 [cols="3,4,3,4"]
 |===
@@ -1153,7 +1055,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Desktop-Anwendung auf macOS 12 bedienen
 [cols="3,4,3,4"]
 |===
@@ -1185,7 +1087,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Benutzerdaten mit AES-256 verschlüsseln
 [cols="3,4,3,4"]
 |===
@@ -1217,7 +1119,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Datenverkehr über HTTPS übertragen
 [cols="3,4,3,4"]
 |===
@@ -1249,7 +1151,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Fehlgeschlagene Anmeldeversuche protokollieren
 [cols="3,4,3,4"]
 |===
@@ -1281,7 +1183,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Login nach drei Fehlversuchen sperren
 [cols="3,4,3,4"]
 |===
@@ -1313,7 +1215,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Webanwendung vollständig per Tastatur bedienen
 [cols="3,4,3,4"]
 |===
@@ -1345,7 +1247,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Texte mit Kontrastverhältnis 4,5:1 anzeigen
 [cols="3,4,3,4"]
 |===
@@ -1377,7 +1279,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Benutzer nach 15 Minuten automatisch abmelden
 [cols="3,4,3,4"]
 |===
@@ -1409,7 +1311,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Bei Serverausfall E-Mail an Administrator senden
 [cols="3,4,3,4"]
 |===
@@ -1441,7 +1343,7 @@ Das System muss fähig sein, Noten und bestandene Module der Studierenden aus Pr
 3+|{set:cellbgcolor:!}
 |===
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .System über Docker-Image installieren
 ====
 Das System muss dem ZPA-Admin die Möglichkeit bieten, die Software über ein Docker-Image auf den Systemen des LRZ zu installieren.
@@ -1477,25 +1379,25 @@ Das System muss dem ZPA-Admin die Möglichkeit bieten, die Software über ein Do
 |===
 ====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Systemprotokolle als CSV exportieren
 ====
 Das System muss dem ZPA-Admin die Möglichkeit bieten, Systemprotokolle im CSV-Format zu exportieren.
 ====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Datenbank-Backup erstellen
 ====
 Das System muss dem ZPA-Admin die Möglichkeit bieten, ein Backup der Datenbank zu erstellen.
 ====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Mobile Installationsdatei auf 50 MB begrenzen
 ====
 Das System muss die Installationsdatei der mobilen Applikation auf eine Größe von höchstens 50 MB begrenzen.
 ====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Kernfunktionen ohne Schulung bedienen
 ====
 Das System muss Studierenden, Lehrenden und Sachbearbeitern die Möglichkeit bieten, die Kernfunktionen ohne vorherige Schulung zu bedienen.
@@ -1531,7 +1433,7 @@ Das System muss Studierenden, Lehrenden und Sachbearbeitern die Möglichkeit bie
 |===
 ====
 
-[caption="{anforderungs-caption} {counter:{nfr-counter} - "]
+[caption="{anforderungs-caption} {counter:nfr-counter} - "]
 .Benutzeroberfläche auf Deutsch anzeigen
 ====
 Das System muss die Benutzeroberfläche in deutscher Sprache anzeigen.
@@ -1584,6 +1486,10 @@ Historische Informationen aus dem bestehenden System sind nicht relevant und mü
 |{set:cellbgcolor:#e8e8e8} *Abkürzung*
 |{set:cellbgcolor:#e8e8e8} *Begriff*
 |{set:cellbgcolor:#e8e8e8} *Definition*
+
+|{set:cellbgcolor:!} ECTS
+|European Credit Transfer and Accumulation System
+|Leistungspunktesystem zur Beschreibung des Arbeitsaufwands von Studienleistungen. Für den Studienfortschritt zählt das ZPA die gemäß Studienordnung erworbenen ECTS-Punkte im Verhältnis zur erforderlichen Gesamtzahl des Studiengangs.
 
 |{set:cellbgcolor:!} FWP
 |Fachwissenschaftliches Wahlpflichtfach
