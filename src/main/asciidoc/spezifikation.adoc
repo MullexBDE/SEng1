@@ -537,22 +537,22 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Das ZPA muss fähig sein, den Studienfortschritt nach Notenimport zu berechnen.
+.Studienfortschritt nach Notenimport berechnen
 |===
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Das ZPA muss fähig sein, Moduldetails zu öffnen, nachdem ein Klick auf das Modul im Stundenplan erfolgte.
+.Moduldetails öffnen, nachdem ein Klick auf das Modul im Stundenplan erfolgt ist
 |===
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Das ZPA muss fähig sein, Prüfungsergebnisse abzurufen und dem Benutzer anzuzeigen.
+.Prüfungsergebnisse abrufen und dem Benutzer anzeigen
 |===
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-.Das ZPA muss fähig sein, ein Schwarzes Brett anzeigen.
+.Schwarzes Brett anzeigen
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
@@ -578,13 +578,13 @@ Ein Dailymanager ist für die operative Betriebsführung und das laufende Tagesg
 |{set:cellbgcolor:#e8e8e8} *Abhängigkeiten*
 |{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Konflikte*
-|{set:cellbgcolor:!} - 
+|{set:cellbgcolor:!} -
 |{set:cellbgcolor:#e8e8e8} *Bemerkung*
 3+|{set:cellbgcolor:!} -
 |===
 
 [caption="{anforderungs-caption} {counter:{fr-counter} - "]
-Das System muss dem Benutzer die Möglichkeit beiten, das Schwarze Brett per E-Mail zu abonnieren.
+.Schwarzes Brett per E-Mail abonnieren
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
@@ -1164,22 +1164,22 @@ Erhalt einer E-Mail auf einem Nutzer-Testaccount.
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Die Desktop-Anwendung des ZPA muss die Bedienung auf Windows 11 unterstützen.
+.Bedienung auf Windows 11 unterstützen
 |===
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Die Desktop-Anwendung des ZPA muss die Bedienung auf macOS 12 unterstützen.
+.Bedienung auf macOS unterstützen
 |===
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Das ZPA muss alle Benutzerdaten mit AES-256 verschlüsseln.
+.Benutzerdaten mit AES-256 verschlüsseln
 |===
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Das ZPA muss den Datenverkehr über HTTPS übertragen.
+.Datenverkehr über HTTPS übertragen
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
@@ -1211,7 +1211,7 @@ Erhalt einer E-Mail auf einem Nutzer-Testaccount.
 |===
 
 [caption="{anforderungs-caption} {counter:{nfr-counter} - "]
-.Das ZPA muss dem Admin die Möglichkeit bieten, ein Protokoll aller fehlgeschlagenen Anmeldeversuche einzusehen.
+.Protokoll aller fehlgeschlagenen Anmeldeversuche einsehen
 [cols="3,4,3,4"]
 |===
 |{set:cellbgcolor:#e8e8e8} *Anforderungstyp*
